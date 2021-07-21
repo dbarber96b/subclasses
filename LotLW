@@ -19,12 +19,12 @@ RequiredSheetVersion(13);
 
 SourceList["GMBDB"] = {
 	name : "GMBinderDBarber96b",
-	abbreviation : "GMBDB",
+	abbreviation : ["GMBDB"],
 	group : "Dbarber96b",
 	url : "https://www.gmbinder.com/share/-MezALlhpv89Ezt1QQlz",
 	date : "2021/07/21"
 };
-AddSubClass("warlock", "Lady of the Lake", { // this code includes contributions by SoilentBrad
+AddSubClass("warlock", "Lady of the Lake", {
 	regExpSearch : /^(?=.*ladyofthelake)(?=.*warlock).*$/i,
 	subname : "Lady of the Lake",
 	source : ["GMBDB"],
