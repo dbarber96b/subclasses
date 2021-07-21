@@ -95,15 +95,14 @@ AddSubClass("warlock", "Lady of the Lake", {
 				"If channeling my will through a melee weapon using the Sentinel feature, I can enchant the blade with the spell instead of casting it, using the same components",
 				"The enchantment has a number of charges equal to the number of targets allowed by the spell, and its duration, equal to that of the spell, begins when placed on the weapon",
 				"When I hit a creature with a weapon attack using this weapon, I can expend a charge of the spell, the target makes the saving throw at disadvantage.",
-				"The specter remains until the end of my next long rest, at which point it vanishes"
-			]),
+				]),
 			usages : "Charisma modifier per ",
       usagescalc : "event.value = Math.max(1, What('Cha Mod'));",
 			recovery : "long rest",
 		},
     "subclassfeature10" : {
 			name : "Armor of the Chalice",
-			source : ["X", 56],
+			source : ["GMBDB"],
 			minlevel : 10,
 			description : desc([
 				"As a reaction when a Warrior's Challenge recipient hits me with an attack, I can roll a d6",
@@ -111,8 +110,8 @@ AddSubClass("warlock", "Lady of the Lake", {
 			])
 		},
 		"subclassfeature14" : {
-			name : "Master of Hexes",
-			source : ["X", 56],
+			name : "Champion of the Grail",
+			source : ["GMBDB"],
 			minlevel : 14,
 			description : desc([
 				"When the target of my Warrior's Challenge dies, I can challenge another I can see within 30 ft",
