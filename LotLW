@@ -24,9 +24,9 @@ SourceList["GMBDB"] = {
 	url : "https://www.gmbinder.com/share/-MezALlhpv89Ezt1QQlz",
 	date : "2021/07/21"
 };
-AddSubClass("warlock", "Lady of the Lake",) {
-	regExpSearch : /^(?=.*ladyofthelake)(?=.*warlock).*$/i,
-	subname : "Lady of the Lake",
+AddSubClass("warlock", "the lady of the lake", {
+	regExpSearch : /^(?=.*warlock)(?=.*lady)(?=.*(lake)).*$/i,
+	subname : "the Lady of the Lake",
 	source : ["GMBDB"],
 	spellcastingExtra : ["shield", "bane", "calm emotions", "find steed", "crusader's mantle", "elemental weapon", "aura of purity", "control water", "dispel evil and good", "holy weapon"],
 	features : {
