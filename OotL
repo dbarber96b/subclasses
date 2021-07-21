@@ -1,0 +1,69 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Subclass
+	Effect:		This script adds a subclass for the Paladin, called "Oath of the Lady "
+				
+	Code by:	dbarber96b
+	Date:		2021-07-21 (sheet v13.0.0beta16)
+*/
+
+var iFileName = "OathoftheLake.js";
+RequiredSheetVersion(13);
+
+SourceList["GMBDB"] = {
+	name : "GMBinderDBarber96b",
+	abbreviation : ["GMBDB"],
+	group : "Dbarber96b",
+	url : "https://www.gmbinder.com/share/-Me1RGkhFdZNFoMne3-F",
+	date : "2021/07/21"
+};
+AddSubClass("paladin", "oath of the lake", {
+	regExpSearch : /^((?=.*(knight|lake))|((?=.*(nimue|arthurian))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))))).*$/i,
+	subname : "Oath of the Lake",
+	source : ["GMBDB"],
+	features : {
+		"subclassfeature3" : {
+			name : "Channel Divinity: Sacrifice for the Lady",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : "\n   " + "I can use my channel divinity to grant myself advantage on melee attacks on my next turn" + "\n   " + "The target also gets advantage on attacks against me on its turn",
+			spellcastingExtra : ["heroism", "compelled duel", "misty step", "enhance ability", "bestow curse", "crusader's mantle", "spirit guardians", "aura of purity", "guardian of faith", "circle of power", "dispel good and evil"]
+		},
+		"subclassfeature3.1" : {
+			name : "Channel Divinity: Anvil and Hammer",
+			source : ["UA:PSO", 1],
+			minlevel : 3,
+			description : "\n   " + "As a reaction, I can use my channel divinity to intercept an attack on a friendly creature" + "\n   " + "The creature must be within a radius of my movement" + "\n   " + "The attacker must now target me instead of my ally" + "\n   " + "I can make a melee attack if the attacker is in range, even if the triggering attack would drop me",
+      action : ["reaction", ""]
+		},
+		"subclassfeature7" : {
+			name : "Aura of the Lion Heart",
+			source : ["GMBDB"],
+			minlevel : 7,
+			description : "\n   " + "While I'm not incapacitated,allies in range have adv. on saves vs. being frightened" + "\n   " + "At 18th level, my aura grants immunity to frightend, and extends to 30 ft.",
+			additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"]
+		},
+		"subclassfeature15" : {
+			name : "Sword of the Lady",
+			source : ["GMBDB"],
+			minlevel : 15,
+			description : "\n   " + "I am compelled to travel to the nearest body of pure water" + "\n   " + "After 24 hours of prayer and fasting, the Lady of the Lake appears and gifts a sacred sword" + "\n   " + "The Sword requires attunement and being given a name to unlock all its benfits" + "\n   " + "My DM will decide the sword's attributes."
+		},
+		"subclassfeature20" : {
+			name : "Champion of the Court",
+			source : ["UA:PSO", 2],
+			minlevel : 20,
+			description : "\n   " + "As an action, I can gain the following benefits for 1 hour:" + "\n    - " + "I have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons" + "\n    - " + "My allies have advantage on Death Saving throws while within 30 feet of me" + "\n    - " + "I gain the benefits of the Enlarge Spell" + "\n    - " + "Attacks on me, and friendly creatures within a 30-foot radius, are made with disadvantage",
+			recovery : "long rest",
+			usages : 1,
+			action : ["action", ""]
+		}
+	}
+});
