@@ -94,7 +94,7 @@ AddSubClass("cleric", "avalon domain", {
 			description : "\n   " + "As a reaction once per day, when an ally with 30 ft. is reduced to 0 or fewer hp, I can renew their spirit to fight on" + "\n   " + "The target regains half their hit points, and can stand as a free action" + "\n   " + "On my ally's next action, they have advantage on attack rolls",
         usages : 1,
         action : ["reaction", ""]
-			])
+	recovery : "long rest"
 		}
 	}
 });
