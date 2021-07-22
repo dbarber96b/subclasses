@@ -1,0 +1,100 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Subclass
+	Effect:		This script adds a subclass for the Cleric, called "Domain of Avalon"
+				
+	Code by:	dbarber96b
+	Date:		2021-07-21 (sheet v13.0.0beta16)
+*/
+
+var iFileName = "LadyoftheLake.js";
+RequiredSheetVersion(13);
+
+SourceList["GMBDB"] = {
+	name : "GMBinderDBarber96b",
+	abbreviation : ["GMBDB"],
+	group : "Dbarber96b",
+	url : "https://www.gmbinder.com/share/-MezALlhpv89Ezt1QQlz",
+	date : "2021/07/21"
+};
+AddSubClass("cleric", "avalon domain", {
+	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(war|fighting|conflict)\b).*$/i,
+	subname : "Avalon Domain",
+	source : ["P", 63],
+	spellcastingExtra : ["divine favor", "sanctuary", "gentle repose", "spiritual weapon", "beacon of hope", "blinding smite", "control water", "guardian of faith", "mass cure wounds", "banishing smite"],
+	features : {
+		"subclassfeature1" : {
+			name : "Bonus Proficiency",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : "\n   " + "I gain proficiency with martial weapons and heavy armor",
+			armorProfs : [false, false, true, false],
+			weaponProfs : [false, true]
+      },
+		"subclassfeature1.1" : {
+			name : "War Priest",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : "\n   " + "When I use the Attack action, I can make a weapon attack as a bonus action",
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest",
+			action : ["bonus action", " (with Attack action)"]
+		},
+    "subclassfeature2" : {
+			name : "Channel Divinity: Waters of the Grail",
+			source : ["GMBDB"],
+			description : "\n   " + "I can bless pure fresh water for healing purposes" + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "The water instantly restores 10 hp when consumed" + "\n   " + "The water loses the magical benefits after 48 hours, and cannot be re-blessed",
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+		},
+    "subclassfeature6" : {
+			name : "Channel Divinity: Blessing of the Mists",
+			source : ["GMBDB"],
+			minlevel : 6,
+			description : desc([
+				"As a reaction, when a I or a friendly creature within 30 ft fails a saving throw against a spell or magical effect, I can cause myself or my ally to reroll the saving throw ",
+				"The creature that succeeds a saving throw using this ability also regains hit points equal to my cleric level"
+			]),
+			action : ["reaction", ""]
+      usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+		},
+		"subclassfeature8" : {
+			name : "Divine Justice",
+			source : [GMBDB],
+			minlevel : 8,
+			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
+			additional : levels.map(function (n) {
+				if (n < 8) return "";
+				return "+" + (n < 14 ? 1 : 2) + "d8 damage of the weapon's type";
+			}),
+			calcChanges : {
+				atkAdd : [
+					function (fields, v) {
+						if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
+							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 damage';
+						}
+					},
+					"Once per turn, I can have one of my weapon attacks that hit do extra damage."
+				]
+			}
+		},
+    "subclassfeature17" : {
+			name : "Prayer for the Fallen Warrior",
+			source : ["GMBDB"],
+			minlevel : 17,
+			description : "\n   " + "As a reaction once per day, when an ally with 30 ft. is reduced to 0 or fewer hp, I can renew their spirit to fight on" + "\n   " + "The target regains half their hit points, and can stand as a free action" + "\n   " + "On my ally's next action, they have advantage on attack rolls",
+        usages : 1,
+        action : ["reaction", ""]
+			])
+		}
+	}
+});
