@@ -14,7 +14,7 @@
 	Date:		2021-07-21 (sheet v13.0.0beta16)
 */
 
-var iFileName = "OrderofAvalon.js"; }
+var iFileName = "OrderofAvalon.js";
 RequiredSheetVersion(13);
 
 SourceList["GMBDB"] = {
