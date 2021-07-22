@@ -42,13 +42,19 @@ AddSubClass("paladin", "oath of the lake", {
 			minlevel : 3,
 			description : "\n   " + "As a reaction, I can use my channel divinity to intercept an attack on a friendly creature" + "\n   " + "The creature must be within a radius of my movement" + "\n   " + "The attacker must now target me instead of my ally" + "\n   " + "I can make a melee attack if the attacker is in range, even if the triggering attack would drop me",
       action : ["reaction", ""]
-		},
+      },
 		"subclassfeature7" : {
-			name : "Aura of the Lion Heart",
+			name : "Mighty Deed",
 			source : ["GMBDB"],
 			minlevel : 7,
-			description : "\n   " + "While I'm not incapacitated,allies in range have adv. on saves vs. being frightened" + "\n   " + "At 18th level, my aura grants immunity to frightend, and extends to 30 ft.",
-			additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"]
+			description : desc([
+				"When I score a critical hit or reduce a target to 0 HP, I can bolster morale or demoralize",
+				"Up to my Cha mod (min 1) of creatures I can see in 30 ft suffer the same chosen effect:",
+				" \u2022 All creatures gain temp HP equal to 1d6 + my Charisma modifier (min 1 temp HP)",
+				" \u2022 All creatures must make a Wis save or be frightened of me until my next turn starts"
+			]),
+			recovery : "Round",
+			usages : 1
 		},
 		"subclassfeature15" : {
 			name : "Sword of the Lady",
