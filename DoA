@@ -26,7 +26,7 @@ SourceList["GMBDB"] = {
 };
 
 AddSubClass("cleric", "avalon domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*fate).*$/i,
+	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*grave).*$/i,
 	subname : "Avalon Domain",
 	source : ["GMBDB"],
 	spellcastingExtra : ["divine favor", "sanctuary", "gentle repose", "spiritual weapon", "beacon of hope", "blinding smite", "control water", "guardian of faith", "mass cure wounds", "banishing smite"],
@@ -40,7 +40,7 @@ AddSubClass("cleric", "avalon domain", {
 			weaponProfs : [false, true]
       },
 		"subclassfeature1.1" : {
-			name : "War Priest",
+			name : "Divine Knight",
 			source : ["GMBDB"],
 			minlevel : 1,
 			description : "\n   " + "When I use the Attack action, I can make a weapon attack as a bonus action",
