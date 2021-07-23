@@ -15,7 +15,7 @@
 */
 
 var iFileName = "Avalon Domain.js";
-RequiredSheetVersion(12.999);
+RequiredSheetVersion(13);
 
 SourceList["GMBDB"] = {
 	name : "GMBinderDBarber96b",
@@ -28,7 +28,7 @@ SourceList["GMBDB"] = {
 AddSubClass("cleric", "Avalon domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*fate).*$/i,
 	subname : "Avalon Domain",
-	source : [""GMBDB"],
+	source : ["GMBDB"],
 	spellcastingExtra : ["divine favor", "sanctuary", "gentle repose", "spiritual weapon", "beacon of hope", "blinding smite", "control water", "guardian of faith", "mass cure wounds", "banishing smite"],
 	features : {
 		"subclassfeature1" : {
