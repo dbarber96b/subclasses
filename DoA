@@ -27,8 +27,8 @@ SourceList["GMBDB"] = {
 
 AddSubClass("cleric", "Avalon domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*fate).*$/i,
-	subname : "Fate Domain",
-	source : ["CF:FD", 1],
+	subname : "Avalon Domain",
+	source : [""GMBDB"],
 	spellcastingExtra : ["divine favor", "sanctuary", "gentle repose", "spiritual weapon", "beacon of hope", "blinding smite", "control water", "guardian of faith", "mass cure wounds", "banishing smite"],
 	features : {
 		"subclassfeature1" : {
@@ -67,7 +67,7 @@ AddSubClass("cleric", "Avalon domain", {
 		},
 		"subclassfeature8" : {
 			name : "Divine Justice",
-			source : [GMBDB],
+			source : ["GMBDB"],
 			minlevel : 8,
 			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
 			additional : levels.map(function (n) {
