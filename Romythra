@@ -39,7 +39,7 @@ AddSubClass("warlock", "the lady of the lake", {
 				"\u2022 I add my proficiency bonus to damage rolls against the challenged target",
 				"\u2022 My attack rolls against the challenged target score a critical hit on a roll of 19 and 20",
 				"\u2022 If the target attacks a creature other than me, it must make a Wisdom saving throw or else make the attack at disadvantage",
-				"The curse ends after 1 minute, when the target dies, I die, or I'm incapacitated"
+				"The challenge ends after 1 minute, when the target dies, I die, or I'm incapacitated"
 			]),
 			recovery : "short rest",
 			usages : 1,
@@ -148,7 +148,8 @@ AddSubClass("cleric", "avalon domain", {
 		"subclassfeature2" : {
 			name : "Channel Divinity: Waters of the Grail",
 			source : ["GMBDB"],
-			description : "\n   " + "I can bless pure fresh water for healing purposes" + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "The water instantly restores 10 hp when consumed" + "\n   " + "The water loses the magical benefits after 48 hours, and cannot be re-blessed",
+			minlevel : 2,
+			description : "\n   " + "I can bless pure fresh water for healing purposes" + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "A creature that succeeds a saving throw using this ability regains hit points equal to my cleric level",
 			usages : "Wisdom modifier per ",
 			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
 		},
@@ -156,7 +157,7 @@ AddSubClass("cleric", "avalon domain", {
 			name : "Channel Divinity: Blessing of the Mists",
 			source : ["GMBDB"],
 			minlevel : 6,
-			description : "\n   " + "I can bless pure fresh water for healing purposes" + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "The water instantly restores 10 hp when consumed" + "\n   " + "The water loses the magical benefits after 48 hours, and cannot be re-blessed",
+			description : "\n   " + "As a reaction, when I or an ally I see with 30 ft fails a saving throw, I can cause myself or my ally to reroll the saving throw " + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "The water instantly restores 10 hp when consumed" + "\n   " + "The water loses the magical benefits after 48 hours, and cannot be re-blessed",
 			usages : "Wisdom modifier per ",
 			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
             action : ["reaction", ""]
