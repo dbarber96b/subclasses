@@ -242,3 +242,68 @@ AddSubClass("paladin", "oath of the lake", {
 		}
 	}
 });
+AddSubClass("fighter", "green knight", {
+	regExpSearch : /^(?=.*green)(?=.*knight).*$/i,
+	subname : "Green Knight",
+	source : ["GMBDB"],
+	fullname : "Green Knight",
+	abilitySave : 4,
+	features : {
+		"subclassfeature3" : {
+			name : "Aspects of the Vale",
+			source : ["X", 28],
+			minlevel : 3,
+			description : desc([
+				"I gain proficiency with the Persuasion and Perception skills",
+				"I also learn the Druidcraft cantrip"
+			]),
+			skillstxt : "Persuasion and Perception",
+			spellcastingBonus : {
+				name : "Aspects of the Vale",
+				spells : ["druidcraft"]
+			},
+		},
+    "subclassfeature7" : {
+			name : "Rooted in Mortality",
+			source : ["GMBDB"],
+			minlevel : 7,
+			description : "\n   " + "I become proficient in Death saving throws" + "If the result of the saving throw is 20 or higher, I regain 1 hit point"
+		},
+    "subclassfeature10" : {
+			name : "Companion of Vines",
+			source : ["GMBDB"],
+			minlevel : 10,
+			description : desc([
+				"As a bonus action I can summon an illusion wrapped in vines and dense leaves",
+				"The illusion appears in a space adjeacent to a target of my attack, and makes an attack with a mundane copy of my weapon",
+        "This illusion can make opportunity attacks as if you were in the place of the copy",
+        "The illusion cannont move from the location it appeared in, and lasts for 1 minute"
+			]),
+			usages : "Charisma modifier per ",
+      usagescalc : "event.value = Math.max(1, What('Cha Mod'));",
+			recovery : "long rest",
+			action : ["bonus action", ""]
+		},
+    "subclassfeature15" : {
+			name : "Against the Odds",
+			source : ["GMBDB"],
+			minlevel : 15,
+			description : "\n   " + "When I use Action Surge on my turn, I gain a number of temporary hit points equalt to my Constitution modifier for each hostile creature within 10 feet of me"
+		},
+		"subclassfeature18" : {
+			name : "Undaunted Form",
+			source : ["GMBDB"],
+			minlevel : 18,
+      recovery : "long rest",
+			description : desc([
+				"I will a physical copy of myself into existence in a space within 5 feet of me",
+				"When it appears, it makes a melee weapon attack against a hostile creature within range",
+				"The copy has a number of hit points equal to half of my total hit points",
+        "It lasts for eight hours, until it is reduced to 0 hit points, or until it is dismissed as an action",
+        "The copy shares my initiative, has mundane copies of the weapons I have, which it can make an attack with as an action",
+        "The copy's attacks count as magical for overcoming resistances and immunities, and has an attack bonus equal to my Charisma + my proficiency bonus. On a hit it deals 2d8 + my Charisma modifier force damage",
+        "The copy follows my commands, which I communicate telepathically",
+			])
+		}
+	}
+});
