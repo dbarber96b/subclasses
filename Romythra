@@ -122,7 +122,7 @@ AddSubClass("warlock", "the lady of the lake", {
 });
 
 AddSubClass("cleric", "avalon domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*grave).*$/i,
+	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(avalon|knight|lake)).*$/i,
 	subname : "Avalon Domain",
 	source : ["GMBDB"],
 	spellcastingExtra : ["divine favor", "sanctuary", "gentle repose", "spiritual weapon", "beacon of hope", "blinding smite", "control water", "guardian of faith", "mass cure wounds", "banishing smite"],
