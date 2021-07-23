@@ -149,7 +149,7 @@ AddSubClass("cleric", "avalon domain", {
 			name : "Channel Divinity: Waters of the Grail",
 			source : ["GMBDB"],
 			minlevel : 2,
-			description : "\n   " + "I can bless pure fresh water for healing purposes" + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "A creature that succeeds a saving throw using this ability regains hit points equal to my cleric level",
+			description : "\n   " + "I can bless pure fresh water for healing purposes" + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "The water instantly restores 10 hp when consumed" + "\n   " + "The water loses the magical benefits after 48 hours, and cannot be re-blessed",
 			usages : "Wisdom modifier per ",
 			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
 		},
@@ -157,7 +157,7 @@ AddSubClass("cleric", "avalon domain", {
 			name : "Channel Divinity: Blessing of the Mists",
 			source : ["GMBDB"],
 			minlevel : 6,
-			description : "\n   " + "As a reaction, when I or an ally I see with 30 ft fails a saving throw, I can cause myself or my ally to reroll the saving throw " + "\n   " + "The water must be stored in a water skin or other appropriate vessel" + "\n   " + "The water instantly restores 10 hp when consumed" + "\n   " + "The water loses the magical benefits after 48 hours, and cannot be re-blessed",
+			description : "\n   " + "As a reaction, when I or an ally I see with 30 ft fails a saving throw, I can cause myself or my ally to reroll the saving throw " + "\n   " + "A creature that succeeds a saving throw using this ability regains hit points equal to my cleric level",
 			usages : "Wisdom modifier per ",
 			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
             action : ["reaction", ""]
@@ -169,16 +169,16 @@ AddSubClass("cleric", "avalon domain", {
 			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
 			additional : levels.map(function (n) {
 				if (n < 8) return "";
-				return "+" + (n < 14 ? 1 : 2) + "d8 damage of the weapon's type";
+				return "+" + (n < 14 ? 1 : 2) + "d8 radiant damage";
 			}),
 			calcChanges : {
 				atkAdd : [
 					function (fields, v) {
 						if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 damage';
+							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 radiant damage';
 						}
 					},
-					"Once per turn, I can have one of my weapon attacks that hit do extra damage."
+					"Once per turn, I can have one of my weapon attacks that hit do extra radiant damage."
 				]
 			}
 		},
