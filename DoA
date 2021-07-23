@@ -25,7 +25,7 @@ SourceList["GMBDB"] = {
 	date : "2021/07/21"
 };
 
-AddSubClass("cleric", "Avalon domain", {
+AddSubClass("cleric", "avalon domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*fate).*$/i,
 	subname : "Avalon Domain",
 	source : ["GMBDB"],
