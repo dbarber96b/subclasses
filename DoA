@@ -19,10 +19,10 @@ RequiredSheetVersion(12.999);
 
 SourceList["GMBDB"] = {
 	name : "GMBinderDBarber96b",
-	abbreviation : "GMBDB",
-	group : "DBarber96B",
+	abbreviation : ["GMBDB"],
+	group : "Dbarber96b",
 	url : "https://www.gmbinder.com/share/-Mf4WqjU3tb8hObvek2u",
-	date : "2021/07/23"
+	date : "2021/07/21"
 };
 
 AddSubClass("cleric", "Avalon domain", {
