@@ -242,8 +242,8 @@ AddSubClass("paladin", "oath of the lake", {
 		}
 	}
 });
-AddSubClass("fighter", "green knight", {
-	regExpSearch : /^(?=.*green)(?=.*knight).*$/i,
+AddSubClass("fighter", "green-knight", {
+	regExpSearch : /^(?=.*arcane)(?=.*archer).*$/i,
 	subname : "Green Knight",
 	source : ["GMBDB"],
 	fullname : "Green Knight",
