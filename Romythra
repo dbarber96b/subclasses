@@ -311,7 +311,7 @@ AddSubClass("sorcerer", "myrddins legacy", {
 	regExpSearch : /^(?=.*myrddin)(?=.*legacy)(?=.*(fey)).*$/i,
 	subname : "Myrddin's Legacy",
 	source : ["GMBDB"],
-	spellcastingExtra : ["shield", "bane", "calm emotions", "find steed", "crusader's mantle", "elemental weapon", "aura of purity", "control water", "dispel evil and good", "holy weapon"],
+	spellcastingExtra : ["charm person", "faerie fire", "misty step", "animal messenger", "summon fey", "hypnotic pattern", "charm monster", "greater invisiblity", "dream", "seeming"],
 	features : {
 		"subclassfeature1" : {
 			name : "Mask of the Courts",
