@@ -8,10 +8,10 @@
 
 /*	-INFORMATION-
 	Subject:	Subclass
-	Effect:		This script adds a subclass for the Warlock, called "Lady of the Lake"
+	Effect:		This script adds a subclasses for the Romythra Campaign Setting
 				
 	Code by:	dbarber96b
-	Date:		2021-07-21 (sheet v13.0.0beta16)
+	Date:		2021-07-26 (sheet v13.0.0beta16)
 */
 
 var iFileName = "Romythra.js";
@@ -314,6 +314,18 @@ AddSubClass("sorcerer", "myrddins legacy", {
 	spellcastingExtra : ["charm person", "faerie fire", "misty step", "animal messenger", "summon fey", "hypnotic pattern", "charm monster", "greater invisiblity", "dream", "seeming"],
 	features : {
 		"subclassfeature1" : {
+			name : "Nature's Initiate",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : desc([
+				"I also learn the Druidcraft cantrip"
+			]),
+				spellcastingBonus : {
+				name : "Nature's Initiate",
+				spells : ["druidcraft"]
+			},
+		},
+		"subclassfeature1.2" : {
 			name : "Mask of the Courts",
 			source : ["GMBDB"],
 			minlevel : 1,
