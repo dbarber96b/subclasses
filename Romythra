@@ -356,7 +356,7 @@ AddSubClass("sorcerer", "myrddins legacy", {
 		"subclassfeature14" : {
 			name : "Travel the Realms",
 			source : ["GMBDB"],
-			minlevel : 1,
+			minlevel : 14,
 			description : desc([
 				"I can learn the teleport spell if I don't already know it",
 				"This spell doesn't count against my number of spells known",
@@ -371,7 +371,7 @@ AddSubClass("sorcerer", "myrddins legacy", {
 		"subclassfeature18" : {
 			name : "Myrddin's Inheritance",
 			source : ["GMBDB"],
-			minlevel : 6,
+			minlevel : 18,
       usages : "Charisma modifier per ",
 			usagescalc : "event.value = Math.max(1, What('Cha Mod'));",
 			recovery : "long rest",
