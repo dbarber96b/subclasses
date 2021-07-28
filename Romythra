@@ -394,16 +394,16 @@ AddSubClass("sorcerer", "myrddins legacy", {
 	}
 });
 RaceList["Kender"] = {
-		regExpSearch : /^((?=.*(hairfoot|tallfellow))|((?=.*\b(halflings?|hobbits?)\b)(?=.*lightfoot))).*$/i,
-		name : "Lightfoot halfling",
-		sortname : "Halfling, Lightfoot",
-		source : [["SRD", 4], ["P", 28]],
-		plural : "Lightfoot halflings",
+		regExpSearch : /^((?=.*(hairfoot))|((?=.*\b(halflings?|kender?)\b)(?=.*lightfoot))).*$/i,
+		name : "Kender",
+		sortname : "Kender",
+		source : ["GMBDB"],
+		plural : "Kender",
 		size : 4,
 		speed : {
-			walk : { spd : 25, enc : 15 }
+			walk : { spd : 30, enc : 20 }
 		},
-		languageProfs : ["Common", "Halfling"],
+		languageProfs : ["Common", "Kenderspeak"],
 		savetxt : { adv_vs : ["frightened"] },
 		age : " reach adulthood at age 20 and live around 100 years",
 		height : " average about 3 to 4 feet tall (2'7\" + 2d4\")",
