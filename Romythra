@@ -394,7 +394,7 @@ AddSubClass("sorcerer", "myrddins legacy", {
 	}
 });
 RaceList["kender"] = {
-	regExpSearch : /^(?=.*\b(halflings?|hobbits?)\b)(?=.*stout).*$/i,
+	regExpSearch : /^(?=.*\b(halflings?|kender?)\b)(?=.*stout).*$/i,
 	name : "Kender",
 	sortname : "Kender",
 	source : ["GMBDB"],
@@ -413,7 +413,7 @@ RaceList["kender"] = {
 	weightMetric : " weigh around 18 kg (16 + 5d4 / 10 kg)",
 	scores : [0, 2, 0, 0, 0, 1],
 	trait : "Kender (+2 Dexterity, +1 Charisma)\n\nLucky: When I roll a 1 on an attack roll, ability check, or saving throw, I can reroll the die and must use the new roll.\n\nFearless: You have advantage on saving throws against being frightened.\n\nTaunt: You have advantage on Charisma (Performance) checks to taunt a creature and make it lose its temper. A creature might turn hostile against you.\n\nKender Pockets: If you find yourself in need of a piece of nonmagical equipment, there is a chance you have it. Roll a d4. If you roll a 4, you find the item in your pocket, pack, or pouch. If you roll anything else, you don´t have such an item on you, and you can´t search again for the same item until you´ve spent at least one day in a town or city. Rummaging through your pouches, pack and pockets in this way takes 1 minute."
-};
+});
 BackgroundList["blade's guild marshal"] = {
 	regExpSearch : /marshal/i,
 	name : "Blade's Guild Marshal",
