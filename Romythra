@@ -393,25 +393,26 @@ AddSubClass("sorcerer", "myrddins legacy", {
 		}
 	}
 });
-RaceList["Kender"] = {
-		regExpSearch : /^((?=.*(hairfoot))|((?=.*\b(halflings?|kender?)\b)(?=.*lightfoot))).*$/i,
-		name : "Kender",
-		sortname : "Kender",
-		source : ["GMBDB"],
-		plural : "Kender",
-		size : 4,
-		speed : {
-			walk : { spd : 30, enc : 20 }
-		},
-		languageProfs : ["Common", "Kenderspeak"],
-		savetxt : { adv_vs : ["frightened"] },
-		age : " reach adulthood at age 20 and live around 100 years",
-		height : " average about 3 to 4 feet tall (2'7\" + 2d4\")",
-		weight : " weigh around 40 lb (35 + 2d4 lb)",
-		heightMetric : " average about 90 to 120 cm tall (80 + 5d4)",
-		weightMetric : " weigh around 18 kg (16 + 5d4 / 10 kg)",
-		scores : [0, 2, 0, 0, 0, 1],
-	trait : "Stout Halfling (+2 Dexterity, +1 Charisma)\n\nLucky: When I roll a 1 on an attack roll, ability check, or saving throw, I can reroll the die and must use the new roll.\n\nFearless: You have advantage on saving throws against being frightened.\n\nTaunt: You have advantage on Charisma (Performance) checks to taunt a creature and make it lose its temper. A creature might turn hostile against you.\n\nKender Pockets: If you find yourself in need of a piece of nonmagical equipment, there is a chance you have it. Roll a d4. If you roll a 4, you find the item in your pocket, pack, or pouch. If you roll anything else, you don´t have such an item on you, and you can´t search again for the same item until you´ve spent at least one day in a town or city. Rummaging through your pouches, pack and pockets in this way takes 1 minute."
+RaceList["kender"] = {
+	regExpSearch : /^(?=.*\b(halflings?|hobbits?)\b)(?=.*stout).*$/i,
+	name : "Kender",
+	sortname : "Kender",
+	source : ["GMBDB"],
+	plural : "Kender",
+	size : 4,
+	speed : {
+		walk : { spd : 30, enc : 20 }
+	},
+	languageProfs : ["Common", "Kenderspeak"],
+	savetxt : { adv_vs : ["frightened", "poison"] },
+	dmgres : ["Poison"],
+	age : " reach adulthood at age 20 and live around 100 years",
+	height : " average about 3 to 4 feet tall (2'7\" + 2d4\")",
+	weight : " weigh around 40 lb (35 + 2d4 lb)",
+	heightMetric : " average about 90 to 120 cm tall (80 + 5d4)",
+	weightMetric : " weigh around 18 kg (16 + 5d4 / 10 kg)",
+	scores : [0, 2, 0, 0, 0, 1],
+	trait : "Kender (+2 Dexterity, +1 Charisma)\n\nLucky: When I roll a 1 on an attack roll, ability check, or saving throw, I can reroll the die and must use the new roll.\n\nFearless: You have advantage on saving throws against being frightened.\n\nTaunt: You have advantage on Charisma (Performance) checks to taunt a creature and make it lose its temper. A creature might turn hostile against you.\n\nKender Pockets: If you find yourself in need of a piece of nonmagical equipment, there is a chance you have it. Roll a d4. If you roll a 4, you find the item in your pocket, pack, or pouch. If you roll anything else, you don´t have such an item on you, and you can´t search again for the same item until you´ve spent at least one day in a town or city. Rummaging through your pouches, pack and pockets in this way takes 1 minute."
 };
 BackgroundList["blade's guild marshal"] = {
 	regExpSearch : /marshal/i,
