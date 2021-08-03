@@ -339,8 +339,8 @@ AddSubClass("sorcerer", "myrddins legacy", {
 				selection : ["disguise self"]
 			}
 		},
-		"subclassfeature3" : {
-			name : "Aspects of the Vale",
+		"subclassfeature1.3" : {
+			name : "Myrddin's Empathy",
 			source : ["GMBDB"],
 			minlevel : 3,
 			description : desc([
