@@ -1,0 +1,72 @@
+  
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Subclass
+	Effect:		This script adds a new subclass
+				
+	Code by:	dbarber96b
+	Date:		2021-08-9 (sheet v13.0.0beta16)
+*/
+
+var iFileName = "GamemasterPatron.js";
+RequiredSheetVersion(13);
+
+SourceList["GMBDB"] = {
+	name : "GMBinderDBarber96b",
+	abbreviation : ["GMBDB"],
+	group : "Dbarber96b",
+	url : "https://www.gmbinder.com/share/-MdN8Kx_JYwIkby0V7kG",
+	date : "2021/08/09"
+};
+AddSubClass("warlock", "the gamemaster", {
+	regExpSearch : /^(?=.*gamemaster)(?=.*warlock).*$/i,
+	subname : "the Gamemaster",
+	source : ["GMBDB"],
+	spellcastingExtra : ["bane", "dissonant whispers", "detect thoughts", "enhance ability", "clairvoyance", "tiny servant", "confusion", "phantasmal killer", "animate object", "geas"],
+	features : {
+		"subclassfeature1" : {
+			name : "Gambler's Tools",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus",
+			toolProfs : [["Gaming sets", 2]]
+		},
+    "subclassfeature1.1" : {
+			name : "Gambler's Tools",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus",
+			toolProfs : [["Gaming sets", 2]]
+		},
+		"subclassfeature6" : {
+			name : "Misty Escape",
+			source : ["P", 109],
+			minlevel : 6,
+			description : "\n   " + "As a reaction, when I take damage, I can turn invisible and teleport up to 60 ft" + "\n   " + "I stay invisible until the start of my next turn or until I attack or cast a spell",
+			action : ["reaction", " (taking damage)"],
+			recovery : "short rest",
+			usages : 1
+		},
+		"subclassfeature10" : {
+			name : "Beguiling Defenses",
+			source : ["P", 109],
+			minlevel : 10,
+			description : "\n   " + "As a reaction, when a creature tries to charm me, I can turn the charm back on it" + "\n   " + "It must make a Wis save or be charmed by me for 1 minute or until taking damage" + "\n   " + "I am immune to being charmed",
+			action : ["reaction", " (when charmed)"],
+			savetxt : { immune : ["charmed"] }
+		},
+		"subclassfeature14" : {
+			name : "Dark Delirium",
+			source : ["P", 109],
+			minlevel : 14,
+			description : "\n   " + "As an action, a creature within 60 ft must make a Wis save or be charmed/frightened" + "\n   " + "This lasts for 1 minute or until my concentration is broken or it takes damage" + "\n   " + "During this time, it can't see or hear anything but the illusion, me, and itself",
+			recovery : "short rest",
+			usages : 1,
+			action : ["action", ""]
