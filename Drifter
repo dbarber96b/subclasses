@@ -51,7 +51,7 @@ AddSubClass("warlock", "the drifter", {
 				"This benefit also works with every weapon from Pact of the Blade, with no restriction",
 			]),
 			armorProfs : [false, true, false, false],
-			weaponProfs : [false, false, "longsword", "rapier", "scimitar"],
+			weaponProfs : [false, false, ["longsword", "rapier", "scimitar"]],
 			calcChanges : {
 				atkAdd : [
 					function (fields, v) {
