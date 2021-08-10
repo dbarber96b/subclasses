@@ -67,7 +67,7 @@ AddSubClass("warlock", "the gamemaster", {
 			action : ["reaction", ""]
 		},
 		"subclassfeature10" : {
-			name : "Beguiling Defenses",
+			name : "Honed Composure",
 			source : ["GMBDB"],
 			minlevel : 10,
 			description : "\n   " + "Any creature under the effect of my Siphon Luck feature has disadvantage on attack rolls against me." + "\n   " + "If an unlucky creature misses me with an attack, I can use my reaction to attempt to frighten that creature." + "\n   " + "That creature must succeed on a Wisdom saving throw against my spell save DC or be frightened until the end of its next turn." + "\n   " + "I now have advantage on saving throws against being frightened or charmed",
