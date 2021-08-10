@@ -1,0 +1,66 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Subclass
+	Effect:		This script adds a new subclass for warlocks
+				
+	Code by:	dbarber96b
+	Date:		2021-08-9 (sheet v13.0.0beta16)
+*/
+
+var iFileName = "PactoftheDeck.js";
+RequiredSheetVersion(13);
+
+SourceList["GMBDB"] = {
+	name : "GMBinderDBarber96b",
+	abbreviation : ["GMBDB"],
+	group : "Dbarber96b",
+	url : "https://www.gmbinder.com/share/-MdN8Kx_JYwIkby0V7kG",
+	date : "2021/08/09"
+};
+AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Deck", {
+	name : "Pact of the Deck",
+	source : ["GMBDB"],
+	description : desc([
+		"I use a deck of playing cards as my spellcasting focus",
+		"The deck can be used in place of material components for spells if there is no cost and the materials are not consumed",
+    "Every time you cast a warlock spell of 1st level or higher",
+    "I can use my deck as throwing cards (darts) and I am proficient with them",
+    "As a bonus action, I can draw and discard a card from my deck, and make a ranged attack against a target. Its suit and face value determine its effect",
+		"If I lose my deck, I can preform an 1-hour ceremony to gain a replacement",
+		"This ceremony destroys the previous deck and can be done during a short or long rest"
+	]),
+  toNotesPage : [{
+				name : "Pact Deck Damage Table",
+				source : ["GMBDB"],
+				popupName : "Pact Deck Damage Table, part 1",
+				additional : "Suits",
+				note : [
+        "Suit  Damage",
+					"Clubs Force.",
+					"Diamonds Cold.",
+					"Hearts Fire.",
+					"Spades Slashing.",
+          ]
+			}, {
+				name : "Pact Deck Damage Table",
+				source : ["GMBDB"],
+				popupName : "Pact Deck Damage Table, part 2",
+				additional : "Values",
+				note : [
+					"Value  Damage",
+					"Ace The target is vulnerable to damage type of your choice until the end of your next turn.",
+					"2-10 Damage",
+					"Jacks The target’s movement is halved until the end of its next turn as small spikes appear at its feet.",
+					"Queens Draw and throw another card, choosing any damage type for the attack.",
+					"Kings The target must succeed on a Strength saving throw or be knocked prone.",
+                    "Jokers Roll on the Wild Magic Surge Table."
+          ]
+			}]
+		});
