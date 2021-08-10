@@ -30,9 +30,11 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the De
 	description : desc([
 		"I use a deck of playing cards as my spellcasting focus",
 		"The deck can be used in place of material components for spells if there is no cost and the materials are not consumed",
-    "Every time you cast a warlock spell of 1st level or higher",
-    "I can use my deck as throwing cards (darts) and I am proficient with them",
-    "As a bonus action, I can draw and discard a card from my deck, and make a ranged attack against a target. Its suit and face value determine its effect",
+   		"Every time you cast a warlock spell of 1st level or higher draw and discard a number of cards from your pact deck equal to the spell level",
+		"If at least two of the cards are aces, you cast the spell without expending a spell slot. If at least one of the cards is a joker, you cast the spell and roll for an effect on the Wild Magic Surge table.",
+    		"I can use my deck as throwing cards (darts) and I am proficient with them",
+		"They are one-handed, thrown finesse weapons with a range of 30/60 feet",
+    		"As a bonus action, I can draw and discard a card from my deck, and make a ranged attack against a target. Its suit and face value determine its effect",
 		"If I lose my deck, I can preform an 1-hour ceremony to gain a replacement",
 		"This ceremony destroys the previous deck and can be done during a short or long rest"
 	]),
