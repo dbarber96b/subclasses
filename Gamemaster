@@ -29,7 +29,7 @@ AddSubClass("warlock", "the gamemaster", {
 	regExpSearch : /^(?=.*gamemaster)(?=.*warlock).*$/i,
 	subname : "the Gamemaster",
 	source : ["GMBDB"],
-	spellcastingExtra : ["bane", "dissonant whispers", "detect thoughts", "enhance ability", "clairvoyance", "tiny servant", "confusion", "phantasmal killer", "animate object", "geas"],
+	spellcastingExtra : ["bane", "dissonant whispers", "detect thoughts", "enhance ability", "clairvoyance", "tiny servant", "confusion", "phantasmal killer", "animate objects", "geas"],
 	features : {
 		"subclassfeature1" : {
 			name : "Gambler's Tools",
