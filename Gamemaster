@@ -9,7 +9,7 @@
 
 /*	-INFORMATION-
 	Subject:	Subclass
-	Effect:		This script adds a new subclass
+	Effect:		This script adds a new subclass for warlocks
 				
 	Code by:	dbarber96b
 	Date:		2021-08-9 (sheet v13.0.0beta16)
@@ -38,35 +38,50 @@ AddSubClass("warlock", "the gamemaster", {
 			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus",
 			toolProfs : [["Gaming sets", 2]]
 		},
-    "subclassfeature1.1" : {
-			name : "Gambler's Tools",
+   		"subclassfeature1.1" : {
+			name : "Siphon Luck",
 			source : ["GMBDB"],
 			minlevel : 1,
-			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus",
-			toolProfs : [["Gaming sets", 2]]
+			description : desc([
+				"As a bonus action, I choose one creature I can see within 60 feet of me and choose one ability score.",
+				"Whenever that creature makes an ability check with the chosen ability score, it must roll a d4 and subtract the number rolled from the ability check.",
+				"An affected creature remains unlucky until you finish a short or long rest, until you are knocked unconscious, or until you use this feature again.",
+				"The d4 becomes a d6 at 6th level, a d8 at 10th level, and a d10 at 14th level."
+			]),
+			usages : "Charisma modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Cha Mod'));",
+			recovery : "long rest",
+			action : ["bonus action", ""]
 		},
 		"subclassfeature6" : {
-			name : "Misty Escape",
-			source : ["P", 109],
-			minlevel : 6,
-			description : "\n   " + "As a reaction, when I take damage, I can turn invisible and teleport up to 60 ft" + "\n   " + "I stay invisible until the start of my next turn or until I attack or cast a spell",
-			action : ["reaction", " (taking damage)"],
-			recovery : "short rest",
-			usages : 1
+			name : "House Advantage",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : desc([
+				"As a reaction, If I roll a natural 1, I may reroll the die and take the higher number.",
+				"If I roll another 1, it is considered a natural 20."
+			]),
+			usages : "Charisma modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Cha Mod'));",
+			recovery : "long rest",
+			action : ["reaction", ""]
 		},
 		"subclassfeature10" : {
 			name : "Beguiling Defenses",
-			source : ["P", 109],
+			source : ["GMBDB"],
 			minlevel : 10,
-			description : "\n   " + "As a reaction, when a creature tries to charm me, I can turn the charm back on it" + "\n   " + "It must make a Wis save or be charmed by me for 1 minute or until taking damage" + "\n   " + "I am immune to being charmed",
-			action : ["reaction", " (when charmed)"],
-			savetxt : { immune : ["charmed"] }
+			description : "\n   " + "Any creature under the effect of my Siphon Luck feature has disadvantage on attack rolls against me." + "\n   " + "If an unlucky creature misses me with an attack, I can use my reaction to attempt to frighten that creature." + "\n   " + "That creature must succeed on a Wisdom saving throw against my spell save DC or be frightened until the end of its next turn." + "\n   " + "I now have advantage on saving throws against being frightened or charmed",
+			action : ["reaction", " (when attacked)"],
+			savetxt : { adv_vs : ["frightened", "charmed"] },
 		},
 		"subclassfeature14" : {
-			name : "Dark Delirium",
-			source : ["P", 109],
+			name : "Deadly Ultimatum",
+			source : ["GMBDB"],
 			minlevel : 14,
-			description : "\n   " + "As an action, a creature within 60 ft must make a Wis save or be charmed/frightened" + "\n   " + "This lasts for 1 minute or until my concentration is broken or it takes damage" + "\n   " + "During this time, it can't see or hear anything but the illusion, me, and itself",
-			recovery : "short rest",
+			description : "\n   " + "As an action, I forbid a creature within 60 ft from a certain action" + "\n   " + "If the creature performs the forbidden action, it must make a Wisdom saving throw against my spell save DC, taking 8d6 psychic damage on a failure." + "\n   " + "If it succeeds, this ends the ultimatum.",
+			recovery : "long rest",
 			usages : 1,
 			action : ["action", ""]
+		}
+	}
+});
