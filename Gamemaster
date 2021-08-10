@@ -35,8 +35,9 @@ AddSubClass("warlock", "the gamemaster", {
 			name : "Gambler's Tools",
 			source : ["GMBDB"],
 			minlevel : 1,
-			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus",
-			toolProfs : [["Gaming sets", 2]]
+			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus"+ " \n   " + "I also gain proficiency with rapiers",
+			toolProfs : [["Gaming sets", 2]],
+			weaponProfs : [false, false, ["rapier"]]
 		},
    		"subclassfeature1.1" : {
 			name : "Siphon Luck",
