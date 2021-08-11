@@ -66,3 +66,102 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the De
           ]
 			}]
 		});
+AddWarlockInvocation("Blind's Up (prereq: level 5 warlock, Pact of the Deck)", {
+	name : "Blind's Up",
+	description : desc([
+		"I can send cards from your pact deck to spin around the head of a creature within 60 feet, like a zoetrope.",
+		"The target must make a Wisdom saving throw",
+		"On a failed save, they do not notice the movement of any creature they can see, instead perceiving it as the creature moving on the spot",
+		"A creature reveals its new position if it attacks the target",
+		"The target cannot make an opportunity attack against a creature that moves out of its melee range while the effect is active",
+		"The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success"
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
+	recovery : "short rest",
+	usages : 1,
+	action : ["action", ""]
+});
+AddWarlockInvocation("Blind's Up (prereq: Pact of the Deck)", {
+	name : "Blind's Up",
+	description : desc([
+		"I can attempt to conceal my spellcasting by performing card flourishes",
+		"I can make a Charisma (Performance) check to disguise any verbal or somatic components as I cast the spell",
+		"This is against the Passive Perception of each of those who I are attempting to deceive",
+		"On a success they are unaware that you have cast a spell.",
+		"The +5 bonus to card-related checks does not apply to this feature"
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
+});
+AddWarlockInvocation("Damage Dealer (prereq: level 7 warlock, Pact of the Deck)", {
+	name : "Damage Dealer",
+	description : desc([
+		"When I draw a throwing card of face value three or lower, I may draw another and throw the new card instead.",
+		"I then discard both cards"
+	]),
+	source : ["X", 56],
+	prereqeval : function(v) { return classes.known.warlock.level >= 7 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
+});
+AddWarlockInvocation("Diviner (prereq: level 5 warlock, Pact of the Deck)", {
+	name : "Diviner",
+	description : desc([
+		"I am able to read my pact deck to predict the actions of your opponents",
+		"On your turn in combat, you can slow your movement to 0 feet to take a reading",
+		"Draw five cards, and return them in any order to the top of my deck",
+		"All opponents have disadvantage on their attacks against me until my next turn."
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
+	recovery : "long rest",
+	usages : 1,
+	action : ["action", ""]
+});
+AddWarlockInvocation("Fresh Hand (prereq: level 7 warlock, Pact of the Deck)", {
+	name : "Fresh Hand",
+	description : desc([
+		"As a bonus action, I can draw a card from my pact deck.",
+		"I can regain a spell slot by discarding every card of this suit left in my deck.",
+		"If I draw a joker, I do not regain a spell slot, and must shuffle any discarded jokers back into my deck.",
+		"I regain the use of this feature after a short rest"
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return classes.known.warlock.level >= 7 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
+	recovery : "short rest",
+	usages : 1,
+	action : ["bonus action", ""]
+});
+AddWarlockInvocation("Suit of Armor (prereq: level 5 warlock, Pact of the Deck)", {
+	name : "Suit of Armor",
+	description : desc([
+		"I am able to surround myself with a protective layer of cards",
+		"I can draw and discard a card from my pact deck",
+		"For one hour, I gain temporary hit points equal to the face value of the card (1-13) and resistance to the damage type represented by its suit",
+		"If I draw a joker, discard it and draw another card - the effect targets the nearest creature to me."
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
+	recovery : "short rest",
+	usages : 1,
+	action : ["bonus action", ""]
+});
+AddWarlockInvocation("Swindle (prereq: Pact of the Deck)", {
+	name : "Swindle",
+	description : desc([
+		"I can attempt to sneak a card from your discard pile back into your pact deck",
+		"As a bonus action, I make a Sleight of Hand check against DC 10. Every time I attempt this, the DC increases by 5, and resets to 10 after a long rest",
+		"On a success, my patron doesn’t notice my con, and I can move a card of your choice from the discard pile to anywhere in your pact deck.",
+		"On a failure, you are caught, stunned until the end of your next turn, and your patron compels you to shuffle any jokers in your discard pile back into your pact deck."
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
+});
+AddWarlockInvocation("Warped Limits (prereq: level 9 warlock, Pact of the Deck)", {
+	name : "Warped Limits",
+	description : desc([
+		"Your spells with a base range of ‘Touch’ can be cast with a range of 60 feet.",
+	    "If I draw a joker, discard it and draw another card - the effect targets the nearest creature to me"
+	]),
+	source : ["GMBDB"],
+	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
+});
