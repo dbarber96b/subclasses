@@ -97,7 +97,7 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the De
     		"I can use my deck as throwing cards (darts) and I am proficient with them",
 		"They are one-handed, thrown finesse weapons with a range of 30/60 feet",
     		"As a bonus action, I can draw and discard a card from my deck, and make a ranged attack against a target. Its suit and face value determine its effect",
-		"If I lose my deck, I can preform an 1-hour ceremony to gain a replacement",
+		"If I lose my deck, I can preform an 1 hour ceremony to gain a replacement",
 		"This ceremony destroys the previous deck and can be done during a short or long rest"
 	]),
   toNotesPage : [{
