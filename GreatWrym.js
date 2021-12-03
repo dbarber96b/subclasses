@@ -33,61 +33,93 @@ AddSubClass("warlock", "the great wyrn", {
 			name : "Patrons Ancestry",
 			source : ["GMBDB"],
 			minlevel : 1,
-			description : "\n   " + "At 1st level your patron's ancestry determines the powers it can impart to you" + "\n   " + "I must be at a crossroads, literally or figuratively to do this",
+			description : "\n   " + "At 1st level my patron's ancestry determines the powers it can impart to me" + "\n   " + "I choose from one of the Draconic Ancestry types",
 		},
     "subclassfeature1.1" : {
-			name : "Dragon Knight",
+			name : "Dragons Breath",
 			source : ["GMBDB"],
 			minlevel : 1,
 			description : desc([
-				"I gain proficiency with medium armor, as well as longswords, rapiers, and scimitars.",
-				"When I finish a long rest, I can imbue one weapon I touch with my will",
-				"Until my next long rest, I can use it with Charisma instead of Strength or Dexterity",
-				"I have to be proficient with the weapon and it can't have the two-handed property",
-				"This benefit also works with every weapon from Pact of the Blade, with no restriction",
+				var EGtW_breathWeaponDesc = function (dmgType, shape) {
+		var shapeStr = shape === "line" ? "5-ft by 30-ft line" : "15-ft cone";
+		var capitailzedDmgType = dmgType.charAt(0).toUpperCase() + dmgType.slice(1);
+		var saveStat = ["cold", "poison"].indexOf(dmgType) >= 0 ? "Con" : "Dex";
+		return capitailzedDmgType + " Breath Weapon: As an action once per short rest, I can deal 2d6 " + dmgType + " damage to all in a " + shapeStr + ", " + saveStat + " save halves (DC 8 + Con mod + prof bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.";
+	};
+	var EGtW_draconicAncestryFeature = {
+		name : "Draconic Ancestry",
+		limfeaname : "Breath Weapon",
+		minlevel : 1,
+		usages : 1,
+		additional : levels.map(function (n) {
+			return (n < 6 ? 2 : n < 11 ? 3 : n < 16 ? 4 : 5) + 'd6';
+		}),
+		recovery : "short rest",
+		action : [['action', ""]],
+		calcChanges : {
+			atkAdd : [
+				function (fields, v) {
+					if (v.theWea.dbBreathWeapon && (/dragonborn/i).test(CurrentRace.known)) {
+						fields.Damage_Die = (CurrentRace.level < 6 ? 2 : CurrentRace.level < 11 ? 3 : CurrentRace.level < 16 ? 4 : 5) + 'd6';
+						if (CurrentRace.variant) {
+							fields.Damage_Type = CurrentRace.breathDmgType;
+							fields.Description = fields.Description.replace(/(dex|con) save/i, ((/cold|poison/i).test(CurrentRace.breathDmgType) ? 'Con' : 'Dex') + ' save');
+							fields.Range = (/black|blue|brass|bronze|copper/i).test(CurrentRace.variant) ? '5-ft \xD7 30-ft line' : '15-ft cone';
+						}
+					}
+				},
+				'',
+				1
+			]
+		}
+	};
+	var EGtW_breathWeaponObj = {
+		regExpSearch : /^(?=.*breath)(?=.*weapon).*$/i,
+		name : "Breath weapon",
+		source : [["W", 168]],
+		ability : 3,
+		type : 'Natural',
+		damage : [2, 6, 'fire'],
+		range : "15-ft cone",
+		description : "Hits all in area; Dex save, success - half damage; Usable only once per short rest",
+		abilitytodamage : false,
+		dc : true,
+		dbBreathWeapon : true
+	};
+	var EGtW_acidBreath = EGtW_breathWeaponDesc("acid", "line");
+	var EGtW_fireBreathCone = EGtW_breathWeaponDesc("fire", "cone");
+	var EGtW_fireBreathLine = EGtW_breathWeaponDesc("fire", "cone");
+	var EGtW_coldBreath = EGtW_breathWeaponDesc("cold", "cone");
+	var EGtW_lightningBreath = EGtW_breathWeaponDesc("lightning", "line");
+	var EGtW_poisonBreath = EGtW_breathWeaponDesc("poison", "cone")
      },
     "subclassfeature1.2" : {
-			name : "Drifter's Gift",
+			name : "Wyrms Claws",
 			source : ["GMBDB"],
 			minlevel : 1,
 			description : desc([
-				"I gain proficiency with medium armor, as well as longswords, rapiers, and scimitars.",
-				"When I finish a long rest, I can imbue one weapon I touch with my will",
-				"Until my next long rest, I can use it with Charisma instead of Strength or Dexterity",
-				"I have to be proficient with the weapon and it can't have the two-handed property",
-				"This benefit also works with every weapon from Pact of the Blade, with no restriction",
+				"I gain proficiency with medium armor and shields, as well as longswords, rapiers, and scimitars.",
 			]),
-			armorProfs : [false, true, false, false],
+			armorProfs : [false, true, false, true],
 			weaponProfs : [false, false, ["longsword", "rapier", "scimitar"]],
-			calcChanges : {
-				atkAdd : [
-					function (fields, v) {
-						var hasPactWeapon = GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the blade';
-						if (What('Cha Mod') > What(AbilityScores.abbreviations[fields.Mod - 1] + ' Mod') && (v.pactWeapon || v.theWea.pactWeapon || (hasPactWeapon && (/\bpact\b/i).test(v.WeaponText)) || (/^(?=.*hexblade)(?!.*((^|[^+-]\b)2|\btwo).?hand(ed)?s?\b).*$/i).test(v.WeaponText))) {
-							fields.Mod = 6;
-						};
-					},
-					"If I include the word 'Drifter' in the name of a weapon that is not two-handed, it gets treated as the weapon I imbued to use Charisma instead of Strength or Dexterity, if my Charisma modifier is higher than the ability it would otherwise use. Alternatively, if I have the Pact of the Blade feature, this will also work if I include 'Pact' in the name of a weapon, regardless if it has the two-handed property."
-				]
-			}
 		},
 		"subclassfeature6" : {
-			name : "Everything's Looking Up",
+			name : "Draconic Affinity",
 			source : ["GMBDB"],
 			minlevel : 6,
-			description : "\n   " + "I have advantage on all Charisma (Persuasion), Charisma (Deception), and Charisma (Performance) checks against any creature of my choice that isn’t hostile toward you " + "\n   " + "I have advantage on Dexterity saving throws against effects such as traps and spells. To gain this benefit, I can't be incapacitated",
+			description : "\n   " + "When I cast a spell that deals damage the same as my Patron's Ancestry, I add my proficiency bonus to the damage.",
 		},
 		"subclassfeature10" : {
-			name : "One Step Ahead",
-			source : ["P", 109],
+			name : "Draconic Resilience",
+			source : ["GMBDB"],
 			minlevel : 10,
-			description : "\n   " + "I now add my Charisma modifier to initiative rolls and Dexterity saving throws",
+			description : "\n   " + "I gain resistance to my patron's element.",+ "\n   " + "When I succeed on a saving throw, instead of half damage, I take none.",
 		},
 		"subclassfeature14" : {
-			name : "Closing the Distance",
-			source : ["P", 109],
+			name : "Frightening Presence",
+			source : ["GMBDB"],
 			minlevel : 14,
-			description : "\n   " + "As an action, I can perform a 1 minute ritual, and cast the teleport spell, without expending a spell slot" + "\n   " + "The connection with my patron gives me increased accuracy with the spell" + "\n   " + "I must finish a long rest before using this ability again",
+			description : "\n   " + "As an action, I can choose a number of creatures equal to 1+ My Charisma Modifier that I can see within 30 feet." + "\n   " + "Targets must make a Charisma saving throw against my Spell Save DC." + "\n   " + "A creature that fails is frightened of me and my allies for 1 minute.",
 			recovery : "long rest",
 			usages : 1,
 			action : ["action", ""]
