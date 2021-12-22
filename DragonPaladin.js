@@ -52,7 +52,7 @@ AddSubClass("paladin", "dragon-paladin", {
 					description : "\n   " + "I have an oath to brass dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
 					dependentChoices : "brass dragon oath"
 				},
-				"bronze Dragon oath" : {
+				"bronze dragon oath" : {
 					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to bronze dragons, which are affiliated with lightning dmg." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
 					dependentChoices : "bronze dragon oath"
@@ -60,7 +60,7 @@ AddSubClass("paladin", "dragon-paladin", {
 				"copper dragon oath" : {
 					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to copper dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "copper Dragon oath"
+					dependentChoices : "copper dragon oath"
 				},
 				"gold dragon oath" : {
 					name : "Dragon Oath",
@@ -75,7 +75,7 @@ AddSubClass("paladin", "dragon-paladin", {
 				"red dragon oath" : {
 					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to red dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "red Dragon oath"
+					dependentChoices : "red dragon oath"
 				},
 				"silver dragon oath" : {
 					name : "Dragon Oath",
