@@ -37,55 +37,55 @@ AddSubClass("paladin", "dragon-paladin", {
 			minlevel : 3,
 			description : "\n   " + "Choose a Dragon Oath using the \"Choose Feature\" button above" + "\n   " + "When I deal damage of the type associated with my Dragon Oath to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to the one associated with my Dragon Oath" + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it" + "\n   " + "I can read, write, speak Draconic.",
 			choices : ["Black Dragon oath", "Blue Dragon oath", "Brass Dragon oath", "Bronze Dragon oath", "Copper Dragon oath", "Gold Dragon oath", "Green Dragon oath", "Red Dragon oath", "Silver Dragon oath", "White Dragon oath"],
-				"black Dragon oath" : {
-					name : "Draconic Blessing",
+				"black dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to black dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "black Dragon oath"
+					dependentChoices : "black dragon oath"
 				},
-				"blue Dragon oath" : {
+				"blue dragon oath" : {
 					name : "Draconic Blessing",
 					description : "\n   " + "I have an oath to blue dragons, which are affiliated with lightning damage." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "blue Dragon oath"
+					dependentChoices : "blue dragon oath"
 				},
-				"brass Dragon oath" : {
-					name : "Draconic Blessing",
+				"brass dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to brass dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "brass Dragon oath"
+					dependentChoices : "brass dragon oath"
 				},
 				"bronze Dragon oath" : {
-					name : "Draconic Blessing",
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to bronze dragons, which are affiliated with lightning dmg." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "bronze Dragon oath"
+					dependentChoices : "bronze dragon oath"
 				},
-				"copper Dragon oath" : {
-					name : "Draconic Blessing",
+				"copper dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to copper dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
 					dependentChoices : "copper Dragon oath"
 				},
-				"gold Dragon oath" : {
-					name : "Draconic Blessing",
+				"gold dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to gold dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "gold Dragon oath"
+					dependentChoices : "gold dragon oath"
 				},
-				"green Dragon oath" : {
-					name : "Draconic Blessing",
+				"green dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to green dragons, which are affiliated with poison damage." + "\n   " + "When I deal poison damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to poison." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "green Dragon oath"
+					dependentChoices : "green dragon oath"
 				},
-				"red Dragon oath" : {
-					name : "Draconic Blessing",
+				"red dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to red dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
 					dependentChoices : "red Dragon oath"
 				},
-				"silver Dragon oath" : {
-					name : "Draconic Blessing",
+				"silver dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to silver dragons, which are affiliated with cold damage." + "\n   " + "When I deal cold damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to cold." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "silver Dragon oath"
+					dependentChoices : "silver dragon oath"
 				},
-				"white Dragon oath" : {
-					name : "Draconic Blessing",
+				"white dragon oath" : {
+					name : "Dragon Oath",
 					description : "\n   " + "I have an oath to white dragons, which are affiliated with cold damage." + "\n   " + "When I deal cold damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to cold." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "white Dragon oath"
+					dependentChoices : "white dragon oath"
 				},
 				languageProfs : ["Draconic"],
 				choiceDependencies : [{
