@@ -402,14 +402,14 @@ AddSubClass("paladin", "dragon-paladin", {
 		},
 		"subclassfeature15" : {
 			name : "Shock and Awe",
-			source : ["GMBDB”],
+			source : ["GMBDB"],
 			minlevel : 15,
 			description : "\n   " + "I can unleash a true dragon's roar that terrifies my enemies and inspires my allies." + "\n   " + "As an action, choose any creatures that I can see within 30 feet of me. If the creature can see and hear you, it must succeed on a Wisdom saving throw against my spell save DC." + "\n   " + "On a failed save, the creature becomes frightened of me for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, then the creature becomes immune to my Shock and Awe for the next 24 hours." + "\n   " + "Additionally, all friendly creatures within 30 feet of me can make their next attack with advantage or make a saving throw against one effect on themselves, provided they can hear me.",
 		}
 	},
 		"subclassfeature20" : {
 			name : "Dragonsoul",
-			source : ["FRA2", 22],
+			source : ["GMBDB"],
 			minlevel : 20,
 			description : desc([
 				"As an action, I wreathe myself in draconic magic for 1 minute and gain the following benefits:",
@@ -423,4 +423,4 @@ AddSubClass("paladin", "dragon-paladin", {
 			action : ["action", ""]
 		}
 	}
-});
+);
