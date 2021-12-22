@@ -6,43 +6,35 @@
 */
 
 /*  -INFORMATION-
-	Subject:    Homebrew: Cleric Domain: Dragon
-	Effect:     This file adds the Dragon Domain as a cleric subclass
+	Subject:    Homebrew: Oath of the Dragon Knight
+	Effect:     This file adds the Oath of the Dragon Knight as a paladin subclass
 	Author:     
-	Code by:	IZUNACCHI
+	Code by:	IZUNACCHI/DBARBER96b
 	Date:		2021/11/17 (sheet v13)
 */
 
-var iFileName = "Dragon Domain";
+var iFileName = "Dragon Oath";
 
 RequiredSheetVersion(13);
 
-SourceList["HM:DD"] = {
-	name : "Dragon Domain",
-	abbreviation : "HM:DD",
+SourceList["GMBDB"] = {
+	name : "Oath of the Dragon Knight",
+	abbreviation : "GMBDB",
 	group : "Homebrew",
 	url : "https://www.gmbinder.com/share/-LsM0grGoORrW24QMMOe",
 	date : "2021/11/17"
 };
 
-AddSubClass("cleric", "dragon domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(dragon|divine|elements)\b).*$/i,
-	subname : "Dragon Domain",
-	source : ["HB", 0],
-	spellcastingExtra : ["absorb elements", "inflict wounds", "dragon's breath", "see invisibility", "fireball", "fly", "elemental bane", "stoneskin", "stoneskin", "dominate person"],
+AddSubClass("paladin", "dragon-paladin", {
+	regExpSearch : /^(?=.*dragon)(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
+	subname : "Oath of the Dragon Knight",
+	source : ["GMBDB"],
+	spellcastingExtra : ["absorb elements", "inflict wounds", "dragon's breath", "see invisibility", "fireball", "fly", "elemental bane", "stoneskin", "cone of cold", "dominate person"],
 	features : {
-		"subclassfeature1" : {
-			name : "Bonus Proficiencies",
-			source : ["HB:DD", 0],
-			minlevel : 1,
-			description : "\n   " + "I gain proficiency with martial weapons and heavy armor.",
-			armorProfs : [false, false, true, false],
-            weaponProfs : [false, true]
-		},
-		"subclassfeature1.1" : {
-			name : "Draconic Blessing",
-			source : ["HB:DD", 0],
-			minlevel : 1,
+			"subclassfeature3" : {
+			name : "Draconic Oath",
+			source : ["GMBDB"],
+			minlevel : 3,
 			description : "\n   " + "Choose a Dragon Blessing using the \"Choose Feature\" button above" + "\n   " + "When I deal damage of the type associated with my Draconic Blessing to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a domain spell, I can change the damage type to the one associated with my Draconic Blessing" + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it" + "\n   " + "I can read, write, speak Draconic.",
 			choices : ["Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
 				"black dragon blessing" : {
