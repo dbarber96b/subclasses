@@ -9,8 +9,8 @@
 	Subject:    Homebrew: Cleric Domain: Dragon
 	Effect:     This file adds the Dragon Domain as a cleric subclass
 	Author:     
-	Code by:	IZUNACCHI
-	Date:		2021/11/17 (sheet v13)
+	Code by:	IZUNACCHI/DBARBER96B
+	Date:		2021/12/30 (sheet v13)
 */
 
 var iFileName = "Dragon Domain";
