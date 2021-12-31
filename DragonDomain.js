@@ -1,18 +1,3 @@
-*	-WHAT IS THIS?-
-	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
-	Import this file using the "Add Extra Materials" bookmark.
-	-KEEP IN MIND-
-	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
-*/
-
-/*  -INFORMATION-
-	Subject:    Homebrew: Cleric Domain: Dragon
-	Effect:     This file adds the Dragon Domain as a cleric subclass
-	Author:     
-	Code by:	IZUNACCHI/DBARBER96B
-	Date:		2021/12/30 (sheet v13)
-*/
-
 var iFileName = "Dragon Domain";
 
 RequiredSheetVersion(13);
@@ -130,12 +115,12 @@ AddSubClass("cleric", "dragon domain", {
 			},
 		"subclassfeature2" : {
 			name : "Channel Divinity: Dragon's Wrath",
-			source : [""GMBDB"],
+			source : ["GMBDB"],
 			minlevel : 2,
 			description : "\n   " + "Choose a Dragon Blessing using the \"Choose Feature\" button above" + "\n   " + "As an action, I unleash a devastating Exhalation of energy. My Draconic Blessing determines the size, shape, and damage type of this breath weapon." + "\n   " + "When I use this breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by my Draconic Blessing. A creature takes 3d8 + your cleric level damage on a failed save, and half as much damage on a successful one.",
             choices : ["Amethyst Dragon blessing", "Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Crystal Dragon blessing", "Emerald Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Sapphire Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
 			choicesNotInMenu : true,
-		    "amethyst Dragon blessing" : {
+		    		"amethyst Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
 					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level force damage on a failed save, and half as much damage on a successful one.",
 				},
@@ -280,7 +265,7 @@ AddSubClass("cleric", "dragon domain", {
 					mgres: ["Cold"]
 				},
         },
-        },
+	},
 		"subclassfeature8.1" : {
 			name : "Divine Strike",
 			source : ["GMBDB"],
@@ -289,7 +274,7 @@ AddSubClass("cleric", "dragon domain", {
 			choices : ["Amethyst Dragon blessing", "Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Crystal Dragon blessing", "Emerald Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Sapphire Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
 			choicesNotInMenu : true,
 				"amethyst Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra force damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -307,7 +292,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"black Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra acid damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -325,7 +310,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"blue Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra lightning damage.",			
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -343,7 +328,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"brass Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -361,7 +346,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"bronze Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra lightning damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -379,7 +364,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"copper Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra acid damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -397,7 +382,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"crystal Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra radiant damage.",			
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -415,7 +400,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"emerald Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra psychic damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -433,7 +418,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"gold Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -451,7 +436,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"green Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra poison damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -469,7 +454,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"red Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -487,7 +472,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"sapphire Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra thunder damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -523,7 +508,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"topaz Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra necrotic damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
@@ -541,7 +526,7 @@ AddSubClass("cleric", "dragon domain", {
 					}
 				},
 				"white Dragon blessing" : {
-					name : "Draconic Might",
+					name : "Draconic Blessing",
 					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra cold damage.",
 					additional : levels.map(function (n) {
 						if (n < 8) return "";
