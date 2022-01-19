@@ -14,7 +14,7 @@
 	Date:		2021-07-26 (sheet v13.0.0beta16)
 */
 
-var iFileName = "Romythra.js";
+var iFileName = "Isendran Classes";
 RequiredSheetVersion(13);
 
 SourceList["GMBDB"] = {
