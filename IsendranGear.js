@@ -333,7 +333,7 @@ WeaponsList["whip-dagger"] = {
 	description : "Finesse, reach",
 	abilitytodamage : true
 };
-Weaponslist["chain-whip"] = {
+WeaponsList["chain-whip"] = {
 		regExpSearch : /^(?!.*chain)(?=.*whip).*$/i,
 		name : "Chain Whip",
 		source : ["GMBDB"],
