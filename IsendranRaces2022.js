@@ -113,11 +113,11 @@ RaceList["half-gnome"] = {
 	scores : [0, 0, 2, 0, 0, 0],
 	trait : "Half Gnome (+2 Intelligence, +1 two other ability scores)\n\nArtificer's Lore: Add twice my proficiency bonus to Intelligence (History) checks with magic, alchemical, and technological items."
 };
-RaceList["vaumedaris"] = {
-		regExpSearch : /^((?=.*vaumedaris)|(?=.*planetouched)(?=.*(hell|abyss|fiend|devil|asmodeus))).*$/i,
+RaceList["vaum-edaris"] = {
+		regExpSearch : /vaum-edaris/i,
 		name : "Vaum-Edaris",
 		source : ["GMBDB"],
-		plural : "Tieflings",
+		plural : "Vaum-Edaris",
 		size : 3,
 		speed : {
 			walk : { spd : 30, enc : 20 }
@@ -126,8 +126,8 @@ RaceList["vaumedaris"] = {
 		vision : [["Darkvision", 60]],
 		dmgres : ["Fire"],
 		age : " reach adulthood in their mid 50's and live around 225 years",
-    weaponProfs : [false, false, ["battleaxe", "handaxe", "warhammer", "light hammer"]],
-		toolProfs : [["Smith, brewer, or mason tools"]],
+    		weaponProfs : [false, false, ["battleaxe", "handaxe", "warhammer", "light hammer"]],
+		toolProfs : ["Smith's Tools"],
 		height : " stand between 4 and 5 feet tall (3'8\" + 2d4\")",
 		weight : " weigh around 150 lb (115 + 2d4 \xD7 2d6 lb)",
 		heightMetric : " stand between 1,2 and 1,5 metres tall (110 + 5d4 cm)",
