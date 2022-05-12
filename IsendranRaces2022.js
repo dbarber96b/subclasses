@@ -176,3 +176,38 @@ RaceList["vaum-edaris"] = {
 			}
 		}
 	};
+RaceList["ulsanya"] = {
+		regExpSearch : /^(?=.*ulsanya).*$/i,
+		name : "Ulsanya",
+		source : ["GMBDB"],
+		plural : "Ulsanya",
+		size : 3,
+		speed : {
+			walk : { spd : 35, enc : 25 }
+		},
+		languageProfs : ["Common", "Elvish", "Orc"],
+		vision : [["Darkvision", 60]],
+		savetxt : {
+			text : ["Magic can't put me to sleep"],
+			adv_vs : ["charmed"]
+		},
+		skillstxt : "Choose either Athletics or Acrobatics",
+    weaponProfs : [false, false, ["handaxe", "light hammer", "longsword", "longbow"]],
+		age : " reach adulthood around age 15 and often live around 100 years",
+		height : " range from 5 to 6 feet tall (4'9\" + 2d8\")",
+		weight : " weigh around 155 lb (110 + 2d8 \xD7 2d4 lb)",
+		heightMetric : " range from 1,5 to 1,8 metres tall (145 + 5d8 cm)",
+		weightMetric : " weigh around 70 kg (50 + 5d8 \xD7 4d4 / 10 kg)",
+		scores : [1, 1, 0, 0, 0, 0],
+		trait : "Ulsanya (+1 Strength, +1 Dexterity, and +1 to another ability of score of my choice)" + (typePF ?
+		"\n- Timberwalk: Checks to track me have disadv. I need not expend extra movement to move over difficult terrain of nonmagical plants." :
+		"\nChild of the Wood: I know the Druidcraft cantrip. "+
+		"|Timberwalk: Disadv. on checks to track me. I require no extra movement for difficult terrain of nonmagical plants."),
+	spellcastingAbility : 5,
+	spellcastingBonus : {
+		name : "Child of the Wood (level 1)",
+		spells : ["druidcraft"],
+		selection : ["druidcraft"],
+		firstCol : 'atwill'
+    }
+	};
