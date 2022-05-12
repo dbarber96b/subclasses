@@ -113,3 +113,67 @@ RaceList["half-gnome"] = {
 	scores : [0, 0, 2, 0, 0, 0],
 	trait : "Half Gnome (+2 Intelligence, +1 two other ability scores)\n\nArtificer's Lore: Add twice my proficiency bonus to Intelligence (History) checks with magic, alchemical, and technological items."
 };
+RaceList["vaumedaris"] = {
+		regExpSearch : /^((?=.*vaumedaris)|(?=.*planetouched)(?=.*(hell|abyss|fiend|devil|asmodeus))).*$/i,
+		name : "Vaum-Edaris",
+		source : ["GMBDB"],
+		plural : "Tieflings",
+		size : 3,
+		speed : {
+			walk : { spd : 30, enc : 20 }
+		},
+		languageProfs : ["Common", "Dwarvish", "Infernal"],
+		vision : [["Darkvision", 60]],
+		dmgres : ["Fire"],
+		age : " reach adulthood in their mid 50's and live around 225 years",
+    weaponProfs : [false, false, ["battleaxe", "handaxe", "warhammer", "light hammer"]],
+		toolProfs : [["Smith, brewer, or mason tools"]],
+		height : " stand between 4 and 5 feet tall (3'8\" + 2d4\")",
+		weight : " weigh around 150 lb (115 + 2d4 \xD7 2d6 lb)",
+		heightMetric : " stand between 1,2 and 1,5 metres tall (110 + 5d4 cm)",
+		weightMetric : " weigh around 70 kg (55 + 5d4 \xD7 4d6 / 10 kg)",
+		scores : [1, 0, 1, 0, 0, 1],
+		trait : "Vaum-Edaris (+1 Strength, +1 Constitution, +1 Charisma)\n\nInfernal Legacy:\n   I know the fire bolt cantrip.\n   At 3rd level, I can cast Hellish Rebuke once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast Darkness once per long rest.\n   Charisma is my spellcasting ability for these spells.",
+		spellcastingAbility : 6,
+		spellcastingBonus : {
+			name : "Infernal Legacy (level 1)",
+			spells : ["fire bolt"],
+			selection : ["firebolt"],
+			firstCol : 'atwill'
+		},
+		features : {
+			"hellish rebuke" : {
+				name : "Infernal Legacy (level 3)",
+				limfeaname : "Hellish Rebuke (3d10)",
+				minlevel : 3,
+				usages : 1,
+				recovery : "long rest",
+				spellcastingBonus : {
+					name : "Infernal Legacy (level 3)",
+					spells : ["hellish rebuke"],
+					selection : ["hellish rebuke"],
+					firstCol : "oncelr"
+				},
+				spellChanges : {
+					"hellish rebuke" : {
+						description : "Cast when taking damage, creature that dealt damage takes 3d10 Fire damage; save halves",
+						changes : "Using Infernal Legacy, I cast Hellish Rebuke as if I'm using a 2nd-level spell slot, doing 3d10 damage."
+					}
+				}
+			},
+			"darkness" : {
+				name : "Infernal Legacy (level 5)",
+				limfeaname : "Scorching Ray",
+				minlevel : 5,
+				usages : 1,
+				recovery : "long rest",
+				spellcastingBonus : {
+					name : "Infernal Legacy (level 5)",
+					spells : ["scorching ray"],
+					selection : ["scorching ray"],
+					firstCol : "oncelr"
+				}
+			}
+		}
+	}
+};
