@@ -14,7 +14,7 @@
 	Date:		2021-08-9 (sheet v13.0.0beta16)
 */
 
-var iFileName = "WyrmPatron.js";
+var iFileName = "GreatWyrmPatron.js";
 RequiredSheetVersion(13);
 
 SourceList["GMBDB"] = {
