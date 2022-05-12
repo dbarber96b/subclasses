@@ -13,7 +13,7 @@ SourceList["GMBDB"] = {
 RaceList["kender"] = {
 	regExpSearch : /^(?=.*kender).*$/i,
 	name : "Kender",
-    source : [["UA:RHoK", 1]],
+    source : ["GMBDB"],
     plural : "Kender",
     size : 4,
     speed : {
