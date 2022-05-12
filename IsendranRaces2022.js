@@ -125,7 +125,7 @@ RaceList["vaum-edaris"] = {
 		languageProfs : ["Common", "Dwarvish", "Infernal"],
 		vision : [["Darkvision", 60]],
 		dmgres : ["Fire"],
-		age : " reach adulthood in their mid 50's and live around 225 years",
+		age : " reach adulthood in their mid 50s and live around 225 years",
     		weaponProfs : [false, false, ["battleaxe", "handaxe", "warhammer", "light hammer"]],
 		toolProfs : ["Smith's Tools"],
 		height : " stand between 4 and 5 feet tall (3'8\" + 2d4\")",
@@ -133,7 +133,7 @@ RaceList["vaum-edaris"] = {
 		heightMetric : " stand between 1,2 and 1,5 metres tall (110 + 5d4 cm)",
 		weightMetric : " weigh around 70 kg (55 + 5d4 \xD7 4d6 / 10 kg)",
 		scores : [1, 0, 1, 0, 0, 1],
-		trait : "Vaum-Edaris (+1 Strength, +1 Constitution, +1 Charisma)\n\nInfernal Legacy:\n   I know the fire bolt cantrip.\n   At 3rd level, I can cast Hellish Rebuke once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast Darkness once per long rest.\n   Charisma is my spellcasting ability for these spells.",
+		trait : "Vaum-Edaris (+1 Strength, +1 Constitution, +1 Charisma)\n\nInfernal Legacy:\n   I know the fire bolt cantrip.\n   At 3rd level, I can cast Hellish Rebuke once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast Scorching Ray once per long rest.\n   Charisma is my spellcasting ability for these spells.",
 		spellcastingAbility : 6,
 		spellcastingBonus : {
 			name : "Infernal Legacy (level 1)",
