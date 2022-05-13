@@ -83,57 +83,52 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 				"If the target has multiple spellcasting abilities, it makes a separate saving throw for each.",
 				"If the target fails any one of these saving throws, its magical abilities that derive from that ability score become disrupted for up to 1 minute.",
 				"It has disadvantage on Constitution saving throws to maintain concentration on a spell. It can’t use reactions to cast spells using that ability.",
-				"if it attempts to cast a spell with a casting time of 1 action using that ability score, you roll a d20. On an 11 or higher, the spell doesn't take effect."
+				"If it attempts to cast a spell with a casting time of 1 action using that ability score, you roll a d20. On an 11 or higher, the spell doesn't take effect."
+			]),
 			action : [["action", ""]],
-			spellcastingExtra : ["shield", "zephyr strike", "branding", "see invisibility", "counterspell", "nondetection", "aura of purity", "banishment", "hold monster", "scrying"]
+			spellcastingExtra : ["shield", "zephyr strike", "branding smite", "see invisibility", "counterspell", "dispel magic", "freedom of movement", "locate creature", "banishing smite", "synaptic static"]
 		},
 		"subclassfeature3.1" : {
 			name : "Channel Divinity: Annihilation",
 			source : ["GMBDB"],
 			minlevel : 3,
 			description : desc([
-				"As an action, I choose one creature within 60 feet that I can see",
-				"The target must make a saving throw of a type determined by its spellcasting ability.",
-				"If the target has multiple spellcasting abilities, it makes a separate saving throw for each.",
-				"If the target fails any one of these saving throws, its magical abilities that derive from that ability score become disrupted for up to 1 minute.",
-				"It has disadvantage on Constitution saving throws to maintain concentration on a spell. It can’t use reactions to cast spells using that ability.",
-				"if it attempts to cast a spell with a casting time of 1 action using that ability score, you roll a d20. On an 11 or higher, the spell doesn't take effect."
+				"As an action, I can use my Channel Divinity to sacrifice my own well of magical energy to destroy my opponent’s.",
+				"When I use my Divine Smite to damage a creature, I can expend a use of Channel Divinity to destroy one of the target’s spell slots.",
+				"The spell slot destroyed is equivalent to the level of the spell slot used to perform Divine Smite.",
+				"If the target has no remaining spell slots of that level, an equivalent number of spell slots lower than the designated level are destroyed until the target has none.",
+				"If the target has an innate spellcasting trait, they lose spells, beginning with those of a level equal to the spell slot expended."
 			]),
 			action : [["action", ""]]
 		},
 		"subclassfeature7" : {
-			name : "Aura of the Sentinel",
-			source : [["T", 55]],
+			name : "Aura of Dampening",
+			source : ["GMBDB"],
 			minlevel : 7,
-			description : "\n   If I'm not incapacitated, chosen creatures in range and I add my Prof. Bonus to Initiative",
-			additional : levels.map(function (n) { return n < 7 ? "" : (n < 18 ? 10 : 30) + "-foot aura"; }),
-			addMod : [{ type : "skill", field : "Init", mod : "prof", text : "I can add my Proficiency Bonus to initiative rolls." }]
+			description : "\n   " + "Allies within range and I have resistance to damage from spells",
+			additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
+			dmgres : ["Spells"]
 		},
 		"subclassfeature15" : {
-			name : "Vigilant Rebuke",
-			source : [["T", 55]],
+			name : "Magical Detective",
+			source : ["GMBDB"],
 			minlevel : 15,
 			description : desc([
-				"As a reaction when I or another I can see succeeds a Int, Wis, or Cha save, I can rebuke",
-				"The creature that forced the saving throw takes 2d8 + my Charisma mod force damage"
+				"I am always under the effects of the Detect Magic spell."
 			]),
-			action : [["reaction", ""]]
 		},
 		"subclassfeature20" : {
-			name : "Mortal Bulwark",
-			source : [["T", 55]],
+			name : "Unweaving Presence",
+			source : ["GMBDB"],
 			minlevel : 20,
 			description : desc([
-				"As a bonus action, I can gain the following benefits for 1 minute:",
-				" \u2022 Truesight 120 ft; Adv. on attacks vs. aberrations, celestials, elementals, fey, and fiends",
-				" \u2022 When I hit and damage a creature with an attack, I can banish it if it fails a Cha save",
-				"   It's banished to its native plane if not there now; It's immune for 24 hours on a success",
-				"I can do this once per long rest, or by expending a 5th-level or higher spell slot (SS 5+)"
+				"As an action, I gain the following benefits for 1 hour",
+				"I gain the effects of the antimagic field spell.",
+				"When I use my Channel Divinity to Disrupt Magic , I can target a number of additional creatures within 60 feet of me that I can see equal to half my Charisma modifier."
 			]),
 			recovery : "long rest",
 			usages : 1,
-			altResource : "SS 5+",
-			action : [["bonus action", ""]]
+			action : ["action", ""]
 		}
 	}
 });
