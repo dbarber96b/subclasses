@@ -132,3 +132,69 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 		}
 	}
 });
+ AddSubClass("ranger", "witchwarden", {
+	regExpSearch : /^(?=.*witchwarden).*$/i,
+	subname : "Witchwarden",
+	source : ["GMBDB"],
+	fullname : "Witchwarden",
+	features : {
+		"subclassfeature3" : {
+			name : "Arcane Momentum",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"When I damage a creature with a ranger spell other than hunter’s mark , I have advantage on the first attack roll I make against that target until the end of my next turn.",
+				"The first time you hit a creature with a weapon attack, it deals an additional 1d8 damage. This damage must be of a type of the spell dealt."
+			]),
+		},
+		"subclassfeature3.1" : {
+			name : "Witchwarden Magic",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"I add a spell to my known spells at level 3, 5, 9, 13, and 17",
+				"These count as ranger spells, but do not count against the number of spells I can know"
+			]),
+			spellcastingExtra : ["sanctuary", "warding bond", "Leomund's tiny hut", "death ward", "wall of force"],
+			spellcastingExtraApplyNonconform : true
+		},
+		"subclassfeature7" : {
+			name : "Witchwarden's Gaze",
+			source : ["GMBDB"],
+			minlevel : 7,
+			description : desc([
+				"When I or an ally within 60 feet of me that I can see fails a saving throw or fails to escape a grapple, I can use my reaction to add 1d6 to the roll.",
+				"I can use this feature a number of times equal to my Wisdom modifier, and regain all expended uses when I finish a long rest."
+			]),
+      action : ["reaction", ""],
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest"
+		},
+		"subclassfeature11" : {
+			name : "Warden's Defense",
+			source : ["GMBDB"],
+			minlevel : 11,
+			description : desc([
+				"As a reaction when I or a creature within 5 ft is hit, I can try to fend off the strike",
+				"I add 1d8 to the target's AC; If the attack still hits, the target has resistance against it",
+				"I can only do this while wielding a melee weapon or a shield"
+			]),
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest",
+			action : ["reaction", ""],
+		},
+		"subclassfeature15" : {
+			name : "Spell-Share",
+			source : ["GMBDB"],
+			minlevel : 15,
+			description : desc([
+				"When I cast a ranger spell targeting myself, you can also affect one ally I can see within 30 feet with the spell.",
+				"You can use this feature twice, and you regain all expended uses when you finish a short rest."
+			]),
+			recovery : "long rest",
+			usages : 2
+		}
+	}
+});
