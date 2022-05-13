@@ -1,8 +1,8 @@
 AddSubClass("cleric", "wanderlust domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(forge|forgery|blacksmith)).*$/i,
-	subname : "Forge Domain",
-	source : ["X", 18],
-	spellcastingExtra : ["identify", "searing smite", "heat metal", "magic weapon", "elemental weapon", "protection from energy", "fabricate", "wall of fire", "animate objects", "creation"],
+	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(wander|wanderlust|wanderer)).*$/i,
+	subname : "Wanderlust Domain",
+	source : ["GMBDB"],
+	spellcastingExtra : ["feather fall", "jump", "knock", "spider climb", "counterspell", "haste", "dimension door", "wall of fire", "animate objects", "creation"],
 	features : {
 		"subclassfeature1" : {
 			name : "Bonus Proficiency",
