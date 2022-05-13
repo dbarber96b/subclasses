@@ -6,49 +6,32 @@ AddSubClass("cleric", "wanderlust domain", {
 	features : {
 		"subclassfeature1" : {
 			name : "Bonus Proficiency",
-			source : ["X", 19],
+			source : ["GMBDB"],
 			minlevel : 1,
-			description : "\n   " + "I gain proficiency with heavy armor and smith's tools",
-			armorProfs : [false, false, true, false],
-			toolProfs : ["Smith's tools"]
-		},
-		"subclassfeature1.1" : {
-			name : "Blessing of the Forge",
-			source : ["X", 19],
-			minlevel : 1,
-			action : ["action", ""],
-			usages : 1,
-			recovery : "long rest",
-			description : desc([
-				"At the end of a long rest, I can imbue magic into a nonmagical weapon or armor",
-				"It becomes magical: +1 AC if armor, or +1 to attack and damage rolls if a weapon",
-				"This lasts until the end of my next long rest or until I die"
-			])
+			descriptionFull : "You gain proficiency in two of the following: Athletics, Acrobatics, or Stealth, as well as Thieves' tools.",
+			description : "I gain proficiency with any combination of three skills or tools of my choice.",
+			skillstxt : "Athletics, Acrobatics, or Stealth"
+			toolProfs : ["Thieves' tools"]
 		},
 		"subclassfeature2" : {
-			name : "Channel Divinity: Artisan's Blessing",
-			source : ["X", 19],
+			name : "Channel Divinity: Traversal",
+			source : ["GMBDB"],
 			minlevel : 2,
 			description : desc([
-				"With an hour-long ritual, I can craft a nonmagical item that is at least part metal",
-				"Including: suit of armor, simple or martial weapon, set of tools, 10 pieces of ammunition",
-				"The creation can be worth up to 100 gp, and I must expend metals of equal value to it",
-				"The metals irretrievably coalesce into the new item, forming even nonmetal parts of it",
-				"The item can be an exact duplicate of a nonmagical item if I possess the original",
-				"The item comes into existence at the end of the hour in an unoccupied space within 5 ft"
+				"I can take the Dash action asa bonus action",
+				"Climbing doesn't cost me any extra movement",
+				"I add my Wisdom modifier to Strength (Athletics), Dexterity (Acrobatics, Stealth), and the distances you can cover making a long or high jump (minimum +1)"
 			])
 		},
 		"subclassfeature6" : {
-			name : "Soul of the Forge",
-			source : ["X", 19],
+			name : "Channel Divinity: Spellsteal",
+			source : ["GMBDB"],
 			minlevel : 6,
-			description : "\n   " + "I gain resistance to fire damage and +1 to AC while wearing medium or heavy armor",
-			dmgres : ["Fire"],
-			extraAC : {
-				mod : 1,
-				text : "I gain a +1 bonus to AC while wearing Medium or Heavy armor.",
-				stopeval : function (v) { return !v.mediumArmor && !v.heavyArmor; }
-			}
+			description : desc([
+				"When I cast Counterspell, I can can expend a use of my Channel Divinity to gain a bonus to the required spellcasting ability check equal to half my cleric level",
+				"If is at least 1st level, and of a level I can cast, I steal knowledge of that spell.",
+				"I can cast this spell a number of times equal to my Wisdom modifier until a long rest."
+			])
 		},
 		"subclassfeature8" : {
 			name : "Divine Strike",
@@ -57,16 +40,16 @@ AddSubClass("cleric", "wanderlust domain", {
 			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
 			additional : levels.map(function (n) {
 				if (n < 8) return "";
-				return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
+				return "+" + (n < 14 ? 1 : 2) + "d8 force damage";
 			}),
 			calcChanges : {
 				atkAdd : [
 					function (fields, v) {
 						if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 fire damage';
+							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 force damage';
 						}
 					},
-					"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
+					"Once per turn, I can have one of my weapon attacks that hit do extra force damage."
 				]
 			}
 		},
