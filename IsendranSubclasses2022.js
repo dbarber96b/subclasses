@@ -68,3 +68,72 @@ AddSubClass("cleric", "wanderlust domain", {
 			firstCol : "1" } }
 	}
 });
+AddSubClass("paladin", "oath of the spellbreaker", {
+	regExpSearch : /^(?=.*spellbreaker)((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
+	subname : "Oath of the Spellbreaker",
+	source : ["GMBDB"],
+	features : {
+		"subclassfeature3" : {
+			name : "Channel Divinity: Disrupt Magic",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"As an action, I choose one creature within 60 feet that I can see",
+				"The target must make a saving throw of a type determined by its spellcasting ability.",
+				"If the target has multiple spellcasting abilities, it makes a separate saving throw for each.",
+				"If the target fails any one of these saving throws, its magical abilities that derive from that ability score become disrupted for up to 1 minute.",
+				"It has disadvantage on Constitution saving throws to maintain concentration on a spell. It can’t use reactions to cast spells using that ability.",
+				"if it attempts to cast a spell with a casting time of 1 action using that ability score, you roll a d20. On an 11 or higher, the spell doesn't take effect."
+			action : [["action", ""]],
+			spellcastingExtra : ["shield", "zephyr strike", "branding", "see invisibility", "counterspell", "nondetection", "aura of purity", "banishment", "hold monster", "scrying"]
+		},
+		"subclassfeature3.1" : {
+			name : "Channel Divinity: Annihilation",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"As an action, I choose one creature within 60 feet that I can see",
+				"The target must make a saving throw of a type determined by its spellcasting ability.",
+				"If the target has multiple spellcasting abilities, it makes a separate saving throw for each.",
+				"If the target fails any one of these saving throws, its magical abilities that derive from that ability score become disrupted for up to 1 minute.",
+				"It has disadvantage on Constitution saving throws to maintain concentration on a spell. It can’t use reactions to cast spells using that ability.",
+				"if it attempts to cast a spell with a casting time of 1 action using that ability score, you roll a d20. On an 11 or higher, the spell doesn't take effect."
+			]),
+			action : [["action", ""]]
+		},
+		"subclassfeature7" : {
+			name : "Aura of the Sentinel",
+			source : [["T", 55]],
+			minlevel : 7,
+			description : "\n   If I'm not incapacitated, chosen creatures in range and I add my Prof. Bonus to Initiative",
+			additional : levels.map(function (n) { return n < 7 ? "" : (n < 18 ? 10 : 30) + "-foot aura"; }),
+			addMod : [{ type : "skill", field : "Init", mod : "prof", text : "I can add my Proficiency Bonus to initiative rolls." }]
+		},
+		"subclassfeature15" : {
+			name : "Vigilant Rebuke",
+			source : [["T", 55]],
+			minlevel : 15,
+			description : desc([
+				"As a reaction when I or another I can see succeeds a Int, Wis, or Cha save, I can rebuke",
+				"The creature that forced the saving throw takes 2d8 + my Charisma mod force damage"
+			]),
+			action : [["reaction", ""]]
+		},
+		"subclassfeature20" : {
+			name : "Mortal Bulwark",
+			source : [["T", 55]],
+			minlevel : 20,
+			description : desc([
+				"As a bonus action, I can gain the following benefits for 1 minute:",
+				" \u2022 Truesight 120 ft; Adv. on attacks vs. aberrations, celestials, elementals, fey, and fiends",
+				" \u2022 When I hit and damage a creature with an attack, I can banish it if it fails a Cha save",
+				"   It's banished to its native plane if not there now; It's immune for 24 hours on a success",
+				"I can do this once per long rest, or by expending a 5th-level or higher spell slot (SS 5+)"
+			]),
+			recovery : "long rest",
+			usages : 1,
+			altResource : "SS 5+",
+			action : [["bonus action", ""]]
+		}
+	}
+});
