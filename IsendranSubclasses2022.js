@@ -10,7 +10,7 @@ AddSubClass("cleric", "wanderlust domain", {
 			minlevel : 1,
 			descriptionFull : "You gain proficiency in two of the following: Athletics, Acrobatics, or Stealth, as well as Thieves' tools.",
 			description : "I gain proficiency with any combination of three skills or tools of my choice.",
-			skillstxt : "Athletics, Acrobatics, or Stealth"
+			skillstxt : "Athletics, Acrobatics, or Stealth",
 			toolProfs : ["Thieves' tools"]
 		},
 		"subclassfeature2" : {
@@ -65,6 +65,6 @@ AddSubClass("cleric", "wanderlust domain", {
 			name : "Transcendence",
 			spells : ["gate", "astral projection"],
 			selection : ["gate", "astral projection"],
-			firstCol : "1"
+			firstCol : "1" } }
 	}
 });
