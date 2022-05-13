@@ -71,15 +71,17 @@ AddSubClass("cleric", "wanderlust domain", {
 			}
 		},
 		"subclassfeature17" : {
-			name : "Saint of Forge and Fire",
-			source : ["X", 19],
+			name : "Transcendence",
+			source : ["GMBDB"],
 			minlevel : 17,
 			description : desc([
-				"I gain immunity to fire damage",
-				"When wearing heavy armor, I'm resistant to nonmagical bludg./piercing/slashing damage"
+				"The Gate and Astral Projection spells are cleric spells for me, and are always prepared, and do not count against the muber of spells I can prepare.",
+				"Freedom of Movement and Dimension Door can now have a casting time of a bonus action instead of and action"
 			]),
-			savetxt : { immune : ["fire"] },
-			dmgres : [["Bludgeoning", "Bludg. (nonmagical)"], ["Piercing", "Pierc. (nonmagical)"], ["Slashing", "Slash. (nonmagical)"]]
-		}
+			spellcastingBonus : {
+			name : "Transcendence",
+			spells : ["gate", "astral projection"],
+			selection : ["gate", "astral projection"],
+			firstCol : "1"
 	}
 });
