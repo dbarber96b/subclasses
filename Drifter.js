@@ -31,8 +31,8 @@ AddSubClass("warlock", "the drifter", {
 	spellcastingExtra : ["bane", "bless", "enhance ability", "pass without trace", "blink", "nondetection", "death ward", "freedom of movement", "circle of power", "passwall"],
 	features : {
 		    "subclassfeature1" : {
-			name : "Hex Warrior",
-			source : ["X", 55],
+			name : "Drifter's Gift",
+			source : ["GMBDB"],
 			minlevel : 1,
 			description : desc([
 				"I gain proficiency with medium armor and longswords, rapiers, and scimitars",
