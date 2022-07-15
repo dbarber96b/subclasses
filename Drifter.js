@@ -31,7 +31,7 @@ AddSubClass("warlock", "the drifter", {
 	spellcastingExtra : ["bane", "bless", "enhance ability", "pass without trace", "blink", "nondetection", "death ward", "freedom of movement", "circle of power", "passwall"],
 	features : {
 		    "subclassfeature1" : {
-			name : "Drifter's Gift",
+			name : "Highwayman",
 			source : ["GMBDB"],
 			minlevel : 1,
 			description : desc([
@@ -70,7 +70,7 @@ AddSubClass("warlock", "the drifter", {
 			description : "\n   " + "I have advantage on all Charisma (Persuasion), Charisma (Deception), and Charisma (Performance) checks against any creature of my choice that isn’t hostile toward you " + "\n   " + "I have advantage on Dexterity saving throws against effects such as traps and spells. To gain this benefit, I can't be incapacitated",
 		},
 		"subclassfeature10" : {
-			name : "Superior Mobility",
+			name : "Drifter's Gift",
 			source : ["X", 47],
 			minlevel : 10,
 			description : "\n   " + "I gain +10 ft to my walking speed (and swimming/climbing speed, if applicable)",
@@ -84,7 +84,7 @@ AddSubClass("warlock", "the drifter", {
 			name : "Closing the Distance",
 			source : ["P", 109],
 			minlevel : 14,
-			description : "\n   " + "As an action, I can perform a 1 minute ritual, and cast the teleport spell, without expending a spell slot" + "\n   " + "The connection with my patron gives me increased accuracy with the spell" + "\n   " + "I must finish a long rest before using this ability again",
+			description : "\n   " + "As an action, I can perform a 1 minute ritual, and cast the teleport spell, expending a spell slot" + "\n   " + "The connection with my patron gives me increased accuracy with the spell" + "\n   " + "I must finish a long rest before using this ability again",
 			recovery : "long rest",
 			usages : 1,
 			action : ["action", ""]
