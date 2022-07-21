@@ -2233,7 +2233,7 @@ AddWarlockInvocation("Warped Limits (prereq: level 9 warlock, Pact of the Deck)"
 	type : "wondrous item",
 	rarity : "rare",
 	description : "While wearing both these steel gauntlets, any weapons I grasp with them count as magical. As a bonus action once per dawn, I can use them to envelop one or two melee weapons in my grasp with magical lightning, causing them to deal an extra 1d8 lightning damage on a hit. This last until I sheath or let go of a weapon.",
-	descriptionFull : "While you wear both of these steel gauntlets, any non- magical weapon you grasp with either gauntlet is treated as a magic weapon. As a bonus action, you can use the gauntlets to cause magical flames to envelop one or two melee weapons in your grasp. Each flaming weapon deals an extra 1d8 lightning damage on a hit. The flames last until you sheath or let go of either weapon. Once used, this property can't be used again until the next dawn.",
+	descriptionFull : "While you wear both of these steel gauntlets, any non- magical weapon you grasp with either gauntlet is treated as a magic weapon. As a bonus action, you can use the gauntlets to cause magical lightning to envelop one or two melee weapons in your grasp. Each empowered weapon deals an extra 1d8 lightning damage on a hit. The lightning last until you sheath or let go of either weapon. Once used, this property can't be used again until the next dawn.",
 	attunement : true,
 	action : [["bonus action", ""]],
 	usages : 1,
