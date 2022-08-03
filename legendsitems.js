@@ -4,8 +4,8 @@ MagicItemsList["storm blade"] = {
 	type : "weapon (longsword)",
 	rarity : "rare",
 	attunement : false,
-	description : "This magic sword is the blade of the chosen of the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
-	descriptionFull : "This magic sword is the blade of the chosen of the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
+	description : "This magic sword is embued with energy from the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
+	descriptionFull : "This magic sword is embued with energy from of the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
 	weight : 2,
 	weaponsAdd : ["Storm Blade"],
 	weaponOptions : [{
