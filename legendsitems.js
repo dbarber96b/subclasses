@@ -1,5 +1,5 @@
-MagicItemsList["stormbringer"] = {
-	name : "Stormbringer",
+MagicItemsList["storm blade"] = {
+	name : "Storm Blade",
 	source : ["GMBDB"],
 	type : "weapon (longsword)",
 	rarity : "rare",
@@ -7,11 +7,11 @@ MagicItemsList["stormbringer"] = {
 	description : "This magic sword is the blade of the chosen of the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
 	descriptionFull : "This magic sword is the blade of the chosen of the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
 	weight : 2,
-	weaponsAdd : ["Stormbringer"],
+	weaponsAdd : ["Storm Blade"],
 	weaponOptions : [{
 		baseWeapon : "longsword",
-		regExpSearch : /^(?=.*storm)(?=.*bringer).*$/i,
-		name : "Stormbringer",
+		regExpSearch : /^(?=.*storm)(?=.*blade).*$/i,
+		name : "Storm Blade",
 		source : ["GMBDB"],
 		description : "Versatile (d10); +1d8 lightning damage",
 	}]
@@ -56,7 +56,7 @@ MagicItemsList["storm bringer"] = {
   allowDuplicates: false,
   choices: ["Dormant", "Awakened", "Exalted"],
   dormant: {
-    name: "Dormant Star Razor",
+    name: "Dormant Storm Bringer",
     description:
       "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +1 to hit and damage and grants resistance to lightning damage. Once per dawn, I can cast thunderwave (DC 13).",
     weaponsAdd: ["Dormant Star Razor"],
@@ -74,7 +74,7 @@ MagicItemsList["storm bringer"] = {
       atkCalc: [
         function (fields, v, output) {
           if (
-            /\bstar razor\b/i.test(v.WeaponTextName) &&
+            /\bstorm bringer\b/i.test(v.WeaponTextName) &&
             /\bglowing\b/i.test(v.WeaponTextName)
           ) {
             output.magic += 1;
@@ -102,15 +102,15 @@ MagicItemsList["storm bringer"] = {
     ],
   },
   awakened: {
-    name: "Awakened Star Razor",
+    name: "Awakened Storm Bringer",
     description:
-      "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +2 to hit and damage and grants resistance to radiant damage. Once per dawn per spell, I can cast (DC 15) faerie fire and see invisibility. See third page.",
-    weaponsAdd: ["Awakened Star Razor"],
+      "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +2 to hit and damage and grants resistance to lightning damage. Once per dawn per spell, I can cast (DC 15) thunderwave and warding wind. See third page.",
+    weaponsAdd: ["Awakened Storm Bringer"],
     weaponOptions: {
       baseWeapon: "longsword",
-      regExpSearch: /^(?=.*awakened)(?=.*star razor).*$/i,
-      name: "Awakened Star Razor",
-      source: [["TDCSR", 210]],
+      regExpSearch: /^(?=.*awakened)(?=.*storm bringer).*$/i,
+      name: "Awakened Storm Bringer",
+      source: ["GMBDB"],
     },
     action: [
       ["bonus action", " (start/stop glow)"],
@@ -134,25 +134,25 @@ MagicItemsList["storm bringer"] = {
     spellcastingBonus: [
       {
         name: "Once per dawn",
-        spells: ["faerie fire"],
-        selection: ["faerie fire"],
+        spells: ["thunderwave"],
+        selection: ["thunderwave"],
         firstCol: "checkbox",
       },
       {
         name: "Once per dawn",
-        spells: ["see invisibility"],
-        selection: ["see invisibility"],
+        spells: ["warding wind"],
+        selection: ["warding wind"],
         firstCol: "checkbox",
       },
     ],
     extraLimitedFeatures: [
       {
-        name: "Faerie Fire (Star Razor)",
+        name: "Thunderwave (Storm Bringer)",
         usages: 1,
         recovery: "dawn",
       },
       {
-        name: "See Invisibility (Star Razor)",
+        name: "Warding Wind (Storm Bringer)",
         usages: 1,
         recovery: "dawn",
       },
@@ -162,7 +162,7 @@ MagicItemsList["storm bringer"] = {
         name: "Features",
         page3notes: true,
         note: [
-          "When hit in melee, I can use my reaction to deal 1d8 damage to the attacker",
+          "When hit in melee, I can use my reaction to deal 1d8 thunder damage to the attacker",
         ],
       },
     ],
@@ -170,13 +170,13 @@ MagicItemsList["storm bringer"] = {
   exalted: {
     name: "Exalted Star Razor",
     description:
-      "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +3 to hit and damage and grants resistance to radiant damage. Once per dawn per spell, I can cast (DC 15) faerie fire, see invisibility, and fly. See third page.",
+      "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +3 to hit and damage and grants resistance to lightning damage. Once per dawn per spell, I can cast (DC 15) thunderwave, warding wind, and fly. See third page.",
     weaponsAdd: ["Exalted Star Razor"],
     weaponOptions: {
       baseWeapon: "longsword",
-      regExpSearch: /^(?=.*exalted)(?=.*star razor).*$/i,
-      name: "Exalted Star Razor",
-      source: [["TDCSR", 210]],
+      regExpSearch: /^(?=.*exalted)(?=.*storm bringer).*$/i,
+      name: "Exalted Storm Bringer",
+      source: ["GMBDB"],
     },
     action: [
       ["bonus action", " (start/stop glow)"],
@@ -200,14 +200,14 @@ MagicItemsList["storm bringer"] = {
     spellcastingBonus: [
       {
         name: "Once per dawn",
-        spells: ["faerie fire"],
-        selection: ["faerie fire"],
+        spells: ["thunderwave"],
+        selection: ["thunderwave"],
         firstCol: "checkbox",
       },
       {
         name: "Once per dawn",
-        spells: ["see invisibility"],
-        selection: ["see invisibility"],
+        spells: ["warding wind"],
+        selection: ["warding wind"],
         firstCol: "checkbox",
       },
       {
@@ -219,17 +219,17 @@ MagicItemsList["storm bringer"] = {
     ],
     extraLimitedFeatures: [
       {
-        name: "Faerie Fire (Star Razor)",
+        name: "Thunderwave (Storm Bringer)",
         usages: 1,
         recovery: "dawn",
       },
       {
-        name: "See Invisibility (Star Razor)",
+        name: "Warding Wind (Storm Bringer)",
         usages: 1,
         recovery: "dawn",
       },
       {
-        name: "Fly (Star Razor)",
+        name: "Fly (Storm Bringer)",
         usages: 1,
         recovery: "dawn",
       },
@@ -239,7 +239,7 @@ MagicItemsList["storm bringer"] = {
         name: "Features",
         page3notes: true,
         note: [
-          "When hit in melee, I can use my reaction to deal 1d12 damage to the attacker",
+          "When hit in melee, I can use my reaction to deal 1d12 thunder damage to the attacker",
           "I can then teleport to a seen, unoccupied space within 15 ft",
         ],
       },
