@@ -1,21 +1,35 @@
 MagicItemsList["storm blade"] = {
 	name : "Storm Blade",
 	source : ["GMBDB"],
-	type : "weapon (longsword)",
-	rarity : "rare",
-	attunement : false,
-	description : "This magic sword is embued with energy from the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
-	descriptionFull : "This magic sword is embued with energy from of the God of Storms. Its blade has delicate Lichtenberg patterns along the blade. The weapon deals an extra 1d8 lightning damage to any target it hits.",
-	weight : 2,
-	weaponsAdd : ["Storm Blade"],
-	weaponOptions : [{
-		baseWeapon : "longsword",
-		regExpSearch : /^(?=.*storm)(?=.*blade).*$/i,
-		name : "Storm Blade",
-		source : ["GMBDB"],
-		description : "Versatile (d10); +1d8 lightning damage",
-	}]
-};
+	type : "weapon (any sword)",
+		rarity : "rare",
+		magicItemTable : "G",
+		attunement : true,
+		description : "As a bonus action, I can speak the command word of this magic sword, causing lightning to erupt from it. This lightning adds +1d8 lightning damage. The lightning lasts until I speak the command word again as a bonus action or sheathe it.",
+		descriptionFull : "You can use a bonus action to speak this magic sword's command word, causing lightning to erupt from the blade. While the sword is active, it deals an extra 1d8 lightning damage to any target it hits. The lightning last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
+		action : [["bonus action", " (activate/end)"]],
+		chooseGear : {
+			type : "weapon",
+			prefixOrSuffix : "brackets",
+			descriptionChange : ["replace", "sword"],
+			excludeCheck : function (inObjKey, inObj) {
+				var testRegex = /sword|scimitar|rapier/i;
+				return !(testRegex).test(inObjKey) && (!inObj.baseWeapon || !(testRegex).test(inObj.baseWeapon));
+			}
+		},
+		calcChanges : {
+			atkAdd : [
+				function (fields, v) {
+					if (!v.theWea.isMagicWeapon && v.isMeleeWeapon && (/sword|scimitar|rapier/i).test(v.baseWeaponName) && (/^(?=.*storm)(?=.*blade).*$/i).test(v.WeaponTextName)) {
+						v.theWea.isMagicWeapon = true;
+						fields.Description = fields.Description.replace(/(, |; )?Counts as magical/i, '');
+						fields.Description += (fields.Description ? '; ' : '') + 'While active, +1d8 lightning damage';
+					}
+				},
+				'If I include the words "Storm Blade" in a the name of a sword, it will be treated as the magic weapon Storm Blade. When the command word is spoken, the blade erupts with ligtning, adding +1d8 lightning damage on a hit.'
+			]
+		}
+	},
 MagicItemsList["storm bringer"] = {
   name: "Storm Bringer",
   source: ["GMBDB"],
