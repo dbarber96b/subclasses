@@ -16,41 +16,41 @@ MagicItemsList["stormbringer"] = {
 		description : "Versatile (d10); +1d8 lightning damage",
 	}]
 };
-MagicItemsList["star razor"] = {
-  name: "Star Razor",
-  source: [["TDCSR", 210]],
+MagicItemsList["storm bringer"] = {
+  name: "Storm Bringer",
+  source: ["GMBDB"],
   type: "weapon (longsword)",
   rarity: "legendary",
   attunement: true,
   description: "",
   descriptionFull:
-    "The thick, grooved blade of this shining silver longsword is lined with etched runes that sparkle blue in the light. Star Razor—known also as Dwueth'var— was thought to have been destroyed or lost after the Calamity, but new rumors suggest that it might be wielded by a half-orc somewhere in Wildemount." +
+    "The thick, grooved blade of this shining silver longsword is lined with Lichtenberg patterns that crackle blue in the light. Storm Bringer—known also as Aimsir— is the weapon of the latest champions of Velios, the god of storms.." +
     "\n" +
     toUni("Dormant") +
     "\n" +
-    "While Star Razor is in a dormant state, you can hold this magic longsword and use a bonus action to speak the command word Galas-var, causing the sword to emit a pale blue glow that sheds bright light in a 20-foot radius and dim light for an additional 20 feet. This glow lasts until you use a bonus action to speak the command word again, or until you drop or sheathe the sword." +
+    "While Storm Bringer is in a dormant state, you can hold this magic longsword and use a bonus action to speak the command word Tintreach, causing the sword to emit a pale blue glow that sheds bright light in a 20-foot radius and dim light for an additional 20 feet. This glow lasts until you use a bonus action to speak the command word again, or until you drop or sheathe the sword." +
     "\n" +
-    "\u2022 While this longsword is glowing, you gain a +1 bonus to attack and damage rolls made with the weapon, and you have resistance to radiant damage." +
+    "\u2022 While this longsword is glowing, you gain a +1 bonus to attack and damage rolls made with the weapon, and you have resistance to lightning damage." +
     "\n" +
-    "\u2022 You can cast the faerie fire spell from the weapon as an action, requiring no components (save DC 13). Once a spell has been cast using Star Razor, that spell can't be cast from the sword until the next dawn." +
+    "\u2022 You can cast the thunderwave spell from the weapon as an action, requiring no components (save DC 13). Once a spell has been cast using Storm Bringer, that spell can't be cast from the sword until the next dawn." +
     "\n" +
     toUni("Awakened") +
     "\n" +
-    "When Star Razor reaches an awakened state, you gain the following benefits:" +
+    "When Storm Bringer reaches an awakened state, you gain the following benefits:" +
     "\n" +
     "\u2022 The weapon's bonus to attack and damage rolls increases to +2." +
     "\n" +
-    "\u2022 When a creature within 5 feet of you hits you with a melee attack, you can use your reaction to create a burst of radiance from the sword, dealing 1d8 radiant damage to the attacker." +
+    "\u2022 When a creature within 5 feet of you hits you with a melee attack, you can use your reaction to create a burst of thunder from the sword, dealing 1d8 thunder damage to the attacker." +
     "\n" +
-    "\u2022 You can cast the see invisibility spell from the sword as an action, and the save DC for spells cast using the sword increases to 15." +
+    "\u2022 You can cast the warding wind spell from the sword as an action, and the save DC for spells cast using the sword increases to 15." +
     "\n" +
     toUni("Exalted") +
     "\n" +
-    "\u2022 When Star Razor reaches an exalted state, you gain the following benefits:" +
+    "\u2022 When Storm Bringer reaches an exalted state, you gain the following benefits:" +
     "\n" +
     "\u2022 The weapon's bonus to attack and damage rolls increases to +3." +
     "\n" +
-    "\u2022 The burst of radiance you can create as a reaction when hit with a melee attack deals 1d12 radiant damage, and you can immediately teleport to an unoccupied space you can see within 15 feet of you as part of the same reaction." +
+    "\u2022 The burst of thunder you can create as a reaction when hit with a melee attack deals 1d12 thunder damage, and you can immediately teleport to an unoccupied space you can see within 15 feet of you as part of the same reaction." +
     "\n" +
     "\u2022 You can cast the fly spell from the sword as an action, and the save DC for spells cast using the sword increases to 17.",
   allowDuplicates: false,
@@ -58,17 +58,17 @@ MagicItemsList["star razor"] = {
   dormant: {
     name: "Dormant Star Razor",
     description:
-      "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +1 to hit and damage and grants resistance to radiant damage. Once per dawn, I can cast faerie fire (DC 13).",
+      "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +1 to hit and damage and grants resistance to lightning damage. Once per dawn, I can cast thunderwave (DC 13).",
     weaponsAdd: ["Dormant Star Razor"],
     weaponOptions: {
       baseWeapon: "longsword",
-      regExpSearch: /^(?=.*dormant)(?=.*star razor).*$/i,
-      name: "Dormant Star Razor",
-      source: [["TDCSR", 210]],
+      regExpSearch: /^(?=.*dormant)(?=.*storm bringer).*$/i,
+      name: "Dormant Storm Bringerr",
+      source: ["GMBDB"],
     },
     action: [
       ["bonus action", " (start/stop glow)"],
-      ["action", " (faerie fire)"],
+      ["action", " (thunderwave)"],
     ],
     calcChanges: {
       atkCalc: [
@@ -88,14 +88,14 @@ MagicItemsList["star razor"] = {
     spellcastingBonus: [
       {
         name: "Once per dawn",
-        spells: ["faerie fire"],
-        selection: ["faerie fire"],
+        spells: ["thunderwave"],
+        selection: ["thunderwave"],
         firstCol: "checkbox",
       },
     ],
     extraLimitedFeatures: [
       {
-        name: "Faerie Fire (Star Razor)",
+        name: "Thunderwave (Storm Bringer)",
         usages: 1,
         recovery: "dawn",
       },
