@@ -1093,60 +1093,60 @@ AddSubClass("cleric", "dragon domain", {
 			choicesNotInMenu : true,
 		    		"amethyst Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level force damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level force damage on a failed save, and half as much damage on a successful one.",
 				},
 				"black Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level acid damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level acid damage on a failed save, and half as much damage on a successful one.",
 				},
 				"blue Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level lightning damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level lightning damage on a failed save, and half as much damage on a successful one.",
 				},
 				"brass Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level fire damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level fire damage on a failed save, and half as much damage on a successful one.",
 				},
 				"bronze Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level lightning damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level lightning damage on a failed save, and half as much damage on a successful one.",
 				},
 				"copper Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level acid damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level acid damage on a failed save, and half as much damage on a successful one.",
 				},
 				"crystal Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level radiant damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level radiant damage on a failed save, and half as much damage on a successful one.",
 				},
 				"emerald Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level psychic damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level psychic damage on a failed save, and half as much damage on a successful one.",
 				},
 				"gold Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my paladin level fire damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my cleric level fire damage on a failed save, and half as much damage on a successful one.",
 				},
 				"green Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my paladin level posion damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my cleric level posion damage on a failed save, and half as much damage on a successful one.",
 				},
 				"red Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my paladin level fire damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my cleric level fire damage on a failed save, and half as much damage on a successful one.",
 				},
 				"sapphire Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level thunder damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level thunder damage on a failed save, and half as much damage on a successful one.",
 				},
 				"silver Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my paladin level cold damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my cleric level cold damage on a failed save, and half as much damage on a successful one.",
 					
 				},
 				"topaz Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level necrotic damage on a failed save, and half as much damage on a successful one.",
+					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level necrotic damage on a failed save, and half as much damage on a successful one.",
 				},
 				"white Dragon blessing" : {
 					name : "Channel Divinity: Dragon's Wrath",
