@@ -2114,10 +2114,10 @@ AddSubClass("warlock", "the drifter", {
 				]
 			}
 		},
-		"subclassfeature3.1" : {
+		"subclassfeature1.1" : {
 				name : "One Step Ahead",
 				source : ["GMBDB"],
-				minlevel : 3,
+				minlevel : 1,
 				description : desc([
 					"I add my Charisma modifier to initiative rolls"
 				]),
