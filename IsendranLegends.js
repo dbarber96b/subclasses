@@ -7,7 +7,7 @@
 
 /*	-INFORMATION-
 	Subject:	Subclass
-	Effect:		This script adds background options
+	Effect:		This script adds Isendran Campaign material
 	Code by:	DBarber96b
 	Date:		2021-07-23 (sheet v13)
 */
@@ -283,88 +283,8 @@ BackgroundList["wyvern hunter"] = {
 	languageProfs : ["Draconic"],
 	lifestyle : "comfortable"
 };
-BackgroundList["mystic"] = {
-	regExpSearch : /mystic/i,
-	name : "Mystic",
-	source : ["GMBDB"],
-	skills : ["Insight", "Medicine"],
-	gold : 5,
-	equipleft : [
-		["Winter blanket", "", 3],
-		["Herbalism kit", "", 3]
-	],
-	equipright : [
-		["Common clothes", "", 3],
-		["Scroll case with notes", "", 1]
-	],
-	feature : "Revelation",
-	trait : [
-		"I've been isolated for so long that I rarely speak, preferring gestures and the occasional grunt.",
-		"I am utterly serene, even in the face of disaster.",
-		"The leader of my community had something wise to say on every topic, and I am eager to share that wisdom.",
-		"I feel tremendous empathy for all who suffer.",
-		"I'm oblivious to etiquette and social expectations.",
-		"I connect everything that happens to me to a grand, cosmic plan.",
-		"I often get lost in my own thoughts and contemplation, becoming oblivious to my surroundings.",
-		"I am working on a grand philosophical theory and love sharing my ideas."
-	],
-	ideal : [
-		["Greater Good",
-			"Greater Good: My gifts are meant to be shared with all, not used for my own benefit. (Good)"
-		],
-		["Logic",
-			"Logic: Emotions must not cloud our sense of what is right and true, or our logical thinking. (Lawful)"
-		],
-		["Free Thinking",
-			"Free Thinking: Inquiry and curiosity are the pillars of progress. (Chaotic)"
-		],
-		["Power",
-			"Power: Solitude and contemplation are paths toward mystical or magical power. (Evil)"
-		],
-		["Live and Let Live",
-			"Live and Let Live: Meddling in the affairs of others only causes trouble. (Neutral)"
-		],
-		["Self-Knowledge",
-			"Self-Knowledge: If you know yourself, there's nothing left to know. (Any)"
-		]
-	],
-	bond : [
-		"Nothing is more important than the other members of my hermitage, order, or association.",
-		"I entered seclusion to hide from the ones who might still be hunting me. I must someday confront them.",
-		"I'm still seeking the enlightenment I pursued in my seclusion, and it still eludes me.",
-		"I entered seclusion because I loved someone I could not have.",
-		"Should my discovery come to light, it could bring ruin to the world.",
-		"My isolation gave me great insight into a great evil that only I can destroy."
-	],
-	flaw : [
-		"I hold others to a high standard, and myself even higher.",
-		"I place too much faith in those most powerful within my temple's hierarchy.",
-		"My religiosity can lead me to naively trust those that claim faith in my deity.",
-		"I am very stubborn in my thinking.",
-		"I am pessimistic and distrustful of strangers.",
-		"Once I choose an objective, I become so single minded that the rest of my life fades into the background."
-	],
-	extra : [
-		"Select a Life of Seclusion",
-		"Searching for spiritual enlightenment",
-		"Living in accordance with a religious order",
-		"Exiled for a crime I didn't commit",
-		"Retreated from society after a life-altering event",
-		"Worked on my art, literature, music, or manifesto",
-		"Commune with nature, far from civilization",
-		"Caretaker of an ancient ruin or relic",
-		"Pilgrim in search of a thing of spiritual significance"
-	],
-	toolProfs : ["Herbalism kit"],
-	languageProfs : [2],
-	lifestyle : "poor"
-};
 BackgroundFeatureList["armory access"] = {
 	description : "I have access to the stores of any Blade's Guild armory. Should I require any mundane simple or martial weapon, I can obtain one or two for each memeber of my party. I can also acquire studded leather armor, chain shirts, and chain mail if the armory is well stocked. Should I require any other mundane weapons or armor, I can purchase them for 50% less than their listed price.",
-	source : ["GMBDB"]
-};
-BackgroundFeatureList["ashland lingo"] = {
-	description : "When I speak to another Ashlander, they will recognize my accent and language use as being from the Ashlands, even if they are not from there themselves. The will immediately be more receptive to my requests and ideas, as they understanc that you must have been raised around their kin. Conversely, anyone who holds prejudice against Ashlanders will immediately be suspicious of me.",
 	source : ["GMBDB"]
 };
 BackgroundFeatureList["granny always said"] = {
@@ -377,10 +297,6 @@ BackgroundFeatureList["hard to reach"] = {
 };
 BackgroundFeatureList["dragon bane"] = {
 	description : "When I succeed on a saving throw imposed by a dragon's breath weapon, I take no damgage instead of half damage. Additionally, I have advantage on saving throws ro resist the frightened condition against dragons.",
-	source : ["GMBDB"]
-};
-BackgroundFeatureList["revelation"] = {
-	description : "The quiet meditation gave you access to a unique and powerful revelation. The exact nature of this discovery depends on the nature of your spiritual journey. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces of nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long forgotten, or unearthed some relic of the past that could rewrite history. Work with your DM to determine the details of your revelation and its impact on the campaign..",
 	source : ["GMBDB"]
 };
 RaceList["kender"] = {
