@@ -1,5 +1,5 @@
-AddSubClass("rogue", "arcane trickster", {
-	regExpSearch : /^(?=.*(trickster|rogue|miscreant))(?=.*\b(eldritch|arcane|magic|mage|witch)\b).*$/i,
+AddSubClass("rogue", "gatecrasher", {
+	regExpSearch : /^(?=.*(gate|rogue|miscreant))(?=.*\b(eldritch|arcane|magic|mage|witch)\b).*$/i,
 	subname : "Arcane Trickster",
 	fullname : "Arcane Trickster",
 	source : [["P", 98]],
