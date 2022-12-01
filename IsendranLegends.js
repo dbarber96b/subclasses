@@ -299,40 +299,6 @@ BackgroundFeatureList["dragon bane"] = {
 	description : "When I succeed on a saving throw imposed by a dragon's breath weapon, I take no damgage instead of half damage. Additionally, I have advantage on saving throws ro resist the frightened condition against dragons.",
 	source : ["GMBDB"]
 };
-RaceList["kender"] = {
-	regExpSearch : /^(?=.*kender).*$/i,
-	name : "Kender",
-    source : ["GMBDB"],
-    plural : "Kender",
-    size : 4,
-    speed : {
-        walk : { spd : 30, enc : 20}
-    },
-    languageProfs : ["Common", 1],
-    savetxt : { immune : ["frightened"]},
-    skillstxt : "Choose one from Insight, Investigation, Sleight of Hand, Stealth, and Survival",
-    scorestxt : "+2 to one ability score and +1 to a different score of my choice, -or- +1 to three different scores of my choice",
-    features : {
-        "taunt" : {
-            name : "Taunt",
-            minlevel : 1,
-            usages : "Proficiency bonus per ",
-            usagescalc : "event.value = How('Proficiency Bonus');",
-            recovery : "long rest",
-            action : [["bonus action", ""]],
-            eval: function () {
-                var Options = ["Intelligence", "Wisdom", "Charisma"];
-                var choice = AskUserOptions('Taunt', 'The Kender race feature "Taunt" offers a choice of what ability modifier should be used to calculate the saving throw DC. Make the selection to update the sheet accordingly. You can only change this selection by removing the Kender race.', Options, 'radio', true);
-                var revisedTaunt = "Taunt: As a bonus action I can taunt a creature within 60 ft that can hear and understand me. They must make a Wisdom save of DC 8 + " + choice + " modifier + Proficiency bonus. If failed, they have disadvantage on attack rolls not made against me until the start of my next turn. I can do this a number of times per long rest equal to my Proficiency Bonus.";
-                Value("Racial Traits", What("Racial Traits").replace(/Taunt:.*/, '') + revisedTaunt);
-            }
-
-        }
-    },
-    trait : "Kender" + 
-    "\n \u2022 Fearless: I am immune to the frightened condition." +
-    "\n \u2022 Taunt: As a bonus action I can taunt a creature within 60 ft that can hear and understand me. They must make a Wisdom save of DC 8 + (Intelligence, Wisdom, or Charisma) modifier + Proficiency bonus. If failed, they have disadvantage on attack rolls not made against me until the start of my next turn. I can do this a number of times per long rest equal to my Proficiency Bonus."
-};
 RaceList["half-kender"] = {
 	regExpSearch : /^(?=.*half)(?=.*kender).*$/i,
 	name : "Half-kender",
