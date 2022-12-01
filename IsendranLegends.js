@@ -792,1098 +792,114 @@ AddSubClass("paladin", "oath of the tempest", {
 		}
 	}
 });
-AddSubClass("cleric", "dragon domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(dragon|divine|elements)\b).*$/i,
-	subname : "Dragon Domain",
-	source : ["GMBDB"],
-	spellcastingExtra : ["absorb elements", "inflict wounds", "dragon's breath", "see invisibility", "fireball", "fly", "elemental bane", "stoneskin", "cone of cold", "dominate person"],
+AddSubClass("paladin", "paladin-weave", {
+	regExpSearch : /^(?=.*weave)(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
+	subname : "Oath of the Weave",
+	source : ["FRA2", 21],
+	spellcastingExtra : ["detect magic", "shield", "misty step", "warding bond", "counterspell", "dispel magic", "death ward", "ice storm", "flame strike", "teleportation circle"],
 	features : {
-		"subclassfeature1" : {
-			name : "Bonus Proficiencies",
-			source : ["HB:DD", 0],
-			minlevel : 1,
-			description : "\n   " + "I gain proficiency with martial weapons and heavy armor.",
-			armorProfs : [false, false, true, false],
-            weaponProfs : [false, true]
-		},
-		"subclassfeature1.1" : {
-			name : "Draconic Blessing",
-			source : ["GMBDB"],
-			minlevel : 1,
-			description : "\n   " + "Choose a Dragon Blessing using the \"Choose Feature\" button above" + "\n   " + "When I deal damage of the type associated with my Draconic Blessing to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a domain spell, I can change the damage type to the one associated with my Draconic Blessing" + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it" + "\n   " + "I can read, write, speak Draconic.",
-		choices : ["Amethyst Dragon blessing", "Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Crystal Dragon blessing", "Emerald Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Sapphire Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
-				"amethyst dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n " + "I have an blessing to Amethyst dragons, which are affiliated with force damage." + "\n " + "When I deal force damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to force." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "amethyst dragon blessing"
-				},
-				"black dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to black dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "black dragon blessing"
-				},
-				"blue dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "I have an blessing to blue dragons, which are affiliated with lightning damage." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "blue dragon blessing"
-				},
-				"brass dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to brass dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "brass dragon blessing"
-				},
-				"bronze dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to bronze dragons, which are affiliated with lightning dmg." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "bronze dragon blessing"
-				},
-				"copper dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to copper dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "copper dragon blessing"
-				},
-				"crystal dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n " + "I have an blessing to crystal dragons, which are affiliated with radiant damage." + "\n " + "When I deal radiant damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to radiant." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "crystal dragon blessing"
-				},
-				"emerald dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n " + "I have an blessing to emerald dragons, which are affiliated with psychic damage." + "\n " + "When I deal psychic damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to psychic." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "emerald dragon blessing"
-				},
-				"gold dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to gold dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "gold dragon blessing"
-				},
-				"green dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to green dragons, which are affiliated with poison damage." + "\n   " + "When I deal poison damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to poison." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "green dragon blessing"
-				},
-				"red dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to red dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "red dragon blessing"
-				},
-				"sapphire dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n " + "I have an blessing to sapphire dragons, which are affiliated with thunder dmg." + "\n " + "When I deal thunder damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to thunder." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "sapphire dragon blessing"
-				},
-				"silver dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to silver dragons, which are affiliated with cold damage." + "\n   " + "When I deal cold damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to cold." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "silver dragon blessing"
-				},
-				"topaz dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n " + "I have an blessing to topaz dragons, which are affiliated with necrotic damage." + "\n " + "When I deal necrotic damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to necrotic." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "topaz dragon blessing"
-				},
-				"white dragon blessing" : {
-					name : "Dragon Blessing",
-					description : "\n   " + "I have an blessing to white dragons, which are affiliated with cold damage." + "\n   " + "When I deal cold damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to cold." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "white dragon blessing"
-				},
-				languageProfs : ["Draconic"],
-				choiceDependencies : [{
-					feature : "subclassfeature2"},{
-						feature : "subclassfeature6"
-				},{
-					feature : "subclassfeature8.1"
-			}]
-			},
-		"subclassfeature2" : {
-			name : "Channel Divinity: Dragon's Wrath",
-			source : ["GMBDB"],
-			minlevel : 2,
-			description : "\n   " + "Choose a Dragon Blessing using the \"Choose Feature\" button above" + "\n   " + "As an action, I unleash a devastating Exhalation of energy. My Draconic Blessing determines the size, shape, and damage type of this breath weapon." + "\n   " + "When I use this breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by my Draconic Blessing. A creature takes 3d8 + your cleric level damage on a failed save, and half as much damage on a successful one.",
-            choices : ["Amethyst Dragon blessing", "Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Crystal Dragon blessing", "Emerald Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Sapphire Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
-			choicesNotInMenu : true,
-		    		"amethyst Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level force damage on a failed save, and half as much damage on a successful one.",
-				},
-				"black Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level acid damage on a failed save, and half as much damage on a successful one.",
-				},
-				"blue Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level lightning damage on a failed save, and half as much damage on a successful one.",
-				},
-				"brass Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level fire damage on a failed save, and half as much damage on a successful one.",
-				},
-				"bronze Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level lightning damage on a failed save, and half as much damage on a successful one.",
-				},
-				"copper Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level acid damage on a failed save, and half as much damage on a successful one.",
-				},
-				"crystal Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level radiant damage on a failed save, and half as much damage on a successful one.",
-				},
-				"emerald Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level psychic damage on a failed save, and half as much damage on a successful one.",
-				},
-				"gold Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my cleric level fire damage on a failed save, and half as much damage on a successful one.",
-				},
-				"green Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my cleric level posion damage on a failed save, and half as much damage on a successful one.",
-				},
-				"red Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my cleric level fire damage on a failed save, and half as much damage on a successful one.",
-				},
-				"sapphire Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level thunder damage on a failed save, and half as much damage on a successful one.",
-				},
-				"silver Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my cleric level cold damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"topaz Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my cleric level necrotic damage on a failed save, and half as much damage on a successful one.",
-				},
-				"white Dragon blessing" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my paladin level cold damage on a failed save, and half as much damage on a successful one.",
-		    },
-  },
-		"subclassfeature6" : {
-			name : "Legendary Protection",
-			source : ["GMBDB"],
-			minlevel : 6,
-			description : "\n   " + "I have resistance to the damage type of my Draconic Blessing. If I already have the resistance to that type from another source, the I can instead reduce damage of that type by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg",
-            choices : ["Amethyst Dragon blessing", "Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Crystal Dragon blessing", "Emerald Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Sapphire Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
-			choicesNotInMenu : true,
-            			"amethyst Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to force damage. If I already have force damage resistance from another source, the I can instead reduce force damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					dmgres: ["Force"]
-				},
-				"black Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to acid damage. If I already have acid damage resistance from another source, the I can instead reduce acid damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					dmgres: ["Acid"]
-				},
-				"blue Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to lightning damage. If I already have lightning damage resistance from another source, the I can instead reduce lightning damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Lightning"]
-				},
-				"brass Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to fire damage. If I already have fire damage resistance from another source, the I can instead reduce fire damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Fire"]
-				},
-				"bronze Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to lightning damage. If I already have lightning damage resistance from another source, the I can instead reduce lightning damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Lightning"]
-				},
-				"copper Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to acid damage. If I already have acid damage resistance from another source, the I can instead reduce acid damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Acid"]
-				},
-				"crystal Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to radiant damage. If I already have radiant damage resistance from another source, the I can instead reduce radiant damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Radiant"]
-				},
-				"emerald Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to psychic damage. If I already have psychic damage resistance from another source, the I can instead reduce pyschic damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Psychic"]
-				},
-				"gold Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to fire damage. If I already have fire damage resistance from another source, the I can instead reduce fire damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Fire"]
-				},
-				"green Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to poison damage. If I already have poison damage resistance from another source, the I can instead reduce poison damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Poison"]
-				},
-				"red Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to fire damage. If I already have fire damage resistance from another source, the I can instead reduce fire damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Fire"]
-				},
-				"sapphire Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to thunder damage. If I already have thunder damage resistance from another source, the I can instead reduce thunder damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Thunder"]
-				},
-				"silver Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to cold damage. If I already have cold damage resistance from another source, the I can instead reduce cold damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Cold"]
-				},
-				"topaz Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to necrotic damage. If I already have necrotic damage resistance from another source, the I can instead reduce necrotic damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Necrotic"]
-				},
-				"white Dragon blessing" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to cold damage. If I already have cold damage resistance from another source, the I can instead reduce cold damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Cold"]
-				},
-        },
-	},
-		"subclassfeature8.1" : {
-			name : "Divine Strike",
-			source : ["GMBDB"],
-			minlevel : 8,
-			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage of the type associated with my Dragon Blessing",
-			choices : ["Amethyst Dragon blessing", "Black Dragon blessing", "Blue Dragon blessing", "Brass Dragon blessing", "Bronze Dragon blessing", "Copper Dragon blessing", "Crystal Dragon blessing", "Emerald Dragon blessing", "Gold Dragon blessing", "Green Dragon blessing", "Red Dragon blessing", "Sapphire Dragon blessing", "Silver Dragon blessing", "White Dragon blessing"],
-			choicesNotInMenu : true,
-				"amethyst Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra force damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 force damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 force damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra force damage."
-						]
-					}
-				},
-				"black Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra acid damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 acid damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 acid damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra acid damage."
-						]
-					}
-				},
-				"blue Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra lightning damage.",			
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 lightning damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 lightning damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."
-						]
-					}
-				},
-				"brass Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 fire damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
-						]
-					}
-				},
-				"bronze Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra lightning damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 lightning damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 lightning damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."
-						]
-					}
-				},
-				"copper Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra acid damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 acid damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 acid damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra acid damage."
-						]
-					}
-				},
-				"crystal Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra radiant damage.",			
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 radiant damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 radiant damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra radiant damage."
-						]
-					}
-				},
-				"emerald Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra psychic damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 psychic damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 psychic damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra psychic damage."
-						]
-					}
-				},
-				"gold Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 fire damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
-						]
-					}
-				},
-				"green Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra poison damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 poison damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 poison damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra poison damage."
-						]
-					}
-				},
-				"red Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 fire damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
-						]
-					}
-				},
-				"sapphire Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra thunder damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 thunder damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 thunder damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra thunder damage."
-						]
-					}
-				},
-				"silver Dragon blessing" : {
-					name : "Divine Strike",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra cold damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 cold damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra cold damage."
-						]
-					}
-				},
-				"topaz Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra necrotic damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 necrotic damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 necrotic damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra necrotic damage."
-						]
-					}
-				},
-				"white Dragon blessing" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra cold damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 cold damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra cold damage."
-						]
-					}
-				},
-		},
-		"subclassfeature17" : {
-			name : "Shock and Awe",
-			source : ["GMBDB"],
-			minlevel : 17,
-			description : "\n   " + "I can unleash a true dragon's roar that terrifies my enemies and inspires my allies." + "\n   " + "As an action, choose any creatures that I can see within 30 feet of me. If the creature can see and hear you, it must succeed on a Wisdom saving throw against my spell save DC." + "\n   " + "On a failed save, the creature becomes frightened of me for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, then the creature becomes immune to my Shock and Awe for the next 24 hours." + "\n   " + "Additionally, all friendly creatures within 30 feet of me can make their next attack with advantage or make a saving throw against one effect on themselves, provided they can hear me.",
-		}
-	});
-  AddSubClass("paladin", "dragon-paladin", {
-	regExpSearch : /^(?=.*dragon)(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
-	subname : "Oath of the Dragon Knight",
-	source : ["GMBDB"],
-	spellcastingExtra : ["absorb elements", "inflict wounds", "dragon's breath", "see invisibility", "fireball", "fly", "elemental bane", "stoneskin", "cone of cold", "dominate person"],
-	features : {
-			"subclassfeature3" : {
-			name : "Dragon Oath",
-			source : ["GMBDB"],
+		"subclassfeature3" : {
+			name : "Channel Divinity: Spellfire Blade",
+			source : ["FRA2", 22],
 			minlevel : 3,
-			description : "\n   " + "Choose a Dragon Oath using the \"Choose Feature\" button above" + "\n   " + "When I deal damage of the type associated with my Dragon Oath to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to the one associated with my Dragon Oath" + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it" + "\n   " + "I can read, write, speak Draconic.",
-			choices : ["Amethyst Dragon oath", "Black Dragon oath", "Blue Dragon oath", "Brass Dragon oath", "Bronze Dragon oath", "Copper Dragon oath", "Crystal Dragon oath", "Emerald Dragon oath", "Gold Dragon oath", "Green Dragon oath", "Red Dragon oath", "Sapphire Dragon oath", "Silver Dragon oath", "White Dragon oath"],
-				"amethyst dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n " + "I have an oath to Amethyst dragons, which are affiliated with force damage." + "\n " + "When I deal force damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to force." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "amethyst dragon oath"
-				},
-				"black dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to black dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "black dragon oath"
-				},
-				"blue dragon oath" : {
-					name : "Draconic Blessing",
-					description : "\n   " + "I have an oath to blue dragons, which are affiliated with lightning damage." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "blue dragon oath"
-				},
-				"brass dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to brass dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "brass dragon oath"
-				},
-				"bronze dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to bronze dragons, which are affiliated with lightning dmg." + "\n   " + "When I deal lightning damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to lightning." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "bronze dragon oath"
-				},
-				"copper dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to copper dragons, which are affiliated with acid damage." + "\n   " + "When I deal acid damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to acid." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "copper dragon oath"
-				},
-				"crystal dragon oath" : {
-					name : "Draconic Blessing",
-					description : "\n " + "I have an oath to crystal dragons, which are affiliated with radiant damage." + "\n " + "When I deal radiant damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to radiant." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "crystal dragon oath"
-				},
-				"emerald dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n " + "I have an oath to emerald dragons, which are affiliated with psychic damage." + "\n " + "When I deal psychic damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to psychic." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "emerald dragon oath"
-				},
-				"gold dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to gold dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "gold dragon oath"
-				},
-				"green dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to green dragons, which are affiliated with poison damage." + "\n   " + "When I deal poison damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to poison." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "green dragon oath"
-				},
-				"red dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to red dragons, which are affiliated with fire damage." + "\n   " + "When I deal fire damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to fire." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "red dragon oath"
-				},
-				"sapphire dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n " + "I have an oath to sapphire dragons, which are affiliated with thunder dmg." + "\n " + "When I deal thunder damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to thunder." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "sapphire dragon oath"
-				},
-				"silver dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to silver dragons, which are affiliated with cold damage." + "\n   " + "When I deal cold damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to cold." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "silver dragon oath"
-				},
-				"topaz dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n " + "I have an oath to topaz dragons, which are affiliated with necrotic damage." + "\n " + "When I deal necrotic damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n " + "When I deal damage with a paladin spell, I can change the damage type to necrotic." + "\n " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n " + "I can read, write, speak Draconic.",
-					dependentChoices : "topaz dragon oath"
-				},
-				"white dragon oath" : {
-					name : "Dragon Oath",
-					description : "\n   " + "I have an oath to white dragons, which are affiliated with cold damage." + "\n   " + "When I deal cold damage to other creatures, I can choose a number of them equal to my proficiency bonus. The chosen creatures automatically succeed on their saving throws against it (if any), and suffer no damage from it." + "\n   " + "When I deal damage with a paladin spell, I can change the damage type to cold." + "\n   " + "When interacting with dragons, if I can add my proficiency bonus, I can double it." + "\n   " + "I can read, write, speak Draconic.",
-					dependentChoices : "white dragon oath"
-				},
-				languageProfs : ["Draconic"],
-				choiceDependencies : [{
-					feature : "subclassfeature2"},{
-						feature : "subclassfeature6"
-				},{
-					feature : "subclassfeature8.1"
-			}]
-			},
+			description : desc([
+				"As a bonus action, I can infuse my weapon with arcane energy for 1 minute",
+				"My first hit with it as part of an action to cast a cantrip, it deals extra radiant damage",
+				"Also, the next time the target tries to cast a spell, it must succeed a concentration save"
+			]),
+			action : ["bonus action", ""],
+			additional : levels.map(function (n) {
+				if (n < 3) return "";
+				return "2d8+" + n + " damage";
+			})
+		},
 		"subclassfeature3.1" : {
-			name : "Channel Divinity: Dragon's Wrath",
-			source : ["GMBDB"],
+			name : "Channel Divinity: Spellfire Shield",
+			source : ["FRA2", 22],
 			minlevel : 3,
-			description : "\n   " + "Choose a Dragon oath using the \"Choose Feature\" button above" + "\n   " + "As an action, I unleash a devastating Exhalation of energy. My Draconic Blessing determines the size, shape, and damage type of this breath weapon." + "\n   " + "When I use this breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by my Draconic Blessing. A creature takes 3d8 + your paladin level damage on a failed save, and half as much damage on a successful one.",
-            choices : ["Amethyst Dragon oath", "Black Dragon oath", "Blue Dragon oath", "Brass Dragon oath", "Bronze Dragon oath", "Copper Dragon oath", "Crystal Dragon oath", "Emerald Dragon oath", "Gold Dragon oath", "Green Dragon oath", "Red Dragon oath", "Sapphire Dragon oath", "Silver Dragon oath", "White Dragon oath"],
-			choicesNotInMenu : true,
-		    		"amethyst Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level force damage on a failed save, and half as much damage on a successful one.",
-				},
-				"black Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level acid damage on a failed save, and half as much damage on a successful one.",
-				},
-				"blue Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level lightning damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"brass Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level fire damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"bronze Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level lightning damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"copper Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level acid damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"crystal Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level radiant damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"emerald Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level psychic damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"gold Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my paladin level fire damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"green Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my paladin level posion damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"red Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a dexterity saving throw. A creature takes 3d8 + my paladin level fire damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"sapphire Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level thunder damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"silver Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my paladin level cold damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"topaz Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 10 by 60 ft. line must make a dexterity saving throw. A creature takes 3d8 + my paladin level necrotic damage on a failed save, and half as much damage on a successful one.",
-					
-				},
-				"white Dragon oath" : {
-					name : "Channel Divinity: Dragon's Wrath",
-					description : "\n   " + "As an action, I unleash a devastating Exhalation of energy. " + "\n   " + "When I use this breath weapon, each creature in a 30 ft. cone must make a constitution saving throw. A creature takes 3d8 + my paladin level cold damage on a failed save, and half as much damage on a successful one.",
-			
-				},
-        },
+			description : desc([
+				"As a reaction when a spell missed me or I save against it, I can redirect the spell cast",
+				"I can have it target another within 30 ft, causing a new attack/save roll"
+			]),
+			action : ["reaction", ""]
+		},
+		"subclassfeature3.2" : {
+			name : "Spellshatter",
+			source : ["FRA2", 22],
+			minlevel : 3,
+			description : desc([
+				"As a bonus action when I use Divine Smite, I can dispel spells affecting the target",
+				"All spells of a level equal to or lower than the spell slot used for the smite are ended",
+				"If the attack triggers a concentration save, the DC is that of my paladin spell DC"
+			]),
+			usages : "Charisma modifier per ",
+			usagescalc : "event.value = Math.max(1, tDoc.getField('Cha Mod').value);",
+			recovery : "long rest",
+			action : ["bonus action", ""]
+		},
+		"subclassfeature3.3" : {
+			name : "Arcane Cantrips",
+			source : ["FRA2", 22],
+			minlevel : 3,
+			description : "\n   " + "I learn two cantrips, with Charisma as my spellcasting ability",
+			spellcastingBonus : {
+				name : "Arcane Cantrips",
+				spells : ["booming blade", "green-flame blade", "challenger's mark", "echoing blow", "frostwind blade", "looming shadow", "punishing strike"],
+				times : 2
+			}
+		},
 		"subclassfeature7" : {
-			name : "Legendary Protection",
-			source : ["GMBDB"],
+			name : "Arcane Cantrips: Quick Casting",
+			source : ["FRA2", 22],
 			minlevel : 7,
-			description : "\n   " + "I have resistance to the damage type of my Dragon Oath. If I already have the resistance to that type from another source, the I can instead reduce damage of that type by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg",
-            choices : ["Amethyst Dragon oath", "Black Dragon oath", "Blue Dragon oath", "Brass Dragon oath", "Bronze Dragon oath", "Copper Dragon oath", "Crystal Dragon oath", "Emerald Dragon oath", "Gold Dragon oath", "Green Dragon oath", "Red Dragon oath", "Sapphire Dragon oath", "Silver Dragon oath", "White Dragon oath"],
-			choicesNotInMenu : true,
-            			"amethyst Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to force damage. If I already have force damage resistance from another source, the I can instead reduce force damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					dmgres: ["Force"]
-				},
-				"black Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to acid damage. If I already have acid damage resistance from another source, the I can instead reduce acid damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					dmgres: ["Acid"]
-				},
-				"blue Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to lightning damage. If I already have lightning damage resistance from another source, the I can instead reduce lightning damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Lightning"]
-				},
-				"brass Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to fire damage. If I already have fire damage resistance from another source, the I can instead reduce fire damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Fire"]
-				},
-				"bronze Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to lightning damage. If I already have lightning damage resistance from another source, the I can instead reduce lightning damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Lightning"]
-				},
-				"copper Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to acid damage. If I already have acid damage resistance from another source, the I can instead reduce acid damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Acid"]
-				},
-				"crystal Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to radiant damage. If I already have radiant damage resistance from another source, the I can instead reduce radiant damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Radiant"]
-				},
-				"emerald Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to psychic damage. If I already have psychic damage resistance from another source, the I can instead reduce pyschic damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Psychic"]
-				},
-				"gold Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to fire damage. If I already have fire damage resistance from another source, the I can instead reduce fire damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Fire"]
-				},
-				"green Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to poison damage. If I already have poison damage resistance from another source, the I can instead reduce poison damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Poison"]
-				},
-				"red Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to fire damage. If I already have fire damage resistance from another source, the I can instead reduce fire damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Fire"]
-				},
-				"sapphire Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to thunder damage. If I already have thunder damage resistance from another source, the I can instead reduce thunder damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Thunder"]
-				},
-				"silver Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to cold damage. If I already have cold damage resistance from another source, the I can instead reduce cold damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Cold"]
-				},
-				"topaz Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to necrotic damage. If I already have necrotic damage resistance from another source, the I can instead reduce necrotic damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Necrotic"]
-				},
-				"white Dragon oath" : {
-					name : "Legendary Protection",
-					description : "\n   " + "I have resistance to cold damage. If I already have cold damage resistance from another source, the I can instead reduce cold damage I take by an amount equal to my  Wisdom modifier (minimum of 1) after halving the dmg.",
-					mgres: ["Cold"]
-				},
-        },
+			description : desc([
+				"I can reduce the casting time of one of my arcane cantrip to a bonus action",
+				"Doing this expends 10 points from my Lay on Hands feature"
+			])
+		},
 		"subclassfeature7.1" : {
-			name : "Draconic Might",
-			source : ["GMBDB"],
+			name : "Aegis of Blue Flame",
+			source : ["FRA2", 22],
 			minlevel : 7,
-			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage of the type associated with my Dragon oath",
-			choices : ["Amethyst Dragon oath", "Black Dragon oath", "Blue Dragon oath", "Brass Dragon oath", "Bronze Dragon oath", "Copper Dragon oath", "Crystal Dragon oath", "Emerald Dragon oath", "Gold Dragon oath", "Green Dragon oath", "Red Dragon oath", "Sapphire Dragon oath", "Silver Dragon oath", "White Dragon oath"],
-			choicesNotInMenu : true,
-				"amethyst Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra force damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 force damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 force damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra force damage."
-						]
-					}
-				},
-				"black Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra acid damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 acid damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 acid damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra acid damage."
-						]
-					}
-				},
-				"blue Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra lightning damage.",			
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 lightning damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 lightning damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."
-						]
-					}
-				},
-				"brass Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 fire damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
-						]
-					}
-				},
-				"bronze Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra lightning damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 lightning damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 lightning damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."
-						]
-					}
-				},
-				"copper Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra acid damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 acid damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 acid damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra acid damage."
-						]
-					}
-				},
-				"crystal Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra radiant damage.",			
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 radiant damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 radiant damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra radiant damage."
-						]
-					}
-				},
-				"emerald Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra psychic damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 psychic damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 psychic damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra psychic damage."
-						]
-					}
-				},
-				"gold Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 fire damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
-						]
-					}
-				},
-				"green Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra poison damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 poison damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 poison damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra poison damage."
-						]
-					}
-				},
-				"red Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra fire damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 fire damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra fire damage."
-						]
-					}
-				},
-				"sapphire Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra thunder damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 thunder damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 thunder damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra thunder damage."
-						]
-					}
-				},
-				"silver Dragon oath" : {
-					name : "Divine Strike",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra cold damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 cold damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra cold damage."
-						]
-					}
-				},
-				"topaz Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra necrotic damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 necrotic damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 necrotic damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra necrotic damage."
-						]
-					}
-				},
-				"white Dragon oath" : {
-					name : "Draconic Might",
-					description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra cold damage.",
-					additional : levels.map(function (n) {
-						if (n < 8) return "";
-						return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";
-					}),
-					calcChanges : {
-						atkAdd : [
-							function (fields, v) {
-								if (classes.known.paladin && classes.known.paladin.level > 7 && !v.isSpell) {
-									fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.paladin.level < 14 ? 1 : 2) + 'd8 cold damage';
-								}
-							},
-						"Once per turn, I can have one of my weapon attacks that hit do extra cold damage."
-						]
-					}
-				},
-				
+			description : desc([
+				"Opportunity attacks against friendly creatures within my aura have disadvantage",
+				"As a reaction when an ally within 10 ft is hit with an attack, I can protect it",
+				"The ally takes my Cha mod (min 1) less in bludgeoning, piercing, or slashing damage",
+				"Also,, I can make one weapon attack or cast a cantrip at the attacker"
+			]),
+			additional : levels.map(function (n) {
+				if (n < 7) return "";
+				return (n < 18 ? "10" : "30") + "-foot aura";
+			}),
+			action : ["reaction", ""]
 		},
 		"subclassfeature15" : {
-			name : "Shock and Awe",
-			source : ["GMBDB"],
+			name : "Mystic Champion",
+			source : ["FRA2", 22],
 			minlevel : 15,
-			description : "\n   " + "I can unleash a true dragon's roar that terrifies my enemies and inspires my allies." + "\n   " + "As an action, choose any creatures that I can see within 30 feet of me. If the creature can see and hear you, it must succeed on a Wisdom saving throw against my spell save DC." + "\n   " + "On a failed save, the creature becomes frightened of me for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, then the creature becomes immune to my Shock and Awe for the next 24 hours." + "\n   " + "Additionally, all friendly creatures within 30 feet of me can make their next attack with advantage or make a saving throw against one effect on themselves, provided they can hear me.",
-		}
-	},
+			description : desc([
+				"I add a 4th-level or lower wizard spell to my oath spells and learn two wizard cantrips",
+				"When I use my action to cast a cantrip, I can make a weapon attack as a bonus action"
+			]),
+			action : ["bonus action", ""],
+			spellcastingBonus : [{
+				name : "Mystic Champion",
+				class : "wizard",
+				level : [0, 0],
+				times : 2
+			}, {
+				name : "Mystic Champion (spell)",
+				class : "wizard",
+				level : [1, 4],
+				prepared : true
+			}]
+		},
 		"subclassfeature20" : {
-			name : "Dragonsoul",
-			source : ["GMBDB"],
+			name : "Living Spellfire",
+			source : ["FRA2", 22],
 			minlevel : 20,
 			description : desc([
-				"As an action, I wreathe myself in draconic magic for 1 minute and gain the following benefits:",
+				"As an action, I wreathe myself in spellfire for 1 minute and gain the following benefits:",
 				" - I can teleport my walking speed as a bonus action",
 				" - Hostiles within 30 ft have disadv. on saves vs. my spells and -5 on concentration saves",
 				" - When I use my action to cast a spell, I can make a weapon attack as a bonus action",
@@ -1894,7 +910,7 @@ AddSubClass("cleric", "dragon domain", {
 			action : ["action", ""]
 		}
 	}
-);
+});
 AddSubClass("warlock", "the drifter", {
 	regExpSearch : /^(?=.*drifter)(?=.*warlock).*$/i,
 	subname : "the Drifter",
