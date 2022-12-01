@@ -33,23 +33,15 @@ AddSubClass("rogue", "gatecrasher", {
 			}]
 		},
 		"subclassfeature3.1" : {
-			name : "Mage Hand Legerdemain",
+			name : "Portal Sense",
 			source : [["P", 98]],
 			minlevel : 3,
-			description : desc([
-				"As a bonus action, I can direct my Mage Hand",
-				"With a Dex (Sleight of Hand) vs. Wis (Perception) checks, I can do so discreetly",
-				"I can make it invisible and perform the following tasks:",
-				" \u2022 Stow/retrieve an object the hand is holding in a container worn/carried by another",
-				" \u2022 Use thieves' tools to pick locks and disarm traps at range"
-			]),
-			action : ["bonus action", ""],
-			spellChanges : {
-				"mage hand" : {
-					description : "Invisible hand, carries 10 lb; 1 bns to control, use thieves' tools, or stow/retrieve obj; only 1 instance",
-					changes : "My Mage Hand Legerdemain class feature expands my use of the Mage Hand cantrip and makes the spectral hand invisible."
-				}
-			}
+			description : "\n   " + "I know the Detect Evil and good spell" + "\n   " + "It is a gatecrasher spell for you, and doesn’t count against your number of spells known." + "\n   " + "When you cast it, you can sense the presence of extraplanar portals within range."
+			spellcastingBonus : [{
+				name : "Portal Sense",
+				spells : ["mage hand"],
+				selection : ["mage hand"]
+			}],
 		},
 		"subclassfeature9" : {
 			name : "Magical Ambush",
