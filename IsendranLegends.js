@@ -601,6 +601,83 @@ RaceList["fey'ri"] = {
 			firstCol : "1" } }
 	}
 });
+ AddSubClass("cleric", "nightmare domain", {
+	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(night|nightmare|dreamer)).*$/i,
+	subname : "Nightmare Domain",
+	source : ["GMBDB"],
+	spellcastingExtra : ["tasha's hideos laughter", "illusory script", "phantasmal force", "silence", "major image", "slow", "hallucinatory terrain", "phantasmal killer", "dream", "geas"],
+	features : {
+		"subclassfeature1" : {
+			name : "Bonus Cantrip",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : "\n   " + "I learn the Vicious Mockery cantrip if I didn't already know it",
+			spellcastingBonus : {
+				name : "Bonus Cantrip (Vicious Mockery)",
+				spells : ["vicious mockery"],
+				selection : ["vicious mockery"]
+			}
+		},
+		"subclassfeature1.1" : {
+			name : "Cry In the Night",
+			source : ["GMBDB"],
+			minlevel : 1,
+			description : "\n   " + "As a reaction, when a creature I can see within 30 ft hits me, I can rebuke with their worst fears" + "\n   " + "It takes 2d8 psychic damage that a Wis save can halve",
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest",
+			action : ["reaction", ""]
+		},
+		"subclassfeature2" : {
+			name : "Channel Divinity: Free Falling",
+			source : ["GMBDB"],
+			minlevel : 2,
+			description : desc([
+				"I can cause all creatures I see within 10 ft to see the terrain fall away from under their feet.",
+				"The creatures must make a Wisdom saving throw, falling prone and taking 3d6 psychic damage on a fail",
+				"On a save, they take half damage, and are not knocked prone."
+			])
+		},
+		"subclassfeature6" : {
+			name : "Channel Divinity: Loathsome Knell",
+			source : ["GMBDB"],
+			minlevel : 6,
+			description : desc([
+				"When I deal psychic damage, I can also project a phantasmal bell into the target’s mind and ring it",
+				"This ringing inflicts short term madness lasting 1d10 minutes (see Madness rules)."
+			])
+		},
+		"subclassfeature8" : {
+			name : "Divine Strike",
+			source : ["GMBDB"],
+			minlevel : 8,
+			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
+			additional : levels.map(function (n) {
+				if (n < 8) return "";
+				return "+" + (n < 14 ? 1 : 2) + "d8 psychic damage";
+			}),
+			calcChanges : {
+				atkAdd : [
+					function (fields, v) {
+						if (classes.known.cleric && classes.known.cleric.level > 7 && !v.isSpell) {
+							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 psychic damage';
+						}
+					},
+					"Once per turn, I can have one of my weapon attacks that hit do extra psychic damage."
+				]
+			}
+		},
+		"subclassfeature17" : {
+			name : "The Mind of Madness",
+			source : ["GMBDB"],
+			minlevel : 17,
+			description : desc([
+				"My Loathsome Knell instead inflicts long-term madness lasting 1d10x10 hours and an indefinite madness flaw (see Madness rules in DM rulebook).",
+				"This flaw can only be removed by greater restoration or 30 days of rest."
+			])
+		}
+	}
+});
 AddSubClass("paladin", "oath of the spellbreaker", {
 	regExpSearch : /^(?=.*spellbreaker)((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
 	subname : "Oath of the Spellbreaker",
@@ -719,6 +796,125 @@ AddSubClass("paladin", "oath of the tempest", {
 				"A 20-foot sphere centered on me obscures vision for all creatures except me.",
         "Creatures other than myself that start their turn in the area must succeed a Constitution saving throw, or be deafened for 1 minute.",
         "Creatures other than myself that start their turn in the area take 5 lightning damage."
+			]),
+			recovery : "long rest",
+			usages : 1,
+			action : ["action", ""]
+		}
+	}
+});
+AddSubClass("paladin", "paladin-weave", {
+	regExpSearch : /^(?=.*weave)(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
+	subname : "Oath of the Weave",
+	source : ["FRA2", 21],
+	spellcastingExtra : ["detect magic", "shield", "misty step", "warding bond", "counterspell", "dispel magic", "death ward", "ice storm", "flame strike", "teleportation circle"],
+	features : {
+		"subclassfeature3" : {
+			name : "Channel Divinity: Spellfire Blade",
+			source : ["FRA2", 22],
+			minlevel : 3,
+			description : desc([
+				"As a bonus action, I can infuse my weapon with arcane energy for 1 minute",
+				"My first hit with it as part of an action to cast a cantrip, it deals extra radiant damage",
+				"Also, the next time the target tries to cast a spell, it must succeed a concentration save"
+			]),
+			action : ["bonus action", ""],
+			additional : levels.map(function (n) {
+				if (n < 3) return "";
+				return "2d8+" + n + " damage";
+			})
+		},
+		"subclassfeature3.1" : {
+			name : "Channel Divinity: Spellfire Shield",
+			source : ["FRA2", 22],
+			minlevel : 3,
+			description : desc([
+				"As a reaction when a spell missed me or I save against it, I can redirect the spell cast",
+				"I can have it target another within 30 ft, causing a new attack/save roll"
+			]),
+			action : ["reaction", ""]
+		},
+		"subclassfeature3.2" : {
+			name : "Spellshatter",
+			source : ["FRA2", 22],
+			minlevel : 3,
+			description : desc([
+				"As a bonus action when I use Divine Smite, I can dispel spells affecting the target",
+				"All spells of a level equal to or lower than the spell slot used for the smite are ended",
+				"If the attack triggers a concentration save, the DC is that of my paladin spell DC"
+			]),
+			usages : "Charisma modifier per ",
+			usagescalc : "event.value = Math.max(1, tDoc.getField('Cha Mod').value);",
+			recovery : "long rest",
+			action : ["bonus action", ""]
+		},
+		"subclassfeature3.3" : {
+			name : "Arcane Cantrips",
+			source : ["FRA2", 22],
+			minlevel : 3,
+			description : "\n   " + "I learn two cantrips, with Charisma as my spellcasting ability",
+			spellcastingBonus : {
+				name : "Arcane Cantrips",
+				spells : ["booming blade", "green-flame blade", "challenger's mark", "echoing blow", "frostwind blade", "looming shadow", "punishing strike"],
+				times : 2
+			}
+		},
+		"subclassfeature7" : {
+			name : "Arcane Cantrips: Quick Casting",
+			source : ["FRA2", 22],
+			minlevel : 7,
+			description : desc([
+				"I can reduce the casting time of one of my arcane cantrip to a bonus action",
+				"Doing this expends 10 points from my Lay on Hands feature"
+			])
+		},
+		"subclassfeature7.1" : {
+			name : "Aegis of Blue Flame",
+			source : ["FRA2", 22],
+			minlevel : 7,
+			description : desc([
+				"Opportunity attacks against friendly creatures within my aura have disadvantage",
+				"As a reaction when an ally within 10 ft is hit with an attack, I can protect it",
+				"The ally takes my Cha mod (min 1) less in bludgeoning, piercing, or slashing damage",
+				"Also,, I can make one weapon attack or cast a cantrip at the attacker"
+			]),
+			additional : levels.map(function (n) {
+				if (n < 7) return "";
+				return (n < 18 ? "10" : "30") + "-foot aura";
+			}),
+			action : ["reaction", ""]
+		},
+		"subclassfeature15" : {
+			name : "Mystic Champion",
+			source : ["FRA2", 22],
+			minlevel : 15,
+			description : desc([
+				"I add a 4th-level or lower wizard spell to my oath spells and learn two wizard cantrips",
+				"When I use my action to cast a cantrip, I can make a weapon attack as a bonus action"
+			]),
+			action : ["bonus action", ""],
+			spellcastingBonus : [{
+				name : "Mystic Champion",
+				class : "wizard",
+				level : [0, 0],
+				times : 2
+			}, {
+				name : "Mystic Champion (spell)",
+				class : "wizard",
+				level : [1, 4],
+				prepared : true
+			}]
+		},
+		"subclassfeature20" : {
+			name : "Living Spellfire",
+			source : ["FRA2", 22],
+			minlevel : 20,
+			description : desc([
+				"As an action, I wreathe myself in spellfire for 1 minute and gain the following benefits:",
+				" - I can teleport my walking speed as a bonus action",
+				" - Hostiles within 30 ft have disadv. on saves vs. my spells and -5 on concentration saves",
+				" - When I use my action to cast a spell, I can make a weapon attack as a bonus action",
+				" - I can reroll a number of damage dice for a spell equal to my Cha mod (min 1)"
 			]),
 			recovery : "long rest",
 			usages : 1,
