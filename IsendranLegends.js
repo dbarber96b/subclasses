@@ -1036,7 +1036,7 @@ AddSubClass("paladin", "paladin-weave", {
 		}
 	}
 });
- AddSubClass("ranger", "witchwarden", {
+AddSubClass("ranger", "witchwarden", {
 	regExpSearch : /^(?=.*witchwarden).*$/i,
 	subname : "Witchwarden",
 	source : ["GMBDB"],
@@ -1102,122 +1102,99 @@ AddSubClass("paladin", "paladin-weave", {
 		}
 	}
 });
-AddSubClass("paladin", "paladin-weave", {
-	regExpSearch : /^(?=.*weave)(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
-	subname : "Oath of the Weave",
-	source : ["FRA2", 21],
-	spellcastingExtra : ["detect magic", "shield", "misty step", "warding bond", "counterspell", "dispel magic", "death ward", "ice storm", "flame strike", "teleportation circle"],
+AddSubClass("rogue", "gatecrasher", {
+	regExpSearch : /^(?=.*(gate|rogue|miscreant))(?=.*\b(eldritch|arcane|magic|mage|witch)\b).*$/i,
+	subname : "Gatecrasher",
+	fullname : "Gatecrasher",
+	source : ["GMBDB"],
+	abilitySave : 4,
+	spellcastingFactor : 3,
+	spellcastingList : {
+		"class" : "sorcerer",
+		school : ["Conj", "Div", "Trans"],
+		level : [0, 4]
+	},
+	spellcastingKnown : {
+		cantrips : [0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+		spells : [0, 0, 2, 3, 3, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9]
+	},
 	features : {
 		"subclassfeature3" : {
-			name : "Channel Divinity: Spellfire Blade",
-			source : ["FRA2", 22],
+			name : "Spellcasting",
+			source : [["P", 98]],
 			minlevel : 3,
-			description : desc([
-				"As a bonus action, I can infuse my weapon with arcane energy for 1 minute",
-				"My first hit with it as part of an action to cast a cantrip, it deals extra radiant damage",
-				"Also, the next time the target tries to cast a spell, it must succeed a concentration save"
-			]),
-			action : ["bonus action", ""],
-			additional : levels.map(function (n) {
-				if (n < 3) return "";
-				return "2d8+" + n + " damage";
-			})
-		},
-		"subclassfeature3.1" : {
-			name : "Channel Divinity: Spellfire Shield",
-			source : ["FRA2", 22],
-			minlevel : 3,
-			description : desc([
-				"As a reaction when a spell missed me or I save against it, I can redirect the spell cast",
-				"I can have it target another within 30 ft, causing a new attack/save roll"
-			]),
-			action : ["reaction", ""]
-		},
-		"subclassfeature3.2" : {
-			name : "Spellshatter",
-			source : ["FRA2", 22],
-			minlevel : 3,
-			description : desc([
-				"As a bonus action when I use Divine Smite, I can dispel spells affecting the target",
-				"All spells of a level equal to or lower than the spell slot used for the smite are ended",
-				"If the attack triggers a concentration save, the DC is that of my paladin spell DC"
-			]),
-			usages : "Charisma modifier per ",
-			usagescalc : "event.value = Math.max(1, tDoc.getField('Cha Mod').value);",
-			recovery : "long rest",
-			action : ["bonus action", ""]
-		},
-		"subclassfeature3.3" : {
-			name : "Arcane Cantrips",
-			source : ["FRA2", 22],
-			minlevel : 3,
-			description : "\n   " + "I learn two cantrips, with Charisma as my spellcasting ability",
-			spellcastingBonus : {
-				name : "Arcane Cantrips",
-				spells : ["booming blade", "green-flame blade", "challenger's mark", "echoing blow", "frostwind blade", "looming shadow", "punishing strike"],
-				times : 2
-			}
-		},
-		"subclassfeature7" : {
-			name : "Arcane Cantrips: Quick Casting",
-			source : ["FRA2", 22],
-			minlevel : 7,
-			description : desc([
-				"I can reduce the casting time of one of my arcane cantrip to a bonus action",
-				"Doing this expends 10 points from my Lay on Hands feature"
-			])
-		},
-		"subclassfeature7.1" : {
-			name : "Aegis of Blue Flame",
-			source : ["FRA2", 22],
-			minlevel : 7,
-			description : desc([
-				"Opportunity attacks against friendly creatures within my aura have disadvantage",
-				"As a reaction when an ally within 10 ft is hit with an attack, I can protect it",
-				"The ally takes my Cha mod (min 1) less in bludgeoning, piercing, or slashing damage",
-				"Also,, I can make one weapon attack or cast a cantrip at the attacker"
-			]),
-			additional : levels.map(function (n) {
-				if (n < 7) return "";
-				return (n < 18 ? "10" : "30") + "-foot aura";
-			}),
-			action : ["reaction", ""]
-		},
-		"subclassfeature15" : {
-			name : "Mystic Champion",
-			source : ["FRA2", 22],
-			minlevel : 15,
-			description : desc([
-				"I add a 4th-level or lower wizard spell to my oath spells and learn two wizard cantrips",
-				"When I use my action to cast a cantrip, I can make a weapon attack as a bonus action"
-			]),
-			action : ["bonus action", ""],
+			description : "\n   " + "I can cast known sorcerer cantrips/spells, using Intelligence as my spellcasting ability",
+			additional : ["", "", "3 cantrips \u0026 3 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 5 spells known", "3 cantrips \u0026 6 spells known", "3 cantrips \u0026 6 spells known", "4 cantrips \u0026 7 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 9 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 12 spells known", "4 cantrips \u0026 13 spells known"],
 			spellcastingBonus : [{
-				name : "Mystic Champion",
-				class : "wizard",
-				level : [0, 0],
-				times : 2
+				name : "Mage Hand cantrip", // the Mage Hand cantrip gained at level 1
+				spells : ["mage hand"],
+				selection : ["mage hand"]
 			}, {
-				name : "Mystic Champion (spell)",
-				class : "wizard",
-				level : [1, 4],
-				prepared : true
+				name : "From any school", // the spells gained at level 3, 8, 14, 20
+				"class" : "sorcerer",
+				times : [0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4],
+				level : [1, 4]
 			}]
 		},
-		"subclassfeature20" : {
-			name : "Living Spellfire",
-			source : ["FRA2", 22],
-			minlevel : 20,
+		"subclassfeature3.1" : {
+			name : "Portal Sense",
+			source : [["P", 98]],
 			description : desc([
-				"As an action, I wreathe myself in spellfire for 1 minute and gain the following benefits:",
-				" - I can teleport my walking speed as a bonus action",
-				" - Hostiles within 30 ft have disadv. on saves vs. my spells and -5 on concentration saves",
-				" - When I use my action to cast a spell, I can make a weapon attack as a bonus action",
-				" - I can reroll a number of damage dice for a spell equal to my Cha mod (min 1)"
+				"I know the Detect Evil and Good spell",
+				"It is a gatecrasher spell for you, and doesn’t count against your number of spells known.",
+				"When you cast it, you can sense the presence of extraplanar portals within range."
 			]),
+			action : [["action", ""]],
+			spellcastingExtra : ["detect evil and good"]
+		},
+		"subclassfeature3.2" : {
+			name : "Quicktunnel",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"I can quicktunnel, magically creating a brief, personal portal.",
+				"I can quicktunnel immediately after taking the Disengage action.",
+				"I can also use your reaction to quicktunnel in response to falling or taking damage.",
+				"When I quicktunnel, I teleport up to 30 feet away to an unoccupied space I can see.",
+				"You gain additional uses of this feature, and increase the distance you can travel with it as your level increases: 3 times at 5th level (35 feet), 4 times at 11th level (40 feet), and 5 times at 17th level (45 feet)."
+			]),
+			usages : 2,
+			action : ["bonus action", " (Disengage Action)"],
 			recovery : "long rest",
-			usages : 1,
-			action : ["action", ""]
+		},
+		"subclassfeature9" : {
+			name : "Interlanar Knack",
+			source : ["GMBDB"],
+			minlevel : 9,
+			description : desc([
+				"I can see through opaque portals as if they were transparent.",
+				"Until the start of my next turn, I have advantage on the first weapon attack I make against a creature within 30 feet of my arrival point.",
+				"I also gain theability to immediately pick up rudimentary phrases in languages you don’t know.",
+				"The time it takes for you to learn new a language is halved.",
+				"Through sounds and gestures, you can communicate simple ideas with creatures that speak at least one language."
+			]),
+		},
+		"subclassfeature13" : {
+			name : "Oblique Ambush",
+			source : ["GMBDB"],
+			minlevel : 13,
+			description : desc([
+				"When I quicktunnel, I create momentary sensory distractions as I exit.",
+				"Until the start of my next turn, I have advantage on the first weapon attack I make against a creature within 30 feet of my arrival point."
+			]),
+		},
+		"subclassfeature17" : {
+			name : "Quicktunnel Stabilization",
+			source : [["X", 22]],
+			minlevel : 10,
+			description : desc([
+				"As a bonus action, I can teleport myself up to 60 ft to a spot I can see",
+				"As an action, I can teleport a willing ally I touch up to 30 ft to a spot I can see"
+			]),
+			usages : "Intelligence modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Int Mod'));",
+			recovery : "long rest",
+			action : [["bonus action", ""], ['action', ' (on ally)']]
 		}
 	}
 });
