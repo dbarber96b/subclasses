@@ -1,13 +1,13 @@
 AddSubClass("rogue", "gatecrasher", {
 	regExpSearch : /^(?=.*(gate|rogue|miscreant))(?=.*\b(eldritch|arcane|magic|mage|witch)\b).*$/i,
-	subname : "Arcane Trickster",
-	fullname : "Arcane Trickster",
-	source : [["P", 98]],
+	subname : "Gatecrasher",
+	fullname : "Gatecrasher",
+	source : ["GMBDB"],
 	abilitySave : 4,
 	spellcastingFactor : 3,
 	spellcastingList : {
-		"class" : "wizard",
-		school : ["Ench", "Illus"],
+		"class" : "sorcerer",
+		school : ["Conj", "Div", "Trans"],
 		level : [0, 4]
 	},
 	spellcastingKnown : {
@@ -19,7 +19,7 @@ AddSubClass("rogue", "gatecrasher", {
 			name : "Spellcasting",
 			source : [["P", 98]],
 			minlevel : 3,
-			description : "\n   " + "I can cast known wizard cantrips/spells, using Intelligence as my spellcasting ability",
+			description : "\n   " + "I can cast known sorcerer cantrips/spells, using Intelligence as my spellcasting ability",
 			additional : ["", "", "3 cantrips \u0026 3 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 5 spells known", "3 cantrips \u0026 6 spells known", "3 cantrips \u0026 6 spells known", "4 cantrips \u0026 7 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 9 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 12 spells known", "4 cantrips \u0026 13 spells known"],
 			spellcastingBonus : [{
 				name : "Mage Hand cantrip", // the Mage Hand cantrip gained at level 1
@@ -27,7 +27,7 @@ AddSubClass("rogue", "gatecrasher", {
 				selection : ["mage hand"]
 			}, {
 				name : "From any school", // the spells gained at level 3, 8, 14, 20
-				"class" : "wizard",
+				"class" : "sorcerer",
 				times : [0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4],
 				level : [1, 4]
 			}]
