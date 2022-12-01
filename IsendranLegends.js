@@ -22,6 +22,77 @@ SourceList["GMBDB"] = {
 	url : "https://www.gmbinder.com/share/-Mf4WqjU3tb8hObvek2u",
 	date : "2022/07/21"
 };
+BackgroundList["ashlander"] = {
+	regExpSearch : /ashlander/i,
+	name : "Ashlander",
+	source : ["GMBDB"],
+	skills : ["Perception", "Stealth"],
+	gold : 10,
+	equipright : [
+		["Traveler's Clothers", "", 3],
+		["Gaming Set", "", 1],
+		["Belt pouch (with coins)", "", 1]
+	],
+	feature : "Ashland Lingo",
+	trait : [
+		"I do my best to interact outside of my kin, but I often come off as awkward.",
+		"I try not to act the way people expect me to.",
+		"I constantly ask questions of my friends in a better attempt to understand the world.",
+		"I feel the weight of an entire people on my shoulders, and I feel responsible for their perception in the wider world.",
+		"I am over defensive about my heritage.",
+		"I tell the stories of my people around the fire to anyone who will listen, in an attempt to feel at home.",
+		"When I meet others of my heritage, I get overly excited.",
+		"In confrontational situations I use humor to try and relieve the tension."
+	],
+	ideal : [
+		["Unity",
+			"Unity: I am determinded to help everyone overcome the prejudices which have plagued my kin. (Good)"
+		],
+		["Stand Tall",
+			"Stand Tall: The best way to be accepted is to stand where we can be seen and heard, even when they don't want us to. (Chaotic)"
+		],
+		["Naivety",
+			"Naivety: I am blind to the definition between races by choice and treat everyone as my equal. (Any)"
+		],
+		["Patience",
+			"Patience: The Ashlands may not be popular but we have our place, and will do our part when the time comes. (Lawful)"
+		],
+		["Bigot",
+			"Bigot: I have no problem using outsiders' perception of me as leverage to get what I want. (Evil)"
+		],
+		["Advocate",
+			"Advocate: I have no patience for those who disrespect me or my heritage. (Any)"
+		]
+	],
+	bond : [
+		"I will make my prejudiced parents (or mentor) see reason, and show them the good of the world.",
+		"I must find an ancient artifact that my kin considers sacred.",
+		"I have sworn to find my people a place to exist in the world, alongside those who once thought us lesser.",
+		"I will bring down the people responsible for actively speaking out against my people.",
+		"My lover from a 'normal' society was stolen from me by their family. I hope to find them again one day.",
+		"I must find a way to have the story of my people told, so that if we die, we will not be forgotten."
+	],
+	flaw : [
+		"I struggle to drop the prejudices I have against non-ashlanders.",
+		"I am clueless as to social customs in the world outside my own.",
+		"Many of my idioms make no sense to non-ashlanders, and as such, I am often misunderstood or cause offense.",
+		"I pretend not to understand the local language in order to avoid interactions I would rather not have.",
+		"I publicly shame those who slight me, no matter their status.",
+		"I have a weakness for the new intoxicants and other pleasures of this land."
+	],
+	extra : [
+		"Select why you left the Ashlands",
+		"Emissary",
+		"Exile",
+		"Fugitive",
+		"Pilgrim",
+		"Scout",
+		"Wanderer"
+	],
+	toolProfs : ["Gaming Set", 1],
+ 	 languageProfs : [1],
+	lifestyle : "poor"
+};
 BackgroundList["blade's guild marshal"] = {
 	regExpSearch : /marshal/i,
 	name : "Blade's Guild Marshal",
