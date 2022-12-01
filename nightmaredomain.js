@@ -1,4 +1,47 @@
- AddSubClass("cleric", "nightmare domain", {
+AddSubClass("monk", "way of the specter", {
+	regExpSearch : /^((?=.*specter)(?=.*master))|((?=.*specter)((?=.*(monk|monastic))|((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
+	subname : "Way of the Specter",
+	source : ["GMBDB"],
+	fullname : "Drunken Master",
+	features : {
+		"subclassfeature3" : {
+			name : "Weakening Blows",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"When I successfully hit a creature with an attack, I can spend 1 ki point to force the creature to make a Constitution saving throw.",
+				"The creature takes one point of exhaustion.",
+				"I can spend 1 ki point per attack to repeat this effect, but I cannot inflict more than three levels of exhaustion to one creature.",
+				"At the end of each of the affected creature’s turns, they lose one level of exhaustion."
+			]),
+		},
+		"subclassfeature6" : {
+			name : "Death Spiral",
+			source : ["GMBDB"],
+			minlevel : 6,
+			description : "\n   " + "Whenever I hit an enemy with at least one point of exhaustion with an unarmed strike, I inflict one additional damage die for each point of exhaustion that creature is under."
+		},
+		"subclassfeature11" : {
+			name : "Siphoned Life",
+			source : ["GMBDB"],
+			minlevel : 11,
+			description : "\n   " + "Whenever I use Weakening Blows to give a creature a point of exhaustion, I am healed for an amount equal to the damage roll of that attack" + "\n   " + "I can use this ability a number of times equal to my Wisdom modifier" + "\n   " + "I regain all uses of this ability after a long rest.",
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest",
+		},
+		"subclassfeature17" : {
+			name : "Siphoned Life",
+			source : ["GMBDB"],
+			minlevel : 11,
+			description : "\n   " + "Select an ability score you want to damage other than Constitution." + "\n   " + "When you make an unarmed strike, you can use 5 ki points to force your target to make a saving throw." + "\n   " + "If your target fails the saving throw, roll your martial arts damage die. The ability score you chose is lowered for your target by half of the martial arts roll." + "\n   " + "If the creature’s ability score reaches 0, they automatically fail any ability check or saving throw using that ability score." + "\n   " + "I regain all uses of this ability after a long rest.",
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest",
+	},
+    }
+});
+AddSubClass("cleric", "nightmare domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(night|nightmare|dreamer)).*$/i,
 	subname : "Nightmare Domain",
 	source : ["GMBDB"],
