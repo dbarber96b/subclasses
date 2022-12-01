@@ -43,11 +43,32 @@ AddSubClass("rogue", "gatecrasher", {
 			action : [["action", ""]],
 			spellcastingExtra : ["detect evil and good"]
 		},
+		"subclassfeature3.2" : {
+			name : "Quicktunnel",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"I can quicktunnel, magically creating a brief, personal portal.",
+				"I can quicktunnel immediately after taking the Disengage action.",
+				"I can also use your reaction to quicktunnel in response to falling or taking damage.",
+				"When I quicktunnel, I teleport up to 30 feet away to an unoccupied space I can see.",
+				"You gain additional uses of this feature, and increase the distance you can travel with it as your level increases: 3 times at 5th level (35 feet), 4 times at 11th level (40 feet), and 5 times at 17th level (45 feet)."
+			]),
+			usages : 2,
+			action : ["bonus action", " (Disengage Action)"],
+			recovery : "long rest",
+		},
 		"subclassfeature9" : {
-			name : "Magical Ambush",
+			name : "Inter",
 			source : [["P", 98]],
 			minlevel : 9,
-			description : "\n   " + "When I cast a spell while hidden, the target(s) have disadvantage against that spell"
+			description : desc([
+				"I can see through opaque portals as if they were transparent.",
+				"I can quicktunnel immediately after taking the Disengage action.",
+				"I can also use your reaction to quicktunnel in response to falling or taking damage.",
+				"When I quicktunnel, I teleport up to 30 feet away to an unoccupied space I can see.",
+				"You gain additional uses of this feature, and increase the distance you can travel with it as your level increases: 3 times at 5th level (35 feet), 4 times at 11th level (40 feet), and 5 times at 17th level (45 feet)."
+			]),
 		},
 		"subclassfeature13" : {
 			name : "Versatile Trickster",
