@@ -59,32 +59,38 @@ AddSubClass("rogue", "gatecrasher", {
 			recovery : "long rest",
 		},
 		"subclassfeature9" : {
-			name : "Inter",
-			source : [["P", 98]],
+			name : "Interlanar Knack",
+			source : ["GMBDB"],
 			minlevel : 9,
 			description : desc([
 				"I can see through opaque portals as if they were transparent.",
-				"I can quicktunnel immediately after taking the Disengage action.",
-				"I can also use your reaction to quicktunnel in response to falling or taking damage.",
-				"When I quicktunnel, I teleport up to 30 feet away to an unoccupied space I can see.",
-				"You gain additional uses of this feature, and increase the distance you can travel with it as your level increases: 3 times at 5th level (35 feet), 4 times at 11th level (40 feet), and 5 times at 17th level (45 feet)."
+				"Until the start of my next turn, I have advantage on the first weapon attack I make against a creature within 30 feet of my arrival point.",
+				"I also gain theability to immediately pick up rudimentary phrases in languages you don’t know.",
+				"The time it takes for you to learn new a language is halved.",
+				"Through sounds and gestures, you can communicate simple ideas with creatures that speak at least one language."
 			]),
 		},
 		"subclassfeature13" : {
-			name : "Versatile Trickster",
-			source : [["P", 98]],
+			name : "Oblique Ambush",
+			source : ["GMBDB"],
 			minlevel : 13,
-			description : "\n   " + "As a bonus action, gain adv. on attacks this turn on creature within 5 ft of Mage Hand",
-			action : ["bonus action", ""]
+			description : desc([
+				"When I quicktunnel, I create momentary sensory distractions as I exit.",
+				"Until the start of my next turn, I have advantage on the first weapon attack I make against a creature within 30 feet of my arrival point."
+			]),
 		},
 		"subclassfeature17" : {
-			name : "Spell Thief",
-			source : [["P", 98]],
-			minlevel : 17,
-			description : "\n   " + "As a reaction, after a spell is cast at me, I can try to negate and steal it" + "\n   " + "The caster makes a save against my spell DC with his/her spellcasting ability" + "\n   " + "On failure, the caster forgets how to cast that spell for eight hours" + "\n   " + "If I have a spell slot of a high enough level for it, I learn how to cast it during this time",
-			action : ["reaction", ""],
+			name : "Quicktunnel Stabilization",
+			source : [["X", 22]],
+			minlevel : 10,
+			description : desc([
+				"As a bonus action, I can teleport myself up to 60 ft to a spot I can see",
+				"As an action, I can teleport a willing ally I touch up to 30 ft to a spot I can see"
+			]),
+			usages : "Intelligence modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Int Mod'));",
 			recovery : "long rest",
-			usages : 1
+			action : [["bonus action", ""], ['action', ' (on ally)']]
 		}
 	}
 });
