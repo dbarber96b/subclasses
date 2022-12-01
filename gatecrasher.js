@@ -35,13 +35,13 @@ AddSubClass("rogue", "gatecrasher", {
 		"subclassfeature3.1" : {
 			name : "Portal Sense",
 			source : [["P", 98]],
-			minlevel : 3,
-			description : "\n   " + "I know the Detect Evil and good spell" + "\n   " + "It is a gatecrasher spell for you, and doesn’t count against your number of spells known." + "\n   " + "When you cast it, you can sense the presence of extraplanar portals within range."
-			spellcastingBonus : [{
-				name : "Portal Sense",
-				spells : ["mage hand"],
-				selection : ["mage hand"]
-			}],
+			description : desc([
+				"I know the Detect Evil and Good spell",
+				"It is a gatecrasher spell for you, and doesn’t count against your number of spells known.",
+				"When you cast it, you can sense the presence of extraplanar portals within range."
+			]),
+			action : [["action", ""]],
+			spellcastingExtra : ["detect evil and good"]
 		},
 		"subclassfeature9" : {
 			name : "Magical Ambush",
