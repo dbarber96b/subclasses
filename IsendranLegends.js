@@ -1185,8 +1185,8 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature17" : {
 			name : "Quicktunnel Stabilization",
-			source : [["X", 22]],
-			minlevel : 10,
+			source : ["GMBDB"],
+			minlevel : 17,
 			description : desc([
 				"As a bonus action, I can teleport myself up to 60 ft to a spot I can see",
 				"As an action, I can teleport a willing ally I touch up to 30 ft to a spot I can see"
