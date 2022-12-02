@@ -15,17 +15,17 @@
 var iFileName = "Legends of Isendran";
 RequiredSheetVersion(13);
 
-SourceList["GMBDB"] = {
-	name : "GMBinderDBarber96b",
-	abbreviation : ["GMBDB"],
-	group : "Dbarber96b",
+SourceList["LoI"] = {
+	name : "Legends of Isendran",
+	abbreviation : ["LoI"],
+	group : "Primary Sources",
 	url : "https://www.gmbinder.com/share/-Mf4WqjU3tb8hObvek2u",
 	date : "2022/07/21"
 };
 BackgroundList["ashlander"] = {
 	regExpSearch : /ashlander/i,
 	name : "Ashlander",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	skills : ["Perception", "Stealth"],
 	gold : 10,
 	equipright : [
@@ -96,7 +96,7 @@ BackgroundList["ashlander"] = {
 BackgroundList["blade's guild marshal"] = {
 	regExpSearch : /marshal/i,
 	name : "Blade's Guild Marshal",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	skills : ["Intimidation", "Insight"],
 	gold : 20,
 	equipleft : [
@@ -160,7 +160,7 @@ BackgroundList["blade's guild marshal"] = {
 BackgroundList["hag raised"] = {
 	regExpSearch : /hag/i,
 	name : "Hag Raised",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	skills : ["History", "Nature"],
 	gold : 5,
 	equipright : [
@@ -222,7 +222,7 @@ BackgroundList["hag raised"] = {
 BackgroundList["wall walker"] = {
 	regExpSearch : /^(?=.*wall)(?=.*walker).*$/i,
 	name : "Wall Walker",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	skills : ["Stealth", "Athletics"],
 	gold : 15,
 		equipright : [
@@ -290,7 +290,7 @@ BackgroundList["wall walker"] = {
 BackgroundList["wyvern hunter"] = {
 	regExpSearch : /^(?=.*wyvern)(?=.*hunter).*$/i,
 	name : "Wyvern Hunter",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	skills : ["Athletics", "Survival"],
 	gold : 15,
 	equipleft : [
@@ -373,7 +373,7 @@ BackgroundFeatureList["dragon bane"] = {
 RaceList["half-kender"] = {
 	regExpSearch : /^(?=.*half)(?=.*kender).*$/i,
 	name : "Half-kender",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	plural : "Half Kender",
 	size : 3,
 	speed : {walk : { spd : 30, enc : 20 }},
@@ -394,7 +394,7 @@ RaceList["half-kender"] = {
 RaceList["half-dwarf"] = {
 	regExpSearch : /^(?=.*half)(?=.*dwarf).*$/i,
 	name : "Half-dwarf",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	plural : "Half Dwarves",
 	size : 3,
 	speed : {
@@ -419,7 +419,7 @@ RaceList["half-dwarf"] = {
 RaceList["half-gnome"] = {
 	regExpSearch : /^(?=.*half)(?=.*gnome).*$/i,
 	name : "Half-gnome",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	plural : "Half Gnomes",
 	size : 3,
 	speed : {
@@ -442,7 +442,7 @@ RaceList["half-gnome"] = {
 RaceList["vaum-edaris"] = {
 		regExpSearch : /vaum-edaris/i,
 		name : "Vaum-Edaris",
-		source : ["GMBDB"],
+		source : ["LoI"],
 		plural : "Vaum-Edaris",
 		size : 3,
 		speed : {
@@ -505,7 +505,7 @@ RaceList["vaum-edaris"] = {
 RaceList["ulsanya"] = {
 		regExpSearch : /^(?=.*ulsanya).*$/i,
 		name : "Ulsanya",
-		source : ["GMBDB"],
+		source : ["LoI"],
 		plural : "Ulsanya",
 		size : 3,
 		speed : {
@@ -540,7 +540,7 @@ RaceList["ulsanya"] = {
 RaceList["fey'ri"] = {
 		regExpSearch : /^((?=.*fey'ri)|(?=.*planetouched)(?=.*(hell|abyss|fiend|devil|asmodeus))).*$/i,
 		name : "Fey'Ri",
-		source : ["GMBDB"],
+		source : ["LoI"],
 		plural : "Fey'Ri",
 		size : 3,
 		speed : {
@@ -605,12 +605,12 @@ RaceList["fey'ri"] = {
  AddSubClass("cleric", "wanderlust domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(wander|wanderlust|wanderer)).*$/i,
 	subname : "Wanderlust Domain",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	spellcastingExtra : ["feather fall", "jump", "knock", "spider climb", "counterspell", "haste", "dimension door", "wall of fire", "animate objects", "creation"],
 	features : {
 		"subclassfeature1" : {
 			name : "Bonus Proficiency",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			descriptionFull : "You gain proficiency in two of the following: Athletics, Acrobatics, or Stealth, as well as Thieves' tools.",
 			description : "I gain proficiency with any combination of three skills or tools of my choice.",
@@ -619,7 +619,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature2" : {
 			name : "Channel Divinity: Traversal",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 2,
 			description : desc([
 				"I can take the Dash action asa bonus action",
@@ -629,7 +629,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature6" : {
 			name : "Channel Divinity: Spellsteal",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 6,
 			description : desc([
 				"When I cast Counterspell, I can can expend a use of my Channel Divinity to gain a bonus to the required spellcasting ability check equal to half my cleric level",
@@ -639,7 +639,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature8" : {
 			name : "Divine Strike",
-			source : ["X", 19],
+			source : ["LoI"],
 			minlevel : 8,
 			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
 			additional : levels.map(function (n) {
@@ -659,7 +659,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature17" : {
 			name : "Transcendence",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 17,
 			description : desc([
 				"The Gate and Astral Projection spells are cleric spells for me, and are always prepared, and do not count against the muber of spells I can prepare.",
@@ -675,12 +675,12 @@ RaceList["fey'ri"] = {
  AddSubClass("cleric", "nightmare domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(night|nightmare|dreamer)).*$/i,
 	subname : "Nightmare Domain",
-	source : ["GMBDB"],
-	spellcastingExtra : ["tasha's hideos laughter", "illusory script", "phantasmal force", "silence", "major image", "slow", "hallucinatory terrain", "phantasmal killer", "dream", "geas"],
+	source : ["LoI"],
+	spellcastingExtra : ["tasha's hideous laughter", "illusory script", "phantasmal force", "silence", "major image", "slow", "hallucinatory terrain", "phantasmal killer", "dream", "geas"],
 	features : {
 		"subclassfeature1" : {
 			name : "Bonus Cantrip",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			description : "\n   " + "I learn the Vicious Mockery cantrip if I didn't already know it",
 			spellcastingBonus : {
@@ -691,7 +691,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature1.1" : {
 			name : "Cry In the Night",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			description : "\n   " + "As a reaction, when a creature I can see within 30 ft hits me, I can rebuke with their worst fears" + "\n   " + "It takes 2d8 psychic damage that a Wis save can halve",
 			usages : "Wisdom modifier per ",
@@ -701,7 +701,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature2" : {
 			name : "Channel Divinity: Free Falling",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 2,
 			description : desc([
 				"I can cause all creatures I see within 10 ft to see the terrain fall away from under their feet.",
@@ -711,7 +711,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature6" : {
 			name : "Channel Divinity: Loathsome Knell",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 6,
 			description : desc([
 				"When I deal psychic damage, I can also project a phantasmal bell into the target’s mind and ring it",
@@ -720,7 +720,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature8" : {
 			name : "Divine Strike",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 8,
 			description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
 			additional : levels.map(function (n) {
@@ -740,7 +740,7 @@ RaceList["fey'ri"] = {
 		},
 		"subclassfeature17" : {
 			name : "The Mind of Madness",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 17,
 			description : desc([
 				"My Loathsome Knell instead inflicts long-term madness lasting 1d10x10 hours and an indefinite madness flaw (see Madness rules in DM rulebook).",
@@ -752,12 +752,12 @@ RaceList["fey'ri"] = {
 AddSubClass("monk", "way of the specter", {
 	regExpSearch : /^((?=.*specter)(?=.*master))|((?=.*specter)((?=.*(monk|monastic))|((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
 	subname : "Way of the Specter",
-	source : ["GMBDB"],
-	fullname : "Drunken Master",
+	source : ["LoI"],
+	fullname : "Way of the Specter",
 	features : {
 		"subclassfeature3" : {
 			name : "Weakening Blows",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"When I successfully hit a creature with an attack, I can spend 1 ki point to force the creature to make a Constitution saving throw.",
@@ -768,13 +768,13 @@ AddSubClass("monk", "way of the specter", {
 		},
 		"subclassfeature6" : {
 			name : "Death Spiral",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 6,
 			description : "\n   " + "Whenever I hit an enemy with at least one point of exhaustion with an unarmed strike, I inflict one additional damage die for each point of exhaustion that creature is under."
 		},
 		"subclassfeature11" : {
 			name : "Siphoned Life",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 11,
 			description : "\n   " + "Whenever I use Weakening Blows to give a creature a point of exhaustion, I am healed for an amount equal to the damage roll of that attack" + "\n   " + "I can use this ability a number of times equal to my Wisdom modifier" + "\n   " + "I regain all uses of this ability after a long rest.",
 			usages : "Wisdom modifier per ",
@@ -783,7 +783,7 @@ AddSubClass("monk", "way of the specter", {
 		},
 		"subclassfeature17" : {
 			name : "Siphoned Life",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 11,
 			description : "\n   " + "Select an ability score you want to damage other than Constitution." + "\n   " + "When you make an unarmed strike, you can use 5 ki points to force your target to make a saving throw." + "\n   " + "If your target fails the saving throw, roll your martial arts damage die. The ability score you chose is lowered for your target by half of the martial arts roll." + "\n   " + "If the creature’s ability score reaches 0, they automatically fail any ability check or saving throw using that ability score." + "\n   " + "I regain all uses of this ability after a long rest.",
 			usages : "Wisdom modifier per ",
@@ -795,11 +795,11 @@ AddSubClass("monk", "way of the specter", {
 AddSubClass("paladin", "oath of the spellbreaker", {
 	regExpSearch : /^(?=.*spellbreaker)((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
 	subname : "Oath of the Spellbreaker",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	features : {
 		"subclassfeature3" : {
 			name : "Channel Divinity: Disrupt Magic",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As an action, I choose one creature within 60 feet that I can see",
@@ -814,7 +814,7 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 		},
 		"subclassfeature3.1" : {
 			name : "Channel Divinity: Annihilation",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As an action, I can use my Channel Divinity to sacrifice my own well of magical energy to destroy my opponent’s.",
@@ -827,7 +827,7 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 		},
 		"subclassfeature7" : {
 			name : "Aura of Dampening",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 7,
 			description : "\n   " + "Allies within range and I have resistance to damage from spells",
 			additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
@@ -835,7 +835,7 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 		},
 		"subclassfeature15" : {
 			name : "Magical Detective",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 15,
 			description : desc([
 				"I am always under the effects of the Detect Magic spell."
@@ -843,7 +843,7 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 		},
 		"subclassfeature20" : {
 			name : "Unweaving Presence",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 20,
 			description : desc([
 				"As an action, I gain the following benefits for 1 hour",
@@ -859,11 +859,11 @@ AddSubClass("paladin", "oath of the spellbreaker", {
 AddSubClass("paladin", "oath of the tempest", {
 	regExpSearch : /^(?=.*tempest)((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
 	subname : "Oath of the Tempest",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	features : {
 		"subclassfeature3" : {
 			name : "Channel Divinity: Divine Gale",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As a bonus action, I can present my holy symbol, creating a small tornadoe around me.",
@@ -875,7 +875,7 @@ AddSubClass("paladin", "oath of the tempest", {
 		},
 		"subclassfeature3.1" : {
 			name : "Channel Divinity: Steel Tempest",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As an action, I can embue my weapons with the power and speed of elemental wind.",
@@ -885,7 +885,7 @@ AddSubClass("paladin", "oath of the tempest", {
 		},
 		"subclassfeature7" : {
 			name : "Aura of Elemental Air",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 7,
 			description : "\n   " + "Allies within range and I have resistance to damage from thunder, lightning, or cold",
 			additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
@@ -893,7 +893,7 @@ AddSubClass("paladin", "oath of the tempest", {
 		},
 		"subclassfeature15" : {
 			name : "Flow of Battle",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 15,
 			description : desc([
 				"Whenever another creature hits me with an attack, I can use my reaction to add my proficiency bonus to my AC for that attack, potentially causing it to miss.",
@@ -902,7 +902,7 @@ AddSubClass("paladin", "oath of the tempest", {
 		},
 		"subclassfeature20" : {
 			name : "Avatar of the Storm",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 20,
 			description : desc([
 				"As an action, I create a powerful storm around me, and gain the following benefits for 10 minutes:",
@@ -920,12 +920,12 @@ AddSubClass("paladin", "oath of the tempest", {
 AddSubClass("paladin", "paladin-weave", {
 	regExpSearch : /^(?=.*weave)(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
 	subname : "Oath of the Weave",
-	source : ["FRA2", 21],
+	source : ["LoI"],
 	spellcastingExtra : ["detect magic", "shield", "misty step", "warding bond", "counterspell", "dispel magic", "death ward", "ice storm", "flame strike", "teleportation circle"],
 	features : {
 		"subclassfeature3" : {
 			name : "Channel Divinity: Spellfire Blade",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As a bonus action, I can infuse my weapon with arcane energy for 1 minute",
@@ -940,7 +940,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature3.1" : {
 			name : "Channel Divinity: Spellfire Shield",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As a reaction when a spell missed me or I save against it, I can redirect the spell cast",
@@ -950,7 +950,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature3.2" : {
 			name : "Spellshatter",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"As a bonus action when I use Divine Smite, I can dispel spells affecting the target",
@@ -964,7 +964,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature3.3" : {
 			name : "Arcane Cantrips",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 3,
 			description : "\n   " + "I learn two cantrips, with Charisma as my spellcasting ability",
 			spellcastingBonus : {
@@ -975,7 +975,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature7" : {
 			name : "Arcane Cantrips: Quick Casting",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 7,
 			description : desc([
 				"I can reduce the casting time of one of my arcane cantrip to a bonus action",
@@ -984,7 +984,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature7.1" : {
 			name : "Aegis of Blue Flame",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 7,
 			description : desc([
 				"Opportunity attacks against friendly creatures within my aura have disadvantage",
@@ -1000,7 +1000,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature15" : {
 			name : "Mystic Champion",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 15,
 			description : desc([
 				"I add a 4th-level or lower wizard spell to my oath spells and learn two wizard cantrips",
@@ -1021,7 +1021,7 @@ AddSubClass("paladin", "paladin-weave", {
 		},
 		"subclassfeature20" : {
 			name : "Living Spellfire",
-			source : ["FRA2", 22],
+			source : ["LoI"],
 			minlevel : 20,
 			description : desc([
 				"As an action, I wreathe myself in spellfire for 1 minute and gain the following benefits:",
@@ -1039,12 +1039,12 @@ AddSubClass("paladin", "paladin-weave", {
 AddSubClass("ranger", "witchwarden", {
 	regExpSearch : /^(?=.*witchwarden).*$/i,
 	subname : "Witchwarden",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	fullname : "Witchwarden",
 	features : {
 		"subclassfeature3" : {
 			name : "Arcane Momentum",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"When I damage a creature with a ranger spell other than hunter’s mark , I have advantage on the first attack roll I make against that target until the end of my next turn.",
@@ -1053,7 +1053,7 @@ AddSubClass("ranger", "witchwarden", {
 		},
 		"subclassfeature3.1" : {
 			name : "Witchwarden Magic",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"I add a spell to my known spells at level 3, 5, 9, 13, and 17",
@@ -1064,7 +1064,7 @@ AddSubClass("ranger", "witchwarden", {
 		},
 		"subclassfeature7" : {
 			name : "Witchwarden's Gaze",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 7,
 			description : desc([
 				"When I or an ally within 60 feet of me that I can see fails a saving throw or fails to escape a grapple, I can use my reaction to add 1d6 to the roll.",
@@ -1077,7 +1077,7 @@ AddSubClass("ranger", "witchwarden", {
 		},
 		"subclassfeature11" : {
 			name : "Warden's Defense",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 11,
 			description : desc([
 				"As a reaction when I or a creature within 5 ft is hit, I can try to fend off the strike",
@@ -1091,7 +1091,7 @@ AddSubClass("ranger", "witchwarden", {
 		},
 		"subclassfeature15" : {
 			name : "Spell-Share",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 15,
 			description : desc([
 				"When I cast a ranger spell targeting myself, you can also affect one ally I can see within 30 feet with the spell.",
@@ -1106,7 +1106,7 @@ AddSubClass("rogue", "gatecrasher", {
 	regExpSearch : /^(?=.*(gate|rogue|miscreant))(?=.*\b(eldritch|arcane|magic|mage|witch)\b).*$/i,
 	subname : "Gatecrasher",
 	fullname : "Gatecrasher",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	abilitySave : 4,
 	spellcastingFactor : 3,
 	spellcastingList : {
@@ -1121,7 +1121,7 @@ AddSubClass("rogue", "gatecrasher", {
 	features : {
 		"subclassfeature3" : {
 			name : "Spellcasting",
-			source : [["P", 98]],
+			source : ["LoI"],
 			minlevel : 3,
 			description : "\n   " + "I can cast known sorcerer cantrips/spells, using Intelligence as my spellcasting ability",
 			additional : ["", "", "3 cantrips \u0026 3 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 5 spells known", "3 cantrips \u0026 6 spells known", "3 cantrips \u0026 6 spells known", "4 cantrips \u0026 7 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 9 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 12 spells known", "4 cantrips \u0026 13 spells known"],
@@ -1138,7 +1138,8 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature3.1" : {
 			name : "Portal Sense",
-			source : [["P", 98]],
+			source : ["LoI"],
+			minlevel : 3,
 			description : desc([
 				"I know the Detect Evil and Good spell",
 				"It is a gatecrasher spell for you, and doesn’t count against your number of spells known.",
@@ -1149,7 +1150,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature3.2" : {
 			name : "Quicktunnel",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"I can quicktunnel, magically creating a brief, personal portal.",
@@ -1164,7 +1165,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature9" : {
 			name : "Interlanar Knack",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 9,
 			description : desc([
 				"I can see through opaque portals as if they were transparent.",
@@ -1176,7 +1177,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature13" : {
 			name : "Oblique Ambush",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 13,
 			description : desc([
 				"When I quicktunnel, I create momentary sensory distractions as I exit.",
@@ -1185,7 +1186,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature17" : {
 			name : "Quicktunnel Stabilization",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 17,
 			description : desc([
 				"As a bonus action, I can teleport myself up to 60 ft to a spot I can see",
@@ -1201,12 +1202,12 @@ AddSubClass("rogue", "gatecrasher", {
 AddSubClass("warlock", "the drifter", {
 	regExpSearch : /^(?=.*drifter)(?=.*warlock).*$/i,
 	subname : "the Drifter",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	spellcastingExtra : ["bane", "bless", "enhance ability", "pass without trace", "blink", "nondetection", "death ward", "freedom of movement", "circle of power", "passwall"],
 	features : {
 		    "subclassfeature1" : {
 			name : "Highwayman",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			description : desc([
 				"I gain proficiency with medium armor and longswords, rapiers, and scimitars",
@@ -1230,7 +1231,7 @@ AddSubClass("warlock", "the drifter", {
 		},
 		"subclassfeature1.1" : {
 				name : "One Step Ahead",
-				source : ["GMBDB"],
+				source : ["LoI"],
 				minlevel : 1,
 				description : desc([
 					"I add my Charisma modifier to initiative rolls"
@@ -1239,13 +1240,13 @@ AddSubClass("warlock", "the drifter", {
 			},
 		"subclassfeature6" : {
 			name : "Everything's Looking Up",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 6,
 			description : "\n   " + "I have advantage on all Charisma (Persuasion), Charisma (Deception), and Charisma (Performance) checks against any creature of my choice that isn’t hostile toward you " + "\n   " + "I have advantage on Dexterity saving throws against effects such as traps and spells. To gain this benefit, I can't be incapacitated",
 		},
 		"subclassfeature10" : {
 			name : "Drifter's Gift",
-			source : ["X", 47],
+			source : ["LoI"],
 			minlevel : 10,
 			description : "\n   " + "I gain +10 ft to my walking speed (and swimming/climbing speed, if applicable)",
 			speed : {
@@ -1256,7 +1257,7 @@ AddSubClass("warlock", "the drifter", {
 		},
 		"subclassfeature14" : {
 			name : "Closing the Distance",
-			source : ["P", 109],
+			source : ["LoI"],
 			minlevel : 14,
 			description : "\n   " + "As an action, I can perform a 1 minute ritual, and cast the teleport spell, expending a spell slot" + "\n   " + "The connection with my patron gives me increased accuracy with the spell" + "\n   " + "I must finish a long rest before using this ability again",
 			recovery : "long rest",
@@ -1268,12 +1269,12 @@ AddSubClass("warlock", "the drifter", {
 AddSubClass("warlock", "the gamemaster", {
 	regExpSearch : /^(?=.*gamemaster)(?=.*warlock).*$/i,
 	subname : "the Gamemaster",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	spellcastingExtra : ["bane", "dissonant whispers", "detect thoughts", "enhance ability", "clairvoyance", "tiny servant", "confusion", "phantasmal killer", "animate objects", "bigby's hand"],
 	features : {
 		"subclassfeature1" : {
 			name : "Gambler's Tools",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			description : "\n   " + "I gain expertise with two gaming sets of my choice, and I can use them as my arcane focus"+ " \n   " + "I also gain proficiency with rapiers",
 			toolProfs : [["Gaming sets", 2]],
@@ -1281,7 +1282,7 @@ AddSubClass("warlock", "the gamemaster", {
 		},
    		"subclassfeature1.1" : {
 			name : "Siphon Luck",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			description : desc([
 				"As a bonus action, I choose one creature I can see within 60 feet of me and choose one ability score.",
@@ -1296,7 +1297,7 @@ AddSubClass("warlock", "the gamemaster", {
 		},
 		"subclassfeature6" : {
 			name : "House Advantage",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 1,
 			description : desc([
 				"As a reaction, If I roll a natural 1, I may reroll the die and take the higher number.",
@@ -1309,7 +1310,7 @@ AddSubClass("warlock", "the gamemaster", {
 		},
 		"subclassfeature10" : {
 			name : "Honed Composure",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 10,
 			description : "\n   " + "Any creature under the effect of my Siphon Luck feature has disadvantage on attack rolls against me." + "\n   " + "If an unlucky creature misses me with an attack, I can use my reaction to attempt to frighten that creature." + "\n   " + "That creature must succeed on a Wisdom saving throw against my spell save DC or be frightened until the end of its next turn." + "\n   " + "I now have advantage on saving throws against being frightened or charmed",
 			action : ["reaction", " (when attacked)"],
@@ -1317,7 +1318,7 @@ AddSubClass("warlock", "the gamemaster", {
 		},
 		"subclassfeature14" : {
 			name : "Deadly Ultimatum",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 14,
 			description : "\n   " + "As an action, I forbid a creature within 60 ft from a certain action" + "\n   " + "If the creature performs the forbidden action, it must make a Wisdom saving throw against my spell save DC, taking 8d6 psychic damage on a failure." + "\n   " + "If it succeeds, this ends the ultimatum.",
 			recovery : "long rest",
@@ -1328,7 +1329,7 @@ AddSubClass("warlock", "the gamemaster", {
 });
 AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Deck", {
 	name : "Pact of the Deck",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	description : desc([
 		"I use a deck of playing cards as my spellcasting focus",
 		"The deck can be used in place of material components for spells if there is no cost and the materials are not consumed",
@@ -1342,7 +1343,7 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the De
 	]),
   toNotesPage : [{
 				name : "Pact Deck Damage Table",
-				source : ["GMBDB"],
+				source : ["LoI"],
 				popupName : "Pact Deck Damage Table, part 1",
 				additional : "Suits",
 				note : [
@@ -1354,7 +1355,7 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the De
           ]
 			}, {
 				name : "Pact Deck Damage Table",
-				source : ["GMBDB"],
+				source : ["LoI"],
 				popupName : "Pact Deck Damage Table, part 2",
 				additional : "Values",
 				note : [
@@ -1378,7 +1379,7 @@ AddWarlockInvocation("Blind's Up (prereq: level 5 warlock, Pact of the Deck)", {
 		"The target cannot make an opportunity attack against a creature that moves out of its melee range while the effect is active",
 		"The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success"
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
 	recovery : "short rest",
 	usages : 1,
@@ -1393,7 +1394,7 @@ AddWarlockInvocation("Blind's Up (prereq: Pact of the Deck)", {
 		"On a success they are unaware that you have cast a spell.",
 		"The +5 bonus to card-related checks does not apply to this feature"
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
 });
 AddWarlockInvocation("Damage Dealer (prereq: level 7 warlock, Pact of the Deck)", {
@@ -1402,7 +1403,7 @@ AddWarlockInvocation("Damage Dealer (prereq: level 7 warlock, Pact of the Deck)"
 		"When I draw a throwing card of face value three or lower, I may draw another and throw the new card instead.",
 		"I then discard both cards"
 	]),
-	source : ["X", 56],
+	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 7 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
 });
 AddWarlockInvocation("Diviner (prereq: level 5 warlock, Pact of the Deck)", {
@@ -1413,7 +1414,7 @@ AddWarlockInvocation("Diviner (prereq: level 5 warlock, Pact of the Deck)", {
 		"Draw five cards, and return them in any order to the top of my deck",
 		"All opponents have disadvantage on their attacks against me until my next turn."
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
 	recovery : "long rest",
 	usages : 1,
@@ -1427,7 +1428,7 @@ AddWarlockInvocation("Fresh Hand (prereq: level 7 warlock, Pact of the Deck)", {
 		"If I draw a joker, I do not regain a spell slot, and must shuffle any discarded jokers back into my deck.",
 		"I regain the use of this feature after a short rest"
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 7 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
 	recovery : "short rest",
 	usages : 1,
@@ -1441,7 +1442,7 @@ AddWarlockInvocation("Suit of Armor (prereq: level 5 warlock, Pact of the Deck)"
 		"For one hour, I gain temporary hit points equal to the face value of the card (1-13) and resistance to the damage type represented by its suit",
 		"If I draw a joker, discard it and draw another card - the effect targets the nearest creature to me."
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; },
 	recovery : "short rest",
 	usages : 1,
@@ -1455,7 +1456,7 @@ AddWarlockInvocation("Swindle (prereq: Pact of the Deck)", {
 		"On a success, my patron doesn’t notice my con, and I can move a card of your choice from the discard pile to anywhere in your pact deck.",
 		"On a failure, you are caught, stunned until the end of your next turn, and your patron compels you to shuffle any jokers in your discard pile back into your pact deck."
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
 });
 AddWarlockInvocation("Warped Limits (prereq: level 9 warlock, Pact of the Deck)", {
@@ -1464,12 +1465,12 @@ AddWarlockInvocation("Warped Limits (prereq: level 9 warlock, Pact of the Deck)"
 		"Your spells with a base range of ‘Touch’ can be cast with a range of 60 feet.",
 	    "If I draw a joker, discard it and draw another card - the effect targets the nearest creature to me"
 	]),
-	source : ["GMBDB"],
+	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
 });
 MagicItemsList["storm blade"] = {
 	name : "Storm Blade",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	type : "weapon (any sword)",
 		rarity : "rare",
 		magicItemTable : "G",
@@ -1501,7 +1502,7 @@ MagicItemsList["storm blade"] = {
 	},
 MagicItemsList["storm bringer"] = {
   name: "Storm Bringer",
-  source: ["GMBDB"],
+  source: ["LoI"],
   type: "weapon (longsword)",
   rarity: "legendary",
   attunement: true,
@@ -1542,7 +1543,7 @@ MagicItemsList["storm bringer"] = {
     name: "Dormant Storm Bringer",
     description:
       "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +1 to hit and damage and grants resistance to lightning damage. Once per dawn, I can cast thunderwave (DC 13).",
-    weaponsAdd: ["Dormant Star Razor"],
+    weaponsAdd: ["Dormant Storm Bringer"],
     weaponOptions: {
       baseWeapon: "longsword",
       regExpSearch: /^(?=.*dormant)(?=.*storm bringer).*$/i,
@@ -1563,7 +1564,7 @@ MagicItemsList["storm bringer"] = {
             output.magic += 1;
           }
         },
-        "If I include the word 'Glowing' in Star Razor's name, the calculation will add +1 to hit and damage.",
+        "If I include the word 'Glowing' in Storm Bringer's name, the calculation will add +1 to hit and damage.",
       ],
     },
     spellFirstColTitle: "Us",
@@ -1609,7 +1610,7 @@ MagicItemsList["storm bringer"] = {
             output.magic += 2;
           }
         },
-        "If I include the word 'Glowing' in Star Razor's name, the calculation will add +2 to hit and damage.",
+        "If I include the word 'Glowing' in Storm Bringer's name, the calculation will add +2 to hit and damage.",
       ],
     },
     spellFirstColTitle: "Us",
@@ -1651,10 +1652,10 @@ MagicItemsList["storm bringer"] = {
     ],
   },
   exalted: {
-    name: "Exalted Star Razor",
+    name: "Exalted Storm Bringer",
     description:
       "While holding this sword, I can speak its command word to cause it to glow bright light in 20 ft, dim light in 20 ft. While glowing, it adds +3 to hit and damage and grants resistance to lightning damage. Once per dawn per spell, I can cast (DC 15) thunderwave, warding wind, and fly. See third page.",
-    weaponsAdd: ["Exalted Star Razor"],
+    weaponsAdd: ["Exalted Storm Bringer"],
     weaponOptions: {
       baseWeapon: "longsword",
       regExpSearch: /^(?=.*exalted)(?=.*storm bringer).*$/i,
@@ -1675,7 +1676,7 @@ MagicItemsList["storm bringer"] = {
             output.magic += 3;
           }
         },
-        "If I include the word 'Glowing' in Star Razor's name, the calculation will add +3 to hit and damage.",
+        "If I include the word 'Glowing' in Storm Bringer's name, the calculation will add +3 to hit and damage.",
       ],
     },
     spellFirstColTitle: "Us",
@@ -1732,7 +1733,7 @@ MagicItemsList["storm bringer"] = {
 
   MagicItemsList["gauntlets of storming fury"] = {
 	name : "Gauntlets of Storming Fury",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	type : "wondrous item",
 	rarity : "rare",
 	description : "While wearing both these steel gauntlets, any weapons I grasp with them count as magical. As a bonus action once per dawn, I can use them to envelop one or two melee weapons in my grasp with magical lightning, causing them to deal an extra 1d8 lightning damage on a hit. This last until I sheath or let go of a weapon.",
