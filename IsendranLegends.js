@@ -1385,8 +1385,8 @@ AddWarlockInvocation("Blind's Up (prereq: level 5 warlock, Pact of the Deck)", {
 	usages : 1,
 	action : ["action", ""]
 });
-AddWarlockInvocation("Blind's Up (prereq: Pact of the Deck)", {
-	name : "Blind's Up",
+AddWarlockInvocation("Bluff (prereq: Pact of the Deck)", {
+	name : "Bluff",
 	description : desc([
 		"I can attempt to conceal my spellcasting by performing card flourishes",
 		"I can make a Charisma (Performance) check to disguise any verbal or somatic components as I cast the spell",
