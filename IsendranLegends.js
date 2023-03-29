@@ -749,6 +749,90 @@ RaceList["fey'ri"] = {
 		}
 	}
 });
+AddSubClass("fighter", "monster hunter-ua", {
+	regExpSearch : /^(?=.*monster)(?=.*hunter).*$/i,
+	subname : "Monster Hunter",
+	source : ["LoI"],
+	fullname : "Monster Hunter",
+	features : {
+		"subclassfeature3" : {
+			name : "Bonus Proficiencies",
+			source : ["LoI"],
+			minlevel : 3,
+			description : "\n   " + "I gain proficiency with two skills or one skill and any one tool" + "\n   " + "For skills I can choose Arcana, History, Insight, Investigation, Nature, or Perception",
+			choices : ["1 Skill and 1 Tool proficiencies", "2 Skill proficiencies"],
+			"1 skill and 1 tool proficiencies" : {
+				name : "Bonus Proficiencies",
+				description : "\n   " + "I gain proficiency with one skill and any one tool of my choice" + "\n   " + "For the skill, I can choose Arcana, History, Insight, Investigation, Nature, or Perception",
+				skillstxt : "Choose one from: Arcana, History, Insight, Investigation, Nature, or Perception",
+				toolProfs : [["Any tool", 1]]
+			},
+			"2 skill proficiencies" : {
+				name : "Bonus Proficiencies",
+				description : "\n   " + "I gain 2 skill proficiencies: Arcana, History, Insight, Investigation, Nature, or Perception",
+				skillstxt : "Choose two from: Arcana, History, Insight, Investigation, Nature, and Perception"
+			}
+		},
+		"subclassfeature3.1" : {
+			name : "Combat Superiority",
+			source : ["LoI"],
+			minlevel : 3,
+			description : "\n   " + "I gain a number of superiority dice that I can use to fuel special maneuvers (see below)" + "\n   " + "I can use only one maneuver per attack; I regain all superiority dice after a short rest" + "\n    - " + "Use after rolling to hit; I add the superiority die to my attack roll" + "\n    - " + "Use after damaging a creature; I add the superiority die to the damage roll" + "\n       " + "Also, the attack imposes disadvantage on any concentration save resulting from it" + "\n    - " + "Use after Int/Wis/Cha save, before knowing success/fail; add the die to the save total" + "\n    - " + "Use with Wis (Perception) to detect hidden or Wis (Insight) to see if lying to me" + "\n       " + "After rolling but before knowing if success/fail; I add the superiority die to the check",
+			additional : ["", "", "d8", "d8", "d8", "d8", "d8", "d8", "d8", "d10", "d10", "d10", "d10", "d10", "d10", "d10", "d10", "d12", "d12", "d12"],
+			usages : [0, 0, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6],
+			recovery : "short rest"
+		},
+		"subclassfeature3.2" : {
+			name : "Hunter's Mysticism",
+			source : ["LoI"],
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",			
+			description : "\n   " + "I can cast Detect Magic as a ritual and Protection from Evil & Good once per long rest" + "\n   " + "I gain the ability to speak one of the following languages: Abyssal, Celestial, or Infernal",
+			action : ["action", " (Prot vs. Evil/Good)"],
+			languageProfs : [["Abyssal, Celestial, or Infernal", 1]],
+			spellcastingBonus : [{
+				name : "Spirit Seeker",
+				spells : ["detect magic"],
+				selection : ["detect magic"],
+				firstCol : "(R)",
+				spellcastingAbility : 5
+			}, {
+				name : "Spirit Seeker",
+				spells : ["protection from evil and good"],
+				selection : ["protection from evil and good"],
+				firstCol : "oncelr"
+			}],
+			spellChanges : {
+				"detect magic" : {
+					time : "10 min",
+					changes : "I can cast this spell only as a ritual, thus its casting time is 10 minutes longer."
+				}
+			}
+		},
+		"subclassfeature7" : {
+			name : "Monster Slayer",
+			source : ["LoI"],
+			minlevel : 7,
+			usages : 1,
+			recovery : "long rest",
+			description : "\n   " + "Whenever I use a superiority die, I can choose to expend two, adding both to the roll" + "\n   " + "If the target is an aberration, fey, fiend, or undead, both dice deal maximum damage",
+			action : ["action", ""]
+		},
+		"subclassfeature10" : {
+			name : "Improved Combat Superiority",
+			source : [["UA:GH", 2]],
+			minlevel : 10,
+			description : "\n   " + "My superiority dice turn into d10s at 10th level and into d12s at 18th level"
+		},
+		"subclassfeature15" : {
+			name : "Relentless",
+			source : ["LoI"],
+			minlevel : 15,
+			description : "\n   " + "I regain one superiority die if I have no more remaining when I roll initiative"
+		}
+	}
+});
 AddSubClass("monk", "way of the specter", {
 	regExpSearch : /^((?=.*specter)(?=.*master))|((?=.*specter)((?=.*(monk|monastic))|((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
 	subname : "Way of the Specter",
