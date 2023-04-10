@@ -159,8 +159,7 @@ BackgroundList["blade's guild marshal"] = {
 };
 BackgroundList["hag raised"] = {
 	regExpSearch : /hag/i,
-	name : "Hag Raised",
-	source : ["LoI"],
+	name : "Hag Raised",	source : ["LoI"],
 	skills : ["History", "Nature"],
 	gold : 5,
 	equipright : [
@@ -1814,7 +1813,25 @@ MagicItemsList["storm bringer"] = {
     ],
   },
 };
-
+MagicItemsList["fire brand warhammer"] = {	
+	name : "Fire Brand Warhammer",
+	source : ["LoI"],
+	type : "weapon (warhammer)",
+	attunement : true,
+	description : "As a bonus action, I can speak the command word to cause flames that add +1d6 fire damage and shine bright light for 30 ft \u0026 dim light for 30 ft. The flames last until I speak the word again or drop it.",
+	descriptionFull : "You can use a bonus action to speak this magic warhammer's command word, causing flames to erupt from the head. These flames shed bright light in a 30-foot radius and dim light for an additional 30 feet. While the warhammer is ablaze, it deals an extra 1d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
+	action : [
+		["bonus action", "Fire Brand (activate/end)"]
+	],
+	weaponsAdd : ["Fire Brand Warhammer"],
+	weaponOptions : {
+		baseWeapon : "warhammer",
+		regExpSearch : /^(?=.*fire brand)(?=.*war)(?=.*hammer).*$/i,
+		name : "Fire Brand Warhammer",
+		source : ["LoI"],
+		description : "Versatile; While active, +1d6 fire damage",
+	}
+};
   MagicItemsList["gauntlets of storming fury"] = {
 	name : "Gauntlets of Storming Fury",
 	source : ["LoI"],
