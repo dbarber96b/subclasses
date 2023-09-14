@@ -1434,7 +1434,7 @@ AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the De
 					"Clubs Force.",
 					"Diamonds Cold.",
 					"Hearts Fire.",
-					"Spades Slashing.",
+					"Spades Necrotic.",
           ]
 			}, {
 				name : "Pact Deck Damage Table",
