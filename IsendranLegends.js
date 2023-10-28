@@ -1937,7 +1937,7 @@ AddSubClass("sorcerer", "spellfire channeler", {
 			},
 			"empowered fire" : {
 				name : "Empowered Fire",
-				source : "LoI"],
+				source : ["LoI"],
 				description : desc([
 					"As a bonus action when I inflict fire damage with a spell or cantrip, I can do extra damage",
 					"The target takes force damage equal to the roll of the expended dice and is pushed 10 ft"
