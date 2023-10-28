@@ -1965,7 +1965,7 @@ AddSubClass("warlock", "the raven queen", {
 			},
 		}
 	}
-);
+});
 AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Deck", {
 	name : "Pact of the Deck",
 	source : ["LoI"],
