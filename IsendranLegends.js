@@ -1247,6 +1247,7 @@ AddSubClass("fighter", "pact warrior", {
 			description : "\n   " + "I drain some of the vitality of my foes when I score a crit with my pact weapon" + "\n   " + "I gain temporary hit points equal to half of the damage from the attack"
 		}
 	}
+});
 AddSubClass("monk", "way of gravitation", {
 	regExpSearch : /^((?=.*gravity)(?=.*master))|((?=.*gravitation)((?=.*(monk|monastic))|((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
 	subname : "Way of Gravitation",
@@ -1965,7 +1966,7 @@ AddSubClass("warlock", "the raven queen", {
 			},
 		}
 	}
-});
+);
 AddFeatureChoice(ClassList.warlock.features["pact boon"], false, "Pact of the Deck", {
 	name : "Pact of the Deck",
 	source : ["LoI"],
