@@ -1177,7 +1177,7 @@ AddSubClass("fighter", "pact warrior", {
 	features : {
 		"subclassfeature3" : {
 			name : "Pact of the Blade",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 3,
 			description : "\n   " + "As a bonus action, I can create a pact weapon in my empty hand; I'm proficient in its use" + "\n   " + "I can choose the type of melee weapon every time I create it, and it has those statistics" + "\n   " + "The weapon disappears if it is more than 5 ft away from me for 1 minute" + "\n   " + "The weapon counts as magical; I can transform a magic weapon Chao my pact weapon" + "\n   " + "This occurs over an hour-long ritual that I can perform during a short rest" + "\n   " + "I can use an action to re-summon it in any form and can dismiss it as no action",
 			action : ["bonus action", ""],
@@ -1187,7 +1187,7 @@ AddSubClass("fighter", "pact warrior", {
 		},
 		"subclassfeature3.1" : {
 			name : "Hexbladeic Invocations",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 3,
 			description : "\n   " + "Use the \"Choose Features\" button above to add Hexbladeic Invocations to the third page",
 			additional : ["", "", "2 invocations known", "2 invocations known", "2 invocations known", "3 invocations known", "3 invocations known", "3 invocations known", "3 invocations known", "4 invocations known", "4 invocations known", "4 invocations known", "4 invocations known", "4 invocations known", "5 invocations known", "5 invocations known", "5 invocations known", "5 invocations known", "5 invocations known", "5 invocations known"],
@@ -1203,7 +1203,7 @@ AddSubClass("fighter", "pact warrior", {
 			"armor of shadows" : {
 				name : "Armor of Shadows",
 				description : "\n   " + "I can cast Mage Armor on myself at will, without spell slots or material comp. (PHB 256)",
-				source : ["P", 110],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Armor of Shadows",
 					spells : ["mage armor"],
@@ -1214,7 +1214,7 @@ AddSubClass("fighter", "pact warrior", {
 			"ascendant step (prereq: level 9 pact knight)" : {
 				name : "Ascendant Step",
 				description : "\n   " + "I can cast Levitate on myself at will, without spell slots or material comp. (PHB 255)",
-				source : ["P", 110],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Ascendant Step",
 					spells : ["levitate"],
@@ -1225,7 +1225,7 @@ AddSubClass("fighter", "pact warrior", {
 			"beast speech" : {
 				name : "Beast Speech",
 				description : "\n   " + "I can cast Speak with Animals at will, without using spell slots (PHB 277)",
-				source : ["P", 110],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Beast Speech",
 					spells : ["speak with animals"],
@@ -1236,20 +1236,20 @@ AddSubClass("fighter", "pact warrior", {
 			"beguiling influence" : {
 				name : "Beguiling Influence",
 				description : "\n   " + "I gain proficiencies with the Deception and Persuasion skills",
-				source : ["P", 110],
+				source : ["LoI"],
 				skills : ["Deception", "Persuasion"],
 				skillstxt : "\n\n" + toUni("Pact Knight (Beguiling Influence)") + ": Deception and Persuasion."
 			},
 			"devil's sight" : {
 				name : "Devil's Sight",
 				description : "\n   " + "I can see in magical and nonmagical darkness out to 120 ft",
-				source : ["P", 110],
+				source : ["LoI"],
 				vision : [["Devil's sight", 120]]
 			},
 			"eldritch sight" : {
 				name : "Eldritch Sight",
 				description : "\n   " + "I can cast Detect Magic at will, without using spell slots (PHB 231)",
-				source : ["P", 110],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Eldritch Sight",
 					spells : ["detect magic"],
@@ -1260,19 +1260,19 @@ AddSubClass("fighter", "pact warrior", {
 			"eldritch spear (prereq: eldritch blast cantrip)" : {
 				name : "Eldritch Spear",
 				description : "\n   " + "My Eldritch Blast cantrip has a range of 300 ft",
-				source : ["P", 111],
+				source : ["LoI"],
 				eval : "var AB = (What(\"Extra.Notes\").search(/agonizing blast/i) !== -1); RemoveWeapon(\"eldritch blast\"); RemoveWeapon(\"eldritch spear\"); RemoveWeapon(\"agonizing blast\"); if (AB) {AddWeapon(\"Agonizing Spear\")} else {AddWeapon(\"Eldritch Spear\")}",
 				removeeval : "RemoveWeapon(\"eldritch spear\"); RemoveWeapon(\"agonizing spear\"); var AB = (What(\"Extra.Notes\").search(/agonizing blast/i) !== -1); if (AB) {AddWeapon(\"Agonizing Blast\")} else {AddWeapon(\"Eldritch Blast\")}"
 			},
 			"eyes of the rune keeper" : {
 				name : "Eyes of the Rune Keeper",
 				description : "\n   " + "I can read all writing",
-				source : ["P", 111]
+				source : ["LoI"]
 			},
 			"fiendish vigor" : {
 				name : "Fiendish Vigor",
 				description : "\n   " + "I can cast False Life on myself at will, without spell slots or material comp. (PHB 239)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Fiendish Vigor",
 					spells : ["false life"],
@@ -1283,12 +1283,12 @@ AddSubClass("fighter", "pact warrior", {
 			"gaze of two minds" : {
 				name : "Gaze of Two Minds",
 				description : "\n   " + "As an action, I can touch a willing creature and perceive through its senses (not my own)" + "\n   " + "This lasts until the end of my next turn, but I can use an action to extend the duration",
-				source : ["P", 111]
+				source : ["LoI"]
 			},
 			"lifedrinker (prereq: level 12 pact knight)" : {
 				name : "Lifedrinker",
 				description : "\n   " + "My pact weapon does extra necrotic damage equal to my Charisma modifier",
-				source : ["P", 111],
+				source : ["LoI"],
 				calcChanges : {
 					atkCalc : ["if (isMeleeWeapon && (/\\bpact\\b/i).test(WeaponText)) { output.extraDmg += What('Cha Mod'); }; ", "If I include the word 'Pact' in a melee weapon's name or description, the calculation will add my Charisma modifier to its damage. However, it won't say that this added damage is of the necrotic type, as it can only display a single damage type."]
 				}
@@ -1296,7 +1296,7 @@ AddSubClass("fighter", "pact warrior", {
 			"mask of many faces" : {
 				name : "Mask of Many Faces",
 				description : "\n   " + "I can cast Disguise Self on myself at will, without using spell slots (PHB 233)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Mask of Many Faces",
 					spells : ["disguise self"],
@@ -1307,7 +1307,7 @@ AddSubClass("fighter", "pact warrior", {
 			"master of myriad forms (prereq: level 15 pact knight)" : {
 				name : "Master of Myriad Forms",
 				description : "\n   " + "I can cast Alter Self on myself at will, without using spell slots (PHB 211)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Mask of Myriad Forms",
 					spells : ["alter self"],
@@ -1318,7 +1318,7 @@ AddSubClass("fighter", "pact warrior", {
 			"misty visions" : {
 				name : "Misty Visions",
 				description : "\n   " + "I can cast Silent Image at will, without using spell slots or material comp. (PHB 276)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Misty Visions",
 					spells : ["silent image"],
@@ -1329,13 +1329,13 @@ AddSubClass("fighter", "pact warrior", {
 			"one with shadows (prereq: level 5 pact knight)" : {
 				name : "One with Shadows",
 				description : "\n   " + "As an action, when I'm in an area of dim light or darkness, I can become invisible" + "\n   " + "I become visible again when I move or take an action or reaction",
-				source : ["P", 111],
+				source : ["LoI"],
 				action : ["action", ""]
 			},
 			"otherworldly leap (prereq: level 9 pact knight)" : {
 				name : "Otherworldly Leap",
 				description : "\n   " + "I can cast Jump on myself at will, without using spell slots or material comp. (PHB 254)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Otherworldly Leap",
 					spells : ["jump"],
@@ -1346,7 +1346,7 @@ AddSubClass("fighter", "pact warrior", {
 			"repelling blast (prereq: eldritch blast cantrip)" : {
 				name : "Repelling Blast",
 				description : "\n   " + "I can have creatures hit by my Eldritch Blast cantrip be pushed 10 ft away from me",
-				source : ["P", 111],
+				source : ["LoI"],
 				calcChanges : {
 					atkAdd : ["if (theWea && (/eldritch blast/i).test(theWea.name)) {fields.Description += '; Target pushed back 10 ft'; }; ", "When I hit a creature with my Eldritch Blast cantrip, it is pushed 10 ft away from me."]
 				}
@@ -1354,7 +1354,7 @@ AddSubClass("fighter", "pact warrior", {
 			"visions of distant realms (prereq: level 15 pact knight)" : {
 				name : "Visions of Distant Realms",
 				description : "\n   " + "I can cast Arcane Eye at will, without using spell slots (PHB 214)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Visions of Distant Realms",
 					spells : ["arcane eye"],
@@ -1365,7 +1365,7 @@ AddSubClass("fighter", "pact warrior", {
 			"whispers of the grave (prereq: level 9 pact knight)" : {
 				name : "Whispers of the Grave",
 				description : "\n   " + "I can cast Speak with Dead at will, without using spell slots (PHB 277)",
-				source : ["P", 111],
+				source : ["LoI"],
 				spellcastingBonus : {
 					name : "Whispers of the Grave",
 					spells : ["speak with dead"],
@@ -1376,13 +1376,13 @@ AddSubClass("fighter", "pact warrior", {
 			"witch sight (prereq: level 15 pact knight)" : {
 				name : "Witch Sight",
 				description : "\n   " + "I can see the true form of creatures (shapechangers/illusions/transmutations) within 30 ft",
-				source : ["P", 111],
+				source : ["LoI"],
 				vision : [["Witch sight", 30]]
 			},
 		},
 		"subclassfeature3.2" : {
 			name : "Pact Magic",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 3,
 			description : "\n   " + "I can cast warlock cantrips/spells that I know, using Charisma as my spellcasting ability" + "\n   " + "I can use an arcane focus as a spellcasting focus; I know the Hex spell in addition" + "\n   " + "I regain these spell slots on a short rest",
 			additional : levels.map(function (n) {
@@ -1398,7 +1398,7 @@ AddSubClass("fighter", "pact warrior", {
 		},
 		"subclassfeature7" : {
 			name : "Deny the Grave",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 7,
 			description : "\n   " + "I regain 1d10 + my Constitution modifier in HP when I succeed on a Death saving throw" + "\n   " + "I also regain this amount whenever I drop a hexed foe to 0 hp",
 			recovery : "long rest",
@@ -1406,13 +1406,13 @@ AddSubClass("fighter", "pact warrior", {
 		},
 		"subclassfeature15" : {
 			name : "Make My Own Luck",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 15,
 			description : "\n   " + "Against a hexed foe, I gain advantage on my attacks",
 		},
 		"subclassfeature18" : {
 			name : "Vicious Strikes",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 18,
 			description : "\n   " + "Attacks with my pact weapon score a critical hit on a roll of both 19 and 20",
 			calcChanges : {
@@ -1421,7 +1421,7 @@ AddSubClass("fighter", "pact warrior", {
 		},
 		"subclassfeature18.1" : {
 			name : "Crimson Blade",
-			source : ["HB", 0],
+			source : ["LoI"],
 			minlevel : 18,
 			description : "\n   " + "I drain some of the vitality of my foes when I score a crit with my pact weapon" + "\n   " + "I gain temporary hit points equal to half of the damage from the attack"
 		}
@@ -1526,70 +1526,6 @@ AddSubClass("monk", "way of the specter", {
 			recovery : "long rest",
 	},
     }
-});
-AddSubClass("paladin", "oath of the spellbreaker", {
-	regExpSearch : /^(?=.*spellbreaker)((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
-	subname : "Oath of the Spellbreaker",
-	source : ["LoI"],
-	features : {
-		"subclassfeature3" : {
-			name : "Channel Divinity: Disrupt Magic",
-			source : ["LoI"],
-			minlevel : 3,
-			description : desc([
-				"As an action, I choose one creature within 60 feet that I can see",
-				"The target must make a saving throw of a type determined by its spellcasting ability.",
-				"If the target has multiple spellcasting abilities, it makes a separate saving throw for each.",
-				"If the target fails any one of these saving throws, its magical abilities that derive from that ability score become disrupted for up to 1 minute.",
-				"It has disadvantage on Constitution saving throws to maintain concentration on a spell. It can’t use reactions to cast spells using that ability.",
-				"If it attempts to cast a spell with a casting time of 1 action using that ability score, you roll a d20. On an 11 or higher, the spell doesn't take effect."
-			]),
-			action : [["action", ""]],
-			spellcastingExtra : ["shield", "zephyr strike", "branding smite", "see invisibility", "counterspell", "dispel magic", "freedom of movement", "locate creature", "banishing smite", "synaptic static"]
-		},
-		"subclassfeature3.1" : {
-			name : "Channel Divinity: Annihilation",
-			source : ["LoI"],
-			minlevel : 3,
-			description : desc([
-				"As an action, I can use my Channel Divinity to sacrifice my own well of magical energy to destroy my opponent’s.",
-				"When I use my Divine Smite to damage a creature, I can expend a use of Channel Divinity to destroy one of the target’s spell slots.",
-				"The spell slot destroyed is equivalent to the level of the spell slot used to perform Divine Smite.",
-				"If the target has no remaining spell slots of that level, an equivalent number of spell slots lower than the designated level are destroyed until the target has none.",
-				"If the target has an innate spellcasting trait, they lose spells, beginning with those of a level equal to the spell slot expended."
-			]),
-			action : [["action", ""]]
-		},
-		"subclassfeature7" : {
-			name : "Aura of Dampening",
-			source : ["LoI"],
-			minlevel : 7,
-			description : "\n   " + "Allies within range and I have resistance to damage from spells",
-			additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
-			dmgres : ["Spells"]
-		},
-		"subclassfeature15" : {
-			name : "Magical Detective",
-			source : ["LoI"],
-			minlevel : 15,
-			description : desc([
-				"I am always under the effects of the Detect Magic spell."
-			]),
-		},
-		"subclassfeature20" : {
-			name : "Unweaving Presence",
-			source : ["LoI"],
-			minlevel : 20,
-			description : desc([
-				"As an action, I gain the following benefits for 1 hour",
-				"I gain the effects of the antimagic field spell.",
-				"When I use my Channel Divinity to Disrupt Magic , I can target a number of additional creatures within 60 feet of me that I can see equal to half my Charisma modifier."
-			]),
-			recovery : "long rest",
-			usages : 1,
-			action : ["action", ""]
-		}
-	}
 });
 AddSubClass("paladin", "oath of the tempest", {
 	regExpSearch : /^(?=.*tempest)((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
@@ -1840,7 +1776,7 @@ AddSubClass("ranger", "witchwarden", {
 AddSubClass("rogue", "gatecrasher", {
 	regExpSearch : /^(?=.*(rogue|miscreant))(?=.*gatecrasher).*$/i,
 	subname : "Gatecrasher",
-	source : ["HB:GCR", 1],
+	source : ["LoI"],
 	features : {
 		"subclassfeature3" : {
 			name : "Extraplanar Detection",
@@ -1867,7 +1803,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature3.1" : {
 			name : "Striker's Gate",
-			source : ["HB:GCR", 1],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"If I haven't moved, I can use a bonus action to mark a creature within 30 ft",
@@ -1879,7 +1815,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature9" : {
 			name : "Trickster's Gate",
-			source : ["HB:GCR", 1],
+			source : ["LoI"],
 			minlevel : 9,
 			description : desc([
 				"As an action, I can create two linked dimensional gates in unoccupied spaces I see",
@@ -1895,7 +1831,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature13" : {
 			name : "Escapist's Gate",
-			source : ["HB:GCR", 1],
+			source : ["LoI"],
 			minlevel : 13,
 			description : desc([
 				"I can cast the word of recall spell",
@@ -1919,7 +1855,7 @@ AddSubClass("rogue", "gatecrasher", {
 		},
 		"subclassfeature17" : {
 			name : "Boltportal Strike",
-			source : ["HB:GCR", 1],
+			source : ["LoI"],
 			minlevel : 17,
 			description : desc([
 				"After I use Striker's Gate, I can make a weapon attack against the marked creature",
@@ -2222,7 +2158,7 @@ AddSubClass("warlock", "the gamemaster", {
 AddSubClass("warlock", "the raven queen", {
 	regExpSearch : /^(?=.*\braven)(?=.*queen\b).*$/i,
 	subname : "the Raven Queen",
-	source : ["HB", 1],
+	source : ["LoI"],
 	spellcastingExtra : ["false life", "sanctuary", "silence", "gentle repose", "feign death", "speak with dead", "ice storm", "locate creature", "commune", "cone of cold"],
 	features : {
 		"subclassfeature1.1" : {
@@ -2238,7 +2174,7 @@ AddSubClass("warlock", "the raven queen", {
 		},
 		"subclassfeature1" : {
 			name : "Sentinel Raven",
-			source : ["HB", 1],
+			source : ["LoI"],
 			minlevel : 1,
 			description : desc([
 				"I gain the services of a spirit in the form of a raven (using the stats of a raven)",
@@ -2256,7 +2192,7 @@ AddSubClass("warlock", "the raven queen", {
 		},
 		"subclassfeature6" : {
 			name : "Soul of the Raven",
-			source : ["HB", 1],
+			source : ["LoI"],
 			minlevel : 6,
 			description : desc([
 				"As a bonus action, when my raven is perched on my shoulder, I can merge our bodies",
@@ -2272,7 +2208,7 @@ AddSubClass("warlock", "the raven queen", {
 		},
 		"subclassfeature10" : {
 			name : "Raven's Shield",
-			source : ["HB", 1],
+			source : ["LoI"],
 			minlevel : 10,
 			description : "\n   " + "I can't be frightened, have advantage on death saves, and resistance to necrotic damage",
 			savetxt : { immune : ["frightened"], adv_vs : ["death"] },
@@ -2280,7 +2216,7 @@ AddSubClass("warlock", "the raven queen", {
 		},
 		"subclassfeature14" : {
 			name : "Audience with the Queen",
-			source : ["HB", 1],
+			source : ["LoI"],
 			minlevel : 14,
 			description : desc([
 				"I can grant audiences with the Raven Queen once per long rest",
