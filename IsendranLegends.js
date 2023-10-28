@@ -832,6 +832,63 @@ AddSubClass("fighter", "monster hunter-ua", {
 		}
 	}
 });
+AddSubClass("monk", "way of gravitation", {
+	regExpSearch : /^((?=.*gravity)(?=.*master))|((?=.*gravitation)((?=.*(monk|monastic))|((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
+	subname : "Way of Gravitation",
+	source : ["LoI"],
+	fullname : "Gravity Master",
+	features : {
+		"subclassfeature3" : {
+			name : "Gravitational Punches",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"When I successfully hit a two seperate creatures with unarmed strikes granted by my Flurry of blows, I create a gravitational pull between the two creatures.",
+				"Until the end of my next turn, those creatures cannot willingly move more than 20 feet from each other.",
+				"Whenever I hit a single creature with both unarmed strikes from Flurry of Blows, I create a vortex of high gravity within it.",
+				"That creature's speed is halved until the end of my next turn."
+			]),
+		},
+"subclassfeature3.1" : {
+			name : "Light as a Feather",
+			source : ["LoI"],
+			minlevel : 3,
+			description : "\n   " + "I gain the ability to reduce my own graivty." + "\n   " + "When I am prone, I can stand up by spending 5 feet of movement, instead of half my movement.",
+		},
+		"subclassfeature6" : {
+			name : "Fluctuate",
+			source : ["LoI"],
+			minlevel : 6,
+			description : desc([
+				"I gain the ability to alter my gravity even further.",
+				"Catch. I can spend 1 ki point to cast Feather Fall without providing material components.",
+				"Heavy Stance. As a reaction to being forcibly moved, I can spend 1 ki point to increase my gravity, and not be moved instead."
+			]),
+		},
+		"subclassfeature11" : {
+			name : "Low Gravity",
+			source : ["LoI"],
+			minlevel : 11,
+			description : desc([
+				"Whenever I use my Step of the Wind feature, I gain a flying speed equal to my walking speed until the end of my turn.",
+				"Additionally, when I affect a creature with my Gravitational Punches feature, it takes addtional force damage equal to my Martial Arts die."
+			]),
+		},
+		"subclassfeature17" : {
+			name : "Plummet",
+			source : ["LoI"],
+			minlevel : 17,
+			description : desc([
+				"When I hit a creature with an unarmed strike, I can spend 3 Ki points to attempt to change the creature's gravitational pull.",
+				"If the creature is somehow anchored to the ground or other surface, this ability has no effect on it.",
+				"The creature must make a Strength saving throw against my Ki save DC.",
+        "On a failed save, it falls 60 feet in a direction I choose. On a successful save, it falls up to 30 feet in that direction.",
+        "In either case, if a solid object is encountered in this fall, it strikes just as it would during a normal downward fall.",
+        "The creature's gravity returns to normal after the fall, or after it collides with anything."
+			]),
+	},
+    }
+});
 AddSubClass("monk", "way of the specter", {
 	regExpSearch : /^((?=.*specter)(?=.*master))|((?=.*specter)((?=.*(monk|monastic))|((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
 	subname : "Way of the Specter",
