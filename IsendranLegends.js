@@ -1658,99 +1658,103 @@ AddSubClass("ranger", "witchwarden", {
 	}
 });
 AddSubClass("rogue", "gatecrasher", {
-	regExpSearch : /^(?=.*(gate|rogue|miscreant))(?=.*\b(eldritch|arcane|magic|mage|witch)\b).*$/i,
+	regExpSearch : /^(?=.*(rogue|miscreant))(?=.*gatecrasher).*$/i,
 	subname : "Gatecrasher",
-	fullname : "Gatecrasher",
-	source : ["LoI"],
-	abilitySave : 4,
-	spellcastingFactor : 3,
-	spellcastingList : {
-		"class" : "sorcerer",
-		school : ["Conj", "Div", "Trans"],
-		level : [0, 4]
-	},
-	spellcastingKnown : {
-		cantrips : [0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-		spells : [0, 0, 2, 3, 3, 3, 4, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9]
-	},
+	source : ["HB:GCR", 1],
 	features : {
 		"subclassfeature3" : {
-			name : "Spellcasting",
-			source : ["LoI"],
-			minlevel : 3,
-			description : "\n   " + "I can cast known sorcerer cantrips/spells, using Intelligence as my spellcasting ability",
-			additional : ["", "", "3 cantrips \u0026 3 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 4 spells known", "3 cantrips \u0026 5 spells known", "3 cantrips \u0026 6 spells known", "3 cantrips \u0026 6 spells known", "4 cantrips \u0026 7 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 8 spells known", "4 cantrips \u0026 9 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 10 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 11 spells known", "4 cantrips \u0026 12 spells known", "4 cantrips \u0026 13 spells known"],
-			spellcastingBonus : [{
-				name : "Mage Hand cantrip", // the Mage Hand cantrip gained at level 1
-				spells : ["mage hand"],
-				selection : ["mage hand"]
-			}, {
-				name : "From any school", // the spells gained at level 3, 8, 14, 20
-				"class" : "sorcerer",
-				times : [0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4],
-				level : [1, 4]
-			}]
-		},
-		"subclassfeature3.1" : {
-			name : "Portal Sense",
-			source : ["LoI"],
+			name : "Extraplanar Detection",
+			source : ["HB:GCR", 1],
 			minlevel : 3,
 			description : desc([
-				"I know the Detect Evil and Good spell",
-				"It is a gatecrasher spell for you, and doesn’t count against your number of spells known.",
-				"When you cast it, you can sense the presence of extraplanar portals within range."
-			]),
-			action : [["action", ""]],
-			spellcastingExtra : ["detect evil and good"]
-		},
-		"subclassfeature3.2" : {
-			name : "Quicktunnel",
-			source : ["LoI"],
-			minlevel : 3,
-			description : desc([
-				"I can quicktunnel, magically creating a brief, personal portal.",
-				"I can quicktunnel immediately after taking the Disengage action.",
-				"I can also use your reaction to quicktunnel in response to falling or taking damage.",
-				"When I quicktunnel, I teleport up to 30 feet away to an unoccupied space I can see.",
-				"You gain additional uses of this feature, and increase the distance you can travel with it as your level increases: 3 times at 5th level (35 feet), 4 times at 11th level (40 feet), and 5 times at 17th level (45 feet)."
+				"I can cast the detect evil and good spell; it also detects planar portals",
 			]),
 			usages : 2,
-			action : ["bonus action", " (Disengage Action)"],
-			recovery : "long rest",
+			recovery : "short rest",
+			spellFirstColTitle: "Us",
+			spellcastingBonus : {
+				name : "Extraplanar Detection",
+				spells : ["detect evil and good"],
+				selection : ["detect evil and good"],
+				firstCol : 2
+			},
+			spellChanges : {
+				"detect evil and good" : {
+					description : "Know if abber./celest./elem./fey/fiend/undead/planar portal and des-/consecrated area within 30 ft",
+					changes : "Using Extraplanar Detection I can cast detect evil and good, which can also detect extraplanar portals."
+				}
+			}
+		},
+		"subclassfeature3.1" : {
+			name : "Striker's Gate",
+			source : ["HB:GCR", 1],
+			minlevel : 3,
+			description : desc([
+				"If I haven't moved, I can use a bonus action to mark a creature within 30 ft",
+				"If I do, I teleport to an unoccupied space within 5 ft of the target",
+				"Until the end of my turn I can sneak attack without adv. as long as I don't have disadv.",
+				"After I teleport, my speed becomes 0 until the end of the turn"
+			]),
+			action : ["bonus action", ""]
 		},
 		"subclassfeature9" : {
-			name : "Interlanar Knack",
-			source : ["LoI"],
+			name : "Trickster's Gate",
+			source : ["HB:GCR", 1],
 			minlevel : 9,
 			description : desc([
-				"I can see through opaque portals as if they were transparent.",
-				"Until the start of my next turn, I have advantage on the first weapon attack I make against a creature within 30 feet of my arrival point.",
-				"I also gain theability to immediately pick up rudimentary phrases in languages you don’t know.",
-				"The time it takes for you to learn new a language is halved.",
-				"Through sounds and gestures, you can communicate simple ideas with creatures that speak at least one language."
+				"As an action, I can create two linked dimensional gates in unoccupied spaces I see",
+				"The first appears in a space within 10ft; second appears in a space within 60 ft",
+				"Each gate is 10 ft tall and 5 ft wide; gates are visible from one side of my choice",
+				"The chosen sides are the sides that function as a portal; last until end of my next turn",
+				"A creature/object entering a gate exits the other like the two were adjacent spaces",
+				"On subsequent turns I can use my action to maintain the portals"
 			]),
+			usages : 1,
+			recovery : "long rest",
+			action : ["action", " (start/maintain)"],
 		},
 		"subclassfeature13" : {
-			name : "Oblique Ambush",
-			source : ["LoI"],
+			name : "Escapist's Gate",
+			source : ["HB:GCR", 1],
 			minlevel : 13,
 			description : desc([
-				"When I quicktunnel, I create momentary sensory distractions as I exit.",
-				"Until the start of my next turn, I have advantage on the first weapon attack I make against a creature within 30 feet of my arrival point."
+				"I can cast the word of recall spell",
+				"When I cast it to designate a sanctuary, the casting time is 1 " + (typePF ? "hour" : "hr") + "; can choose any location",
 			]),
+			usages : 1,
+			recovery : "long rest",
+			spellFirstColTitle: "Us",
+			spellcastingBonus : {
+				name : "Escapist's Gate",
+				spells : ["word of recall"],
+				selection : ["word of recall"],
+				firstCol : 1
+			},
+			spellChanges : {
+				"word of recall" : {
+					description : "Me + 5 willing crea teleport to a sanctuary, designated as such by casting this spell there",
+					changes : "Using Escapist's Gate I can cast word of recall, allowing me and five other willing creatures to teleport to a previously designated sanctuary."
+				}
+			}
 		},
 		"subclassfeature17" : {
-			name : "Quicktunnel Stabilization",
-			source : ["LoI"],
+			name : "Boltportal Strike",
+			source : ["HB:GCR", 1],
 			minlevel : 17,
 			description : desc([
-				"As a bonus action, I can teleport myself up to 60 ft to a spot I can see",
-				"As an action, I can teleport a willing ally I touch up to 30 ft to a spot I can see"
+				"After I use Striker's Gate, I can make a weapon attack against the marked creature",
+				"If the attack hits, it deals an additional 3d6 force damage"
 			]),
-			usages : "Intelligence modifier per ",
-			usagescalc : "event.value = Math.max(1, What('Int Mod'));",
-			recovery : "long rest",
-			action : [["bonus action", ""], ['action', ' (on ally)']]
+			calcChanges : {
+				atkAdd : [
+					function (fields, v) {
+						if ((v.isMeleeWeapon || v.isRangedWeapon) && !v.isSpell) {
+							fields.Description += (fields.Description ? '; ' : '') + '3d6 force damage';
+						}
+					},
+					"If I include the word 'Boltportal' in the name of a weapon, the automation will treat the attack as being against a target of Striker's Gate: adding 3d6 force damage to the attack."
+				]
+			}
 		}
 	}
 });
