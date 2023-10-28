@@ -832,11 +832,11 @@ AddSubClass("fighter", "monster hunter-ua", {
 		}
 	}
 });
-AddSubClass("fighter", "pact knight", {
-	regExpSearch : /^(?=.*pact)(?=.*knight).*$/i,
-	subname : "Pact Knight",
-	source : ["HB", 0],
-	fullname : "Pact Knight",
+AddSubClass("fighter", "pact warrior", {
+	regExpSearch : /^(?=.*pact)(?=.*warrior).*$/i,
+	subname : "Pact Warrior",
+	source : ["LoI"],
+	fullname : "Pact Warrior",
 	abilitySave : 3,
 	spellcastingFactor : "warlock3",
 	spellcastingKnown : {
