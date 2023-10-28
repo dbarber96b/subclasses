@@ -118,3 +118,62 @@ AddSubClass("cleric", "nightmare domain", {
 		}
 	}
 });
+AddSubClass("paladin", "oath of the radiant dawn", {
+regExpSearch : /^(?=.*(radiant|dawn|light))((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
+subname : "Oath of the Radiant Dawn",
+source : ["LoI"],
+spellcastingExtra : ["faerie fire", "guiding bolt", "scorching ray", "warding bond", "beacon of hope", "spirit guardians", "guardian of faith", "wall of fire", "commune", "flamestrike"],
+features : {
+		
+"subclassfeature3.1" : {
+name : "Channel Divinity: Cleansing Light",
+minlevel : 3,
+action : ["bunus action", ""],
+description : desc([
+	"As a bonus action I emit bright light in a 30 foot radius centered on myself. Each creature of my choice must make a Constitution saving throw, taking radiant damage equal to my paladin level and be blinded until the end of my next turn, or half as much on a successful save. Undead creatures have disadvantage on this saving throw."]),
+	},
+
+"subclassfeature3.2" : {
+name : "Channel Divinity: Divine Armament",
+minlevel : 3,
+action : ["action"],
+description : desc([
+	"As an action, I can bolster my allies with the power of the light. I choose a number of creatures within 30 feet of me euqal to my Charisma modifier, and for the next minute their weapon attacks and unarmed strikes deal an additional 1d4 radiant damage, at 11th level this damage increase to 2d4."]),
+	},
+	
+"subclassfeature7" : {
+name : "Aura of Protection",
+minlevel : 7,
+description : "\n   " + "While I'm conscious, allies within range gain temporary hitpoints equal to 1d4 plus my Charisma modifier at the start of each of their turns",
+additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"]
+	},
+
+"subclassfeature15" : {
+name : "Wings of Light",
+minlevel : 15,
+description : desc([
+	"I can't gain levels of Shadow Corruption. I am resistant to necrotic damage, and my Ability Scores and hit-point maximum can't be reduced"]),
+dmgres : ["Necrotic"],
+savetxt : { immune : ["hit point maximum reduction"] }
+    	},	
+
+"subclassfeature20" : {
+name : "Radiant Champion",
+minlevel : 20,
+recovery : "long rest",
+usages : 1,
+action : ["action"],
+description : "\n   " + "At 20th level I gain the Radiant Champion feature (see Notes page below)",
+	toNotesPage : [{
+	name : "Radiant Champion",
+	note : [
+		"As an action, I can gain the following benefits for 1 minute:",
+		"• At the start of each of my turns, I regain 10 hit points.",
+		"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
+		"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."],	
+	page3notes : true,
+	}],
+	
+		},
+	},
+});
