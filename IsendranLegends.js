@@ -601,6 +601,59 @@ RaceList["fey'ri"] = {
 		}
 	}
 };
+AddSubClass("bard", "college of fools", { 
+	regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*satire).*$/i,
+	subname : "College of Fools",
+	source : ["LoI"],
+	features : {
+		"subclassfeature3" : {
+			name : "Bonus Proficiencies",
+			source : [["UA:KoO", 2]],
+			minlevel : 3,
+			description : "\n   " + "I gain proficiency with thieves' tools, sleight of hand, and one other skill of my choice",
+			skills : ["Sleight of Hand"],
+			skillstxt : "Thieves' Tools, Sleight of Hand, and any one other skill",
+			toolProfs : [["Thieves' tools", "Dex"]]
+		},
+		"subclassfeature3.1" : {
+			name : "Tumbling Fool",
+			source : [["UA:KoO", 2]],
+			minlevel : 3,
+			description : "\n   " + "As a bonus action, I tumble which gives the benefits of the Dash and Disengage actions" + "\n   " + "I also gain a climbing speed at my current speed and half damage from falling",
+			action : ["bonus action", ""],
+			speed : { climb : { spd : "walk", enc : "walk" } }
+		},
+		"subclassfeature6" : {
+			name : "Fool's Insight",
+			source : [["UA:KoO", 2]],
+			minlevel : 6,
+			description : "\n   " + "I can cast Detect Thoughts, but on a save the target suffers an embarrassing social gaffe",
+			usages : "Charisma modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Cha Mod'));",
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Fool's Insight",
+				spells : ["detect thoughts"],
+				selection : ["detect thoughts"],
+				firstCol : "(S)"
+			},
+			spellChanges : {
+				"detect thoughts" : {
+					description : "1 a read thoughts of visible Int>3 crea or detect invisible in 30 ft; save for probing, social gaffe on save",
+					changes : "I can cast this spell a number of times equal to my Charisma modifier per long rest and when I do so and the target makes its save, it suffers an embarrassing social gaffe."
+				}
+			}
+		},
+		"subclassfeature14" : {
+			name : "Fool's Luck",
+			source : [["UA:KoO", 3]],
+			minlevel : 14,
+			description : " [one bardic inspiration die]" + "\n   " + "When I fail an ability check, saving throw, or attack roll, I can add one inspiration die" + "\n   " + "If this turns the roll into a success, I have to note down the number rolled" + "\n   " + "I can't use this ability again until the DM subtracts the amount from a check or attack",
+			usages : 1,
+			recovery : "reset"
+		}
+	}
+});
  AddSubClass("cleric", "wanderlust domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(wander|wanderlust|wanderer)).*$/i,
 	subname : "Wanderlust Domain",
