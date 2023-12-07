@@ -8,7 +8,7 @@ features : {
 "subclassfeature3.1" : {
 name : "Channel Divinity: Cleansing Light",
 minlevel : 3,
-action : ["bunus action", ""],
+action : ["bonus action", ""],
 description : desc([
 	"As a bonus action I emit bright light in a 30 foot radius centered on myself. Each creature of my choice must make a Constitution saving throw, taking radiant damage equal to my paladin level and be blinded until the end of my next turn, or half as much on a successful save. Undead creatures have disadvantage on this saving throw."]),
 	},
@@ -61,7 +61,7 @@ AddSubClass("ranger", "treasurehunter", {
 	regExpSearch : /^(?=.*treasurehunter).*$/i,
 	subname : "Treasure Hunter",
 	source : ["GMBDB"],
-	fullname : Treasure Hunter",
+	fullname : "Treasure Hunter",
 	features : {
 		"subclassfeature3" : {
 			name : "Delver of Secrets",
@@ -84,16 +84,18 @@ AddSubClass("ranger", "treasurehunter", {
 			spellcastingExtraApplyNonconform : true
 		},
 		"subclassfeature3.2" : {
-			name : "Radiant Champion",
+			name : "Grappling Hook",
 			minlevel : 3,
-			description : "\n   " + "At 20th level I gain the Radiant Champion feature (see Notes page below)",
+			description : "\n   " + "I gain proficiency in Grappling Hooks, a tool that Treasure Hunters can use in unique ways. (see Notes page below)",
 			toNotesPage : [{
-			name : "Radiant Champion",
+			name : "Grappling Hook",
 			note : [
-				"As an action, I can gain the following benefits for 1 minute:",
-				"• At the start of each of my turns, I regain 10 hit points.",
-				"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
-				"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."],	
+				"I can hook onto a surface within 60 ft., make an attack roll (The AC of the surface is determined by the DM).",
+				"Once hooked, I can use my full movement to climb up the rope. This movement does not provoke opportunity attacks.",
+				"When you hit a target with an attack from the grappling hook, you can subject them to one of the following effects:",
+				"• Hookshot. If the target is a creature that is at least one size larger than me, I may immediately pull myself to an adjacent space. This movement does not provoke opportunity attacks.",
+				"• Entangle. If the target is a creature that is your size or smaller, then I may make a contested Acrobatics or Athletics check. If they fail, the target falls prone and is considered grappled with the hook. This grapple ends when they succeed against my grapple, or until I release them from it.", 
+				"• Retrieve. If the target is an object weighing at most 10 pounds, I may pull it to me as a bonus action. If the object is being held or worn by another creature, make a contested Acrobatics or Athletics check versus their Athletics."],	
 			page3notes : true,
 	}],
 		},
@@ -109,35 +111,37 @@ AddSubClass("ranger", "treasurehunter", {
 				"The holder can also spend the charm when an attack roll is made against them. They roll a d20, and then choose whether the attack uses the attacker's roll or the new roll.",
 				"I can use this feature a number of times equal to my Wisdom modifier, and regain all expended uses when I finish a long rest."
 			]),
-      action : ["reaction", ""],
+      			action : ["reaction", ""],
 			usages : "Wisdom modifier per ",
 			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
 			recovery : "long rest"
 		},
 		"subclassfeature11" : {
-			name : "Warden's Defense",
+			name : "Ready for Anything",
 			source : ["GMBDB"],
 			minlevel : 11,
 			description : desc([
-				"As a reaction when I or a creature within 5 ft is hit, I can try to fend off the strike",
-				"I add 1d8 to the target's AC; If the attack still hits, the target has resistance against it",
-				"I can only do this while wielding a melee weapon or a shield"
+				"I cannot be surprised.",
+				"Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you.",
+				"My movement speed increases by 10 ft."
 			]),
-			usages : "Wisdom modifier per ",
-			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
-			recovery : "long rest",
-			action : ["reaction", ""],
+			speed : {
+				walk : { spd : "+10", enc : "+10" },
+				climb : { spd : "_10", enc : "_10" },
+				swim : { spd : "_10", enc : "_10" }
+			}
 		},
 		"subclassfeature15" : {
-			name : "Spell-Share",
+			name : "Disable Device",
 			source : ["GMBDB"],
 			minlevel : 15,
+			action : [" bonus action"],
 			description : desc([
-				"When I cast a ranger spell targeting myself, you can also affect one ally I can see within 30 feet with the spell.",
-				"You can use this feature twice, and you regain all expended uses when you finish a short rest."
+				"I can attempt to disable any magical device or effect within 60 feet of me.",
+				"As a bonus action, I canmake a Wisdom check with DC equal to 10 + the spell level of the target (if the target is not affected by a specific spell, the DM should estimate to the closest spell level).",
+				"On a success, the magical device or effect is disabled for an hour, and cannot be reactivated. You cannot use this feature again until you finish a short rest."
 			]),
-			recovery : "long rest",
-			usages : 2
+			recovery : "short rest"
 		}
 	}
 });
