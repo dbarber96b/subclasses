@@ -2465,6 +2465,20 @@ AddWarlockInvocation("Warped Limits (prereq: level 9 warlock, Pact of the Deck)"
 	source : ["LoI"],
 	prereqeval : function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the deck'; }
 });
+WeaponsList["grappling hook"] = {
+	regExpSearch : /^(?=.*hook)(?=.*grappling).*$/i,
+	name : "Grappling Hook",
+	source : ["LoI"],
+	list : "ranged",
+	ability : 2,
+	type : "Martial",
+	damage : [1, 4, "bludgeoning"],
+	range : "60 ft",
+	weight : 2,
+	description : "Thrown, two-handed",
+	special : true,
+	abilitytodamage : true
+};
 MagicItemsList["storm blade"] = {
 	name : "Storm Blade",
 	source : ["LoI"],
