@@ -1707,6 +1707,94 @@ AddSubClass("paladin", "paladin-weave", {
 		}
 	}
 });
+AddSubClass("ranger", "treasurehunter", {
+	regExpSearch : /^(?=.*treasurehunter).*$/i,
+	subname : "Treasure Hunter",
+	source : ["GMBDB"],
+	fullname : "Treasure Hunter",
+	features : {
+		"subclassfeature3" : {
+			name : "Delver of Secrets",
+			source : ["GMBDB"],
+			minlevel : 3,
+			descriptionFull : "I gain proficiency in two of the following: Athletics, Acrobatics, or Stealth, as well as Thieves' tools.",
+			description : "I gain proficiency with any combination of two skills, Thieves' tools.",
+			skillstxt : "Athletics, Acrobatics, or Stealth",
+			toolProfs : ["Thieves' tools"]
+		},
+		"subclassfeature3.1" : {
+			name : "Treasure Hunter Magic",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"I add a spell to my known spells at level 3, 5, 9, 13, and 17",
+				"These count as ranger spells, but do not count against the number of spells I can know"
+			]),
+			spellcastingExtra : ["identify", "locate object", "Leomund's tiny hut", "freedom of movement", "legend lore"],
+			spellcastingExtraApplyNonconform : true
+		},
+		"subclassfeature3.2" : {
+			name : "Grappling Hook",
+			minlevel : 3,
+			description : "\n   " + "I gain proficiency in Grappling Hooks, a tool that Treasure Hunters can use in unique ways. (see Notes page below)",
+			toNotesPage : [{
+			name : "Grappling Hook",
+			note : [
+				"I can hook onto a surface within 60 ft., make an attack roll (The AC of the surface is determined by the DM).",
+				"Once hooked, I can use my full movement to climb up the rope. This movement does not provoke opportunity attacks.",
+				"When you hit a target with an attack from the grappling hook, you can subject them to one of the following effects:",
+				"• Hookshot. If the target is a creature that is at least one size larger than me, I may immediately pull myself to an adjacent space. This movement does not provoke opportunity attacks.",
+				"• Entangle. If the target is a creature that is your size or smaller, then I may make a contested Acrobatics or Athletics check. If they fail, the target falls prone and is considered grappled with the hook. This grapple ends when they succeed against my grapple, or until I release them from it.", 
+				"• Retrieve. If the target is an object weighing at most 10 pounds, I may pull it to me as a bonus action. If the object is being held or worn by another creature, make a contested Acrobatics or Athletics check versus their Athletics."],	
+			page3notes : true,
+	}],
+		},
+		"subclassfeature7" : {
+			name : "Lucky Charm",
+			source : ["GMBDB"],
+			minlevel : 7,
+			description : desc([
+				"I can mark a gold piece as a lucky charm, and give that charm to myself or an ally.",
+				"Whenever the holder of the charm makes an attack roll, an ability check, or a saving throw, they can flip the coin to roll an additional d20, expending its charm.",
+				"The holder can choose to spend the charm after they roll the die, but before the outcome is determined.",
+				"The holder can choose which of the d20s is used for the attack roll, ability check, or saving throw.",
+				"The holder can also spend the charm when an attack roll is made against them. They roll a d20, and then choose whether the attack uses the attacker's roll or the new roll.",
+				"I can use this feature a number of times equal to my Wisdom modifier, and regain all expended uses when I finish a long rest."
+			]),
+      			action : ["reaction", ""],
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest"
+		},
+		"subclassfeature11" : {
+			name : "Ready for Anything",
+			source : ["GMBDB"],
+			minlevel : 11,
+			description : desc([
+				"I cannot be surprised.",
+				"Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you.",
+				"My movement speed increases by 10 ft."
+			]),
+			speed : {
+				walk : { spd : "+10", enc : "+10" },
+				climb : { spd : "_10", enc : "_10" },
+				swim : { spd : "_10", enc : "_10" }
+			}
+		},
+		"subclassfeature15" : {
+			name : "Disable Device",
+			source : ["GMBDB"],
+			minlevel : 15,
+			action : [" bonus action"],
+			description : desc([
+				"I can attempt to disable any magical device or effect within 60 feet of me.",
+				"As a bonus action, I canmake a Wisdom check with DC equal to 10 + the spell level of the target (if the target is not affected by a specific spell, the DM should estimate to the closest spell level).",
+				"On a success, the magical device or effect is disabled for an hour, and cannot be reactivated. You cannot use this feature again until you finish a short rest."
+			]),
+			recovery : "short rest"
+		}
+	}
+});
 AddSubClass("ranger", "witchwarden", {
 	regExpSearch : /^(?=.*witchwarden).*$/i,
 	subname : "Witchwarden",
