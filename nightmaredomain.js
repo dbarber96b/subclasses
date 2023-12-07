@@ -177,3 +177,73 @@ description : "\n   " + "At 20th level I gain the Radiant Champion feature (see 
 		},
 	},
 });
+AddSubClass("ranger", "treasurehunter", {
+	regExpSearch : /^(?=.*treasurehunter).*$/i,
+	subname : "Treasure Hunter",
+	source : ["GMBDB"],
+	fullname : Treasure Hunter",
+	features : {
+		"subclassfeature3" : {
+			name : "Delver of Secrets",
+			source : ["GMBDB"],
+			minlevel : 3,
+			descriptionFull : "I gain proficiency in two of the following: Athletics, Acrobatics, or Stealth, as well as Thieves' tools.",
+			description : "I gain proficiency with any combination of two skills, Thieves' tools.",
+			skillstxt : "Athletics, Acrobatics, or Stealth",
+			toolProfs : ["Thieves' tools"]
+		},
+		"subclassfeature3.1" : {
+			name : "Treasure Hunter Magic",
+			source : ["GMBDB"],
+			minlevel : 3,
+			description : desc([
+				"I add a spell to my known spells at level 3, 5, 9, 13, and 17",
+				"These count as ranger spells, but do not count against the number of spells I can know"
+			]),
+			spellcastingExtra : ["identify", "locate object", "Leomund's tiny hut", "freedom of movement", "legend lore"],
+			spellcastingExtraApplyNonconform : true
+		},
+		"subclassfeature7" : {
+			name : "Lucky Charm",
+			source : ["GMBDB"],
+			minlevel : 7,
+			description : desc([
+				"I can mark a gold piece as a lucky charm, and give that charm to myself or an ally.",
+				"Whenever the holder of the charm makes an attack roll, an ability check, or a saving throw, they can flip the coin to roll an additional d20, expending its charm.",
+				"The holder can choose to spend the charm after they roll the die, but before the outcome is determined.",
+				"The holder can choose which of the d20s is used for the attack roll, ability check, or saving throw.",
+				"The holder can also spend the charm when an attack roll is made against them. They roll a d20, and then choose whether the attack uses the attacker's roll or the new roll.",
+				"I can use this feature a number of times equal to my Wisdom modifier, and regain all expended uses when I finish a long rest."
+			]),
+      action : ["reaction", ""],
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest"
+		},
+		"subclassfeature11" : {
+			name : "Warden's Defense",
+			source : ["GMBDB"],
+			minlevel : 11,
+			description : desc([
+				"As a reaction when I or a creature within 5 ft is hit, I can try to fend off the strike",
+				"I add 1d8 to the target's AC; If the attack still hits, the target has resistance against it",
+				"I can only do this while wielding a melee weapon or a shield"
+			]),
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			recovery : "long rest",
+			action : ["reaction", ""],
+		},
+		"subclassfeature15" : {
+			name : "Spell-Share",
+			source : ["GMBDB"],
+			minlevel : 15,
+			description : desc([
+				"When I cast a ranger spell targeting myself, you can also affect one ally I can see within 30 feet with the spell.",
+				"You can use this feature twice, and you regain all expended uses when you finish a short rest."
+			]),
+			recovery : "long rest",
+			usages : 2
+		}
+	}
+});
