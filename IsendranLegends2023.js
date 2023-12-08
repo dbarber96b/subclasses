@@ -1786,7 +1786,7 @@ AddSubClass("ranger", "treasurehunter", {
 			name : "Trinketeer",
 				source : ["LoI"],
 				minlevel : 15,
-				description : "\n   I can attune to up to 4 magical items, and I can ignore all class, race, and level requirements on the use of magic items.",
+				description : "\n   I can attune to additional magical items, and I can ignore all class, race, and level requirements on the use of magic items.",
 				additional : levels.map(function (n) {
 					return n < 10 ? "" : "attune to " + (n < 14 ? 4 : n < 18 ? 5 : 6) + " magic items";
 				})
