@@ -355,19 +355,19 @@ BackgroundList["wyvern hunter"] = {
 };
 BackgroundFeatureList["armory access"] = {
 	description : "I have access to the stores of any Blade's Guild armory. Should I require any mundane simple or martial weapon, I can obtain one or two for each memeber of my party. I can also acquire studded leather armor, chain shirts, and chain mail if the armory is well stocked. Should I require any other mundane weapons or armor, I can purchase them for 50% less than their listed price.",
-	source : ["GMBDB"]
+	source : ["LoI"]
 };
 BackgroundFeatureList["granny always said"] = {
 	description : "The hag that raised me was full of useful knowledge and had an anecdote for every situation, usually based on the whimsical fey creatures she kept the company of. You absorbed much of this information and because of this you usually know what to say to fey creatures to garner their approval, or rile them up.",
-	source : ["GMBDB"]
+	source : ["LoI"]
 };
 BackgroundFeatureList["hard to reach"] = {
 	description : "Years of climb the wall and getting to places have made me a prodigious climber. As such I have a +2 to all athletics checks to climb. Additionally, if the surface is not smooth, or is man-made, I don't fall any further than 5 feet before I regain my hold.",
-	source : ["GMBDB"]
+	source : ["LoI"]
 };
 BackgroundFeatureList["dragon bane"] = {
 	description : "When I succeed on a saving throw imposed by a dragon's breath weapon, I take no damgage instead of half damage. Additionally, I have advantage on saving throws ro resist the frightened condition against dragons.",
-	source : ["GMBDB"]
+	source : ["LoI"]
 };
 RaceList["half-kender"] = {
 	regExpSearch : /^(?=.*half)(?=.*kender).*$/i,
@@ -1435,7 +1435,7 @@ AddSubClass("monk", "way of gravitation", {
 	features : {
 		"subclassfeature3" : {
 			name : "Gravitational Punches",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			description : desc([
 				"When I successfully hit a two seperate creatures with unarmed strikes granted by my Flurry of blows, I create a gravitational pull between the two creatures.",
@@ -1710,12 +1710,12 @@ AddSubClass("paladin", "paladin-weave", {
 AddSubClass("ranger", "treasurehunter", {
 	regExpSearch : /^(?=.*treasurehunter).*$/i,
 	subname : "Treasure Hunter",
-	source : ["GMBDB"],
+	source : ["LoI"],
 	fullname : "Treasure Hunter",
 	features : {
 		"subclassfeature3" : {
 			name : "Delver of Secrets",
-			source : ["GMBDB"],
+			source : ["LoI"],
 			minlevel : 3,
 			descriptionFull : "I gain proficiency in two of the following: Athletics, Acrobatics, or Stealth, as well as Thieves' tools.",
 			description : "I gain proficiency with any combination of two skills, Thieves' tools.",
@@ -1783,6 +1783,15 @@ AddSubClass("ranger", "treasurehunter", {
 			}
 		},
 		"subclassfeature15" : {
+			name : "Trinketeer",
+				source : ["LoI"],
+				minlevel : 15,
+				description : "\n   I can attune to up to 4 magical items, and I can ignore all class, race, and level requirements on the use of magic items.",
+				additional : levels.map(function (n) {
+					return n < 10 ? "" : "attune to " + (n < 14 ? 4 : n < 18 ? 5 : 6) + " magic items";
+				})
+			},
+		"subclassfeature15.1" : {
 			name : "Disable Device",
 			source : ["LoI"],
 			minlevel : 15,
@@ -2559,7 +2568,7 @@ MagicItemsList["storm bringer"] = {
       baseWeapon: "longsword",
       regExpSearch: /^(?=.*dormant)(?=.*storm bringer).*$/i,
       name: "Dormant Storm Bringerr",
-      source: ["GMBDB"],
+      source: ["LoI"],
     },
     action: [
       ["bonus action", " (start/stop glow)"],
@@ -2605,7 +2614,7 @@ MagicItemsList["storm bringer"] = {
       baseWeapon: "longsword",
       regExpSearch: /^(?=.*awakened)(?=.*storm bringer).*$/i,
       name: "Awakened Storm Bringer",
-      source: ["GMBDB"],
+      source: ["LoI"],
     },
     action: [
       ["bonus action", " (start/stop glow)"],
@@ -2671,7 +2680,7 @@ MagicItemsList["storm bringer"] = {
       baseWeapon: "longsword",
       regExpSearch: /^(?=.*exalted)(?=.*storm bringer).*$/i,
       name: "Exalted Storm Bringer",
-      source: ["GMBDB"],
+      source: ["LoI"],
     },
     action: [
       ["bonus action", " (start/stop glow)"],
