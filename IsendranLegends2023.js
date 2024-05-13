@@ -369,6 +369,29 @@ BackgroundFeatureList["dragon bane"] = {
 	description : "When I succeed on a saving throw imposed by a dragon's breath weapon, I take no damgage instead of half damage. Additionally, I have advantage on saving throws ro resist the frightened condition against dragons.",
 	source : ["LoI"]
 };
+RaceList["dreamtouched"] = { //this code includes contributions by /u/SoilentBrad
+	regExpSearch : /dreamtouched/i,
+	name : "Dreamtouched",
+	source : ["LoI"],
+	plural : "Dreamtouched",
+	size : 3,
+	speed : {
+		walk : { spd : 30, enc : 20 }
+	},
+	skillstxt : "Advantage with either Insight, Intimidation, Performance, or Persuasion",
+	languageProfs : ["Common", 1],
+	savetxt : { immune : ["effects that require me to dream"] },
+	dmgres : ["Psychic"],
+	age : " reach adulthood in their early 20's and live thousands of years",
+	height : "range from 5 and a half to well over 6 feet tall (5'4\" + 2d6\")",
+	weight : "weigh around 145 lb (110 + 2d6 \xD7 1d6 lb)",
+	heightMetric : "range from 1,7 to 1,9 metres tall (160 + 5d6 cm)",
+	weightMetric : "weigh around 65 kg (50 + 5d6 \xD7 2d6 / 10 kg)",
+	scorestxt : "+1 Wisdom, +1 Charisma, and +1 to one other ability score of my choice",
+	scores : [0, 0, 0, 0, 1, 1],
+	trait : "Dreamtouched (+1 Wisdom, +1 Charisma, and +1 to one other" + (typePF ? "" : " ability score of my choice") + ")\nDual Mind: As a reaction after I roll a Wis" + (typePF ? " save, I can gain adv." : "dom saving throw, I can gain advantage") + " on it.\nMind Link: I can speak telepathically to any creature I can see within 60 ft, as long as it can speak at least one language. As a bonus action, I can give that creature the ability to speak telepathically back to me until the start of my next turn.\nPsychic Glamour: I have adv. on Insight, Intimidation, Performance, or Persuasion checks.\nSevered from Dreams: I don't dream and thus immune to spells that affect dreams.",
+	action : [['bonus action', 'Mind Link'], ['reaction', 'Dual Mind']]
+};
 RaceList["half-kender"] = {
 	regExpSearch : /^(?=.*half)(?=.*kender).*$/i,
 	name : "Half-kender",
@@ -382,11 +405,11 @@ RaceList["half-kender"] = {
 	toolProfs : ["Thieves' tools"],
 	dmgres : ["Poison"],
 	savetxt : { adv_vs : ["frightened"]},
-	age : " reach adulthood at age 20 and live around 100 years.",
-	hheight : " range from under 5 to 5 1/2 feet tall (4'5\" + 2d6\")",
-	weight : " weigh around 100 lb (75 + 2d6 / 1d6 lb)",
-	heightMetric : " range from under 1,5 to 1,7 metres tall (135 + 5d6 cm)",
-	weightMetric : " weigh around 45 kg (35 + 5d6 / 10 kg)",
+	age : "reach adulthood at age 20 and live around 100 years.",
+	hheight : "range from under 5 to 5 1/2 feet tall (4'5\" + 2d6\")",
+	weight : "weigh around 100 lb (75 + 2d6 / 1d6 lb)",
+	heightMetric : "range from under 1,5 to 1,7 metres tall (135 + 5d6 cm)",
+	weightMetric : "weigh around 45 kg (35 + 5d6 / 10 kg)",
 	scores : [0, 2, 1, 0, 0, 1],
 	trait : "Kender (+2 Dexterity, +1 Constitution, +1 Charisma)\n\nFearlessess: I have advantage on saving throws against being frightened .\n\nTaunt: I have advantage on Charisma (Performance) checks to taunt a creature and make it lose its temper. A creature might turn hostile against me."
 };
