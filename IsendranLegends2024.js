@@ -356,7 +356,7 @@ BackgroundList["wyvern hunter"] = {
 BackgroundList["monastic traveller"] = { // monastic traveller
 	regExpSearch : /^(?=.*monastic)(?=.*traveller).*$/i,
 	name : "Monastic Traveller",
-	source : ["NHB"],
+	source : ["LoI"],
     skills : ["History", "Perception"],
 		gold : 10,
 	equipleft : [
@@ -435,7 +435,7 @@ BackgroundFeatureList["dragon bane"] = {
 };
 BackgroundFeatureList["monastic influence"] = {
     description : "While within the lands where the local monastery has influence, people will tend to be helpful and friendly to the monk and his party. Additionally merchants and locals tend to be more likely to share information.  Gain advantage on persuasion or investigation checks to gather local information as long you maintain good standing with the local monastery.",
-    source : ["NHB"],
+    source : ["LoI"],
 };
 RaceList["dreamtouched"] = { //this code includes contributions by /u/SoilentBrad
 	regExpSearch : /dreamtouched/i,
@@ -1578,18 +1578,18 @@ AddSubClass("monk", "way of gravitation", {
 AddSubClass("monk", "way of the mirror", {
 	regExpSearch : /^(?=.*mirror)((?=.*(monk|monastic|dancer))|(((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$/i,
 	subname : "Way of the Mirror",
-	source : ["NHB", 1],
+	source : ["LoI"],
 	features : {
 		"subclassfeature3" : {
 			name : "Cast Reflection",
-			source : [["NHB", 1]],
+			source : [["LoI", 1]],
 			minlevel : 3,
 			description : ' [see 3rd page]',
 			action: [["bonus action", "Reflection (summon/dismiss)"], ["bonus action", "Reflection (swap location)"]],
 			creaturesAdd : [["Reflection (Monk)"]],
 			creatureOptions : [{
 				name : "Reflection (Monk)",
-				source : [["NHB", 1]],
+				source : [["LoI", 1]],
 				size : 3,
 				type : "Object",
 				alignment : "",
@@ -1631,7 +1631,7 @@ AddSubClass("monk", "way of the mirror", {
 			"cast reflection" : {
 			name : "Cast Reflection",
 			extraname : "Way of the Mirror 3",
-			source : [["NHB", 1]],
+			source : [["LoI", 1]],
 			description : desc([
 				"As a bonus action, I can magically manifest a translucent silver image of myself within 15 ft",
 				"It counts as an object, has 1 HP, AC 14 + Prof. Bonus, immunity to poison/psychic damage",
@@ -1648,7 +1648,7 @@ AddSubClass("monk", "way of the mirror", {
 			}],
 		"subclassfeature3.1" : {
 			name : "Mirror Incantations",
-			source : ["NHB", 1],
+			source : ["LoI", 1],
 			minlevel : 3,
 			description : "\n   " + "I know the Minor Illusion cantrip and can cast certain spells by using ki (see page 3)",
 			spellcastingBonus : {
@@ -1661,7 +1661,7 @@ AddSubClass("monk", "way of the mirror", {
 			"mirror spells" : {
 				name : "Mirror Spells",
 				extraname : "Mirror Incantations",
-				source : ["NHB", 1],
+				source : ["LoI", 1],
 				description : " [2 ki points, no material components]" + "\n   " + "As an action, I can cast Alter Self, Blur, Disguise Self, or Mirror Image",
 				action : ["action", ""],
 				spellcastingBonus : {
@@ -1677,7 +1677,7 @@ AddSubClass("monk", "way of the mirror", {
 		},
 		"subclassfeature6" : {
 			name : "Glass Looking",
-			source : [["NHB", 1]],
+			source : [["LoI", 1]],
 			minlevel : 6,
 			description : desc([
 				"As an action, I can temporarily transfer my consciousness to my reflection for up to 10 min",
@@ -1693,7 +1693,7 @@ AddSubClass("monk", "way of the mirror", {
 		},
 		"subclassfeature11" : {
 			name : "Interpose Reflection",
-			source : [["NHB", 1]],
+			source : [["LoI", 1]],
 			minlevel : 11,
 			description : desc([
 				"As a reaction when a creature I can see is attacked, I can make my reflection the target",
@@ -1707,7 +1707,7 @@ AddSubClass("monk", "way of the mirror", {
 		},
 		"subclassfeature17" : {
 			name : "Mirror Dance",
-			source : ["NHB", 1],
+			source : ["LoI", 1],
 			minlevel : 17,
 			description : desc([
 				"As a reaction, if a creature within 5 ft of me or my reflection is hit by another, I can make a", 
@@ -2220,7 +2220,7 @@ AddSubClass("sorcerer", "spellfire channeler", {
 	features : {
 		"subclassfeature1" : {
 			name : "Bonus Spells",
-			source : ["FRA2", 31],
+			source : ["LoI"],
 			minlevel : 1,
 			description : desc([
 				"I learn Produce Flame, Detect Magic, and Identify in addition to my spells known",
@@ -2729,7 +2729,7 @@ WeaponsList["grappling hook"] = {
 };
 MagicItemsList["silver band of projection"] = {
 	name : "Silver Band of Projection",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "ring",
 	rarity : "common",
 	description : "While wearing this ring, I can use an action to cause my voice to carry clearly for up to 300 feet until the end of my next turn.",
@@ -2737,14 +2737,14 @@ MagicItemsList["silver band of projection"] = {
 }
 MagicItemsList["silver sentinel ring"] = {
 	name : "Silver Sentinel Ring",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "ring",
 	rarity : "common",
 	description : "This ring glows faintly when undead are within 120 feet of it.",
 };
 MagicItemsList["wayfarer's iron ring"] = {
 	name : "Wayfarer's Iron Ring",
-	source : [["NHB"]],
+	source : [["LoI"]],
 	type : "ring",
 	rarity : "uncommon",
 	description : "While I wear this ring, moving through nonmagical difficult terrain doesn't cost me extra movement.",
@@ -2754,7 +2754,7 @@ MagicItemsList["wayfarer's iron ring"] = {
 MagicItemsList["belt of many pouches"] = {	
 	name : "Belt of Many Pouches",
 	nameAlt : "Belt of Pouches",
-	source : [["NHB"]],
+	source : [["LoI"]],
 	type : "wondrous item",
 	rarity : "rare",
 	magicItemTable : "C",
@@ -2767,7 +2767,7 @@ MagicItemsList["belt of many pouches"] = {
 MagicItemsList["snapback strap"] = {	
 	name : "Snapback Strap",
 	nameAlt : "Snapback Strap",
-	source : [["NHB"]],
+	source : [["LoI"]],
 	type : "wondrous item",
 	rarity : "rare",
 	description : "The belt can hold up to four weapons with the Light property. After such a weapon is used to make a ranged attack, the weapon magically teleports back to the belt.",
@@ -2775,7 +2775,7 @@ MagicItemsList["snapback strap"] = {
 };
 MagicItemsList["cloudsinger scimitar"] = {
 	name : "Cloudsinger Scimitar",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "weapon (scimitar)",
 	rarity : "very rare",
 	description : "I gain a +2 bonus to attack and damage rolls made with this magic weapon. It allows me to speak Auran, and softly sings warnings to me, granting me a +2 bonus to initiative while I am not incapacitated.",
@@ -2789,14 +2789,14 @@ MagicItemsList["cloudsinger scimitar"] = {
 		baseWeapon : "scimitar",
 		regExpSearch : /^(?=.*cloudsinger)(?=.*scimitar).*$/i,
 		name : "Cloudsinger Scimitar",
-		source : ["NHB"],
+		source : ["LoI"],
 		description : "Finesse, light; +2 initiative when not incapacitated",
 		modifiers : [2, 2],
 	}
 };
 MagicItemsList["moonlit bow"] = {
 	name : "Moonlit Bow",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "weapon (shortbow)",
 	rarity : "rare",
 	description : "Simply drawing your fingers in the air near this finely crafted bow causes it to be strung with an arrow of lunar energy that deals 1d8 radiant damage. When drawn using both hands, the bow sheds moonlight, creating bright light in a 15-foot radius and dim light for an additional 15 feet.",
@@ -2807,7 +2807,7 @@ MagicItemsList["moonlit bow"] = {
 		baseWeapon : "shortbow",
 		regExpSearch : /^(?=.*moonlit)(?=.*bow).*$/i,
 		name : "Moonlit Bow",
-		source : ["NHB"],
+		source : ["LoI"],
 		damage : [1, 8, "radiant"],
 		description : "Two-handed; creates magical ammunition"
 	}
@@ -2815,7 +2815,7 @@ MagicItemsList["moonlit bow"] = {
 MagicItemsList["red tiger scimitar"] = {
 	name : "Red Tiger Scimitar",
 	nameAlt : "Red Tiger",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "weapon (scimitar)",
 	rarity : "rare",
 	description : "I gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, this magic weapon deals +1d6 thunder damage to any target it hits.",
@@ -2827,14 +2827,14 @@ MagicItemsList["red tiger scimitar"] = {
 		baseWeapon : "scimitar",
 		regExpSearch : /^(?=.*scimitar)(?=.*tiger).*$/i,
 		name : "Red Tiger Scimitar",
-		source : ["NHB"],
+		source : ["LoI"],
 		description : "Finesse, light; +1d6 Thunder Damage",
 		modifiers : [1, 1]
 	}
 };
 MagicItemsList["striking gloves"] = {
 	name : "Striking Gloves",
-	source : [["NHB", 169]],
+	source : [["LoI", 169]],
 	type : "wondrous item",
 	rarity : "rare",	
 	notLegalAL : true,
@@ -2847,14 +2847,14 @@ MagicItemsList["striking gloves"] = {
 		baseWeapon : "unarmed strike",
 		regExpSearch : /^(?=.*gloves)(?=.*striking).*$/i,
 		name : "Striking Gloves",
-		source : [["NHB", 169]],
+		source : [["LoI", 169]],
 		description : "+1d6 force damage"
 	}]
 };
 MagicItemsList["tigersong blade"] = {
 	name : "Tigersong Blade",
 	nameAlt : "Tigersong",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "weapon (any sword)",
 	rarity : "very rare",
 	attunement : true,
@@ -2881,7 +2881,7 @@ MagicItemsList["tigersong blade"] = {
 };
 MagicItemsList["treasure sense dagger"] = {
 	name : "Treasure Sense Dagger",
-	source : ["NHB", 86],
+	source : ["LoI", 86],
 	type : "weapon (dagger)",
 	rarity : "rare",
 	attunement : true,
@@ -2894,14 +2894,14 @@ MagicItemsList["treasure sense dagger"] = {
 		baseWeapon : "dagger",
 		regExpSearch : /^(?=.*treasure)(?=.*sense).*$/i,
 		name : "Treasure Sense Dagger",
-		source : [["NHB", 86]],
+		source : [["LoI", 86]],
 		modifiers : [2, 2]
 	},
 };
 MagicItemsList["weapon of echoes"] = {
 	name : "Weapon of Echoes",
 	nameTest : "of Echoes",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "weapon (any)",
 	rarity : "rare",
 	magicItemTable : "G",
@@ -2926,7 +2926,7 @@ MagicItemsList["weapon of echoes"] = {
 };
 MagicItemsList["whip of red shadows"] = {
 	name : "Whip of Red Shadows",
-	source : ["NHB"],
+	source : ["LoI"],
 	type : "weapon (whip)",
 	rarity : "legendary",
 	description : "This whip has a +2 bonus on to hit and damage and deals +1d6 lightning damage. A critical hit rips the creature's shadow, preventing it from regaining hit points until the shadow is restored. I have advantage on attack rolls against shadowripped targets. A torn shadow can be healed with a remove curse, greater restoration, or wish spell; otherwise it must be allowed to heal naturally by completing a long rest.",
@@ -2937,7 +2937,7 @@ MagicItemsList["whip of red shadows"] = {
 		baseWeapon : "whip",
 		regExpSearch : /^(?=.*whip)(?=.*red)(?=.*shadows).*$/i,
 		name : "Whip of Red Shadows",
-		source : ["NHB"],
+		source : ["LoI"],
 		description : "Finesse, reach; +1d6 lightning damage; crit does shadowrip = Adv. attacks, can't regain hp",
 		modifiers : [2,2],
 	},
