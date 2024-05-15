@@ -415,7 +415,7 @@ BackgroundList["monastic traveller"] = { // monastic traveller
 		"My way of peace and meditation is the only way. Those who travel with me must meditate with me at least once a day or I will refuse to help."
     ],
 	toolProfs : ["Calligrapher's supplies, Cook's utensils, Painter's supplies, Herbalism kit", 1],
-	languageProfs : ["Celestial, Draconic, Dwarvish, Elvish, Gnomish, or Halfling", 1],
+	languageProfs : [1],
 };
 BackgroundFeatureList["armory access"] = {
 	description : "I have access to the stores of any Blade's Guild armory. Should I require any mundane simple or martial weapon, I can obtain one or two for each memeber of my party. I can also acquire studded leather armor, chain shirts, and chain mail if the armory is well stocked. Should I require any other mundane weapons or armor, I can purchase them for 50% less than their listed price.",
