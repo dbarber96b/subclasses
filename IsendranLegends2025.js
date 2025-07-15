@@ -2876,8 +2876,8 @@ SpellsList["undo harm"] = {
 	descriptionCantripDie : "1 crea heals `CD`d4 hit points but no more than damage since last turn",
 	descriptionFull : "You reverse time around a fresh wound, healing some of the damage. A creature you touch regains up to 1d4 hit points, but no higher than the amount of damage that they took since their last turn." + "\n   This spell's healing increases by 1d4 when you reach certain levels: 5th level (2d4), 11th level (3d4), and 17th level (4d4."
 };
-SpellsList["déjà vu"] = {
-	name : "Déjà Vu",
+SpellsList["deja vu"] = {
+	name : "Deja Vu",
 	classes : ["wizard"],
 	source : ["LoI"],
 	level : 1,
