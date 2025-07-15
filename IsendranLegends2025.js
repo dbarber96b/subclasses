@@ -2888,7 +2888,7 @@ SpellsList["deja vu"] = {
 	compMaterial : "A small silver mirror",
 	duration : "Instantaneous",
 	save : "Wis",
-	description : "1 crea save or repeat same action it took on previous turn. If target cannot repeat action, it takes no action.",
+	description : "1 crea save or repeat same action from previous turn. If target cannot repeat action, it takes no action.",
 	descriptionFull : "You briefly rewind the thoughts a creature of your choice that you can see within range. The target must succeed on a Wisdom saving throw or, on their next turn, be forced to use its action to take the same action it took on its previous turn. If the target is unable to take that action again, it instead takes no action. For example, if a creature under the effects of this spell made a weapon attack with a maul on their last turn, they must do so again this turn, though they may choose a different target. If the creature used their action to cast a spell, they must cast the same spell."
 };
 SpellsList["halt"] = {
