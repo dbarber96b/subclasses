@@ -771,53 +771,60 @@ RaceList["fey'ri"] = {
 	}
 };
 RaceList["kitsune"] = {
-	regExpSearch: /^(?=.*kitsune).*$/i,
-	name: "Kitsune",
-	sortname: "Kitsune",
-	source: [["RGttYR", 131]],
-	plural: "Kitsune",
+	regExpSearch : /kitsune/i,
+	name : "Kitsune",
+	source : [["MM:K", 0]],
+	plural : "Kitsune",
 	size : 3,
-	languageProfs: ["Common", "Kitsune", 1],
-	scorestxt : "+2 Charisma, +1 Dexterity",
-	age: " mature at the same rate as humans, reaching adulthood at around 20. They can go on to live up to a millennium.",
 	speed : {
-		walk : { spd : 35, enc : 25 }
+		walk : { spd : 30, enc : 20 }
 	},
-	skillstxt : "Choose one from Deception, Persuasion, or Stealth.",
-	senses : "Darkvision 60 ft",
-	action: [["action", "Ascendant Form"],["action", "Shapeshifter"]],
-	spellcastingAbility: [4, 5, 6],
-	spellcastingBonus: [{
-		name: "kitsune",
-		spells: ["druidcraft", "produce flame"],
-		selection: ["druidcraft", "produce flame"],
-		firstCol: "atwill",
-		times : 2,
+	languageProfs : ["Common", "Sylvan"],
+	vision : [["Darkvision", 60]],
+	age : " reach adulthood around 100 years and live around 900 years",
+	height : " range from 5 to 6 feet tall",
+	weight : " weigh around 135 to 175 lb",
+	scores : [0, 1, 0, 0, 0, 2],
+	trait : "Kitsune (+1 Dexterity, +2 Charisma)\nKitsune Magic: 1st level: Dancing Lights cantrip; 3rd level: Charm Person as a 2nd-level spell; 5th level: Invisibility, self only; Both spells can be used once per long rest without material components. Charisma is my spellcasting ability for these.\nTrue Form: As an action, I can transform to a human form or back to my true fox form.\nThis works as Wild Shape, with the exception that my HP doesn't change when shifting and I may speak as normal and use Kitsune Magic while in fox form.",
+	spellcastingAbility : 6,
+	spellcastingBonus : [{
+		name : "Kitsune Magic (level 1)",
+		spells : ["dancing lights"],
+		selection : ["dancing lights"]
 	}],
-	features: {
-		"fox’s wedding3": {
-			name: "Disguise Self",
-			minlevel: 3,
-			usages: 1,
-			recovery: "long rest",
-			description: desc([
-			"When I reach character level 3, I learn the Disguise Self spell.",
-			]),
-		spellcastingBonus: [{
-			name: "kitsune",
-			spells: ["disguise self"],
-			selection: ["disguise self"],
-			times: 1,
-			firstCol: "oncelr",
-		}],
-	}},
-	trait : "Kitsune"+
-		"\n \u2022 Fey. My creature type is fey, rather than humanoid." +
-		"\n \u2022 Ascendant Form. I have the power to take on a magical, ascendant form. As an action, I can radiate bright, white light for 1 hour or until I end the effect as a bonus action. This light penetrates magical darkness, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. Creatures of my choice in the light can add 1d4 to their Intimidation, Perception, and Persuasion ability checks. While in this form, when a creature within 10 feet of me misses an attack roll or fails a saving throw, I can use my reaction to add 1d4 to the result, potentially turning a miss into a hit or a failure into a success. Once I use this trait, I can’t do so again until I finish a long rest." +
-		"\n \u2022 Fox’s Wedding. I know the druidcraft and produce flame cantrips. Once I reach 3rd level, I can cast the disguise self spell once with this trait as a 1st-level spell, and I regain the ability to cast it this way when I finish a long rest. I can also cast either of those spells using any spell slots I have of the appropriate level. Intelligence, Wisdom, or Charisma is my spellcasting ability for these spells (choose when selecting this race)." +
-		"\n \u2022 Language of Motion. I can articulate ideas through motion, as well as speech. If I spend 1 minute moving my tails and ears, I can communicate a simple message, which can be contrary to any words I may be speaking aloud. This communication is undetectable to any creature that doesn’t speak Kitsune. A creature within 60 feet of me that can see me and speaks Kitsune can understand this message." +
-		"\n \u2022 Shapeshifter. As an action, I can transform into the shape of a fox. When I do, my clothing and equipment meld into my form, and I gain no benefits from them while transformed. I determine the specifics of my appearance in fox form, including my colouration and size (choosing from Tiny or Small when I transform). All my other game statistics remain the same. I can’t cast spells that require material or somatic components while in this form, but I can still concentrate on spells and speak as normal. I remain in this form until I use an action to revert to my true form or I die." + 		
-		(typePF ? "\n \u2022 Kitsune Guile. I gain proficiency with one of the following skills: Deception, Persuasion, or Stealth." : ""),
+	features : {
+		"true form" : {
+			name : "True Form",
+			minlevel : 1,
+			action : [["action", ""]]
+		},
+		"charm person" : {
+			name : "Kitsune Magic (level 3)",
+			limfeaname : "Charm Person (level 2)",
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : [{
+				name : "Kitsune Magic (level 3)",
+				spells : ["charm person"],
+				selection : ["charm person"],
+				firstCol : 'oncelr'
+			}]
+		},
+		"invisibility" : {
+			name : "Kitsune Magic (level 5)",
+			limfeaname : "Invisibility",
+			minlevel : 5,
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : [{
+				name : "Kitsune Magic (level 5)",
+				spells : ["invisibility"],
+				selection : ["invisibility"],
+				firstCol : 'oncelr'
+			}]
+		}
+	}
 };
 AddSubClass("bard", "college of fools", { 
 	regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*satire).*$/i,
