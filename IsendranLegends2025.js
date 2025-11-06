@@ -160,7 +160,7 @@ BackgroundList["blade's guild marshal"] = {
 BackgroundList["firefly guard"] = {
 	regExpSearch : /^(?=.*firefly)(?=.*guard).*$/i,
 	name : "Firefly Guard",
-	source : [["LoI"0]],
+	source : [["LoI"]],
 	skills : ["Athletics", "Intimidation"],
 	calcChanges : {
 		spellList : [
